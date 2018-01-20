@@ -7,6 +7,13 @@
 	"content": " 配置基础开发环境 我们开始安装一些工具来方便我们学习编程，一般初接触编程的同学使用的都是Windows系统或者macOS系统。从这节课开始我们将使用Linux系统来学习编程，不同于Windows以及macOS系统，\n Linux系统是一个开源(open source)系统，也就是说它的所有源代码都可以让大家浏览以及审核，提出修改。\n 如何在Windows系统或者macOS系统上运行Linux系统呢？我们可以使用Docker来在本地使用Linux系统。\n"
 },
 {
+	"uri": "https://www.enginego.org/",
+	"title": "basics",
+	"tags": [],
+	"description": "",
+	"content": " 计算机基础首页 我希望写一本电子书着重于计算机的基础，不单单为了EngineGirls的学员，同时也为了所有想入门学习计算机的人。无论你是什么年龄，什么学历，我都非常欢迎。\n我大学结束之后开始接触编程，周围没有会编程的朋友，而且我是非常多疑问的那种人，很多时候我在网上搜寻不到答案，这个常常令我很崩溃。\n不要妄想当看完这本电子书就能明白计算机的基础。我推荐可以上udacity和coursera的课程，优秀的工程师讲解加上习题可以让你更加巩固。\n"
+},
+{
 	"uri": "https://www.enginego.org/basics/",
 	"title": "basics",
 	"tags": [],
@@ -86,13 +93,6 @@
 {
 	"uri": "https://www.enginego.org/categories/",
 	"title": "Categories",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://www.enginego.org/",
-	"title": "Engine GO",
 	"tags": [],
 	"description": "",
 	"content": ""
