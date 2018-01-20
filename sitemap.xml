@@ -3,17 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.enginego.org/basics/</loc>
+    <lastmod>2018-01-08T00:10:14+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.enginego.org/dockers/</loc>
     <lastmod>2018-01-08T00:10:14+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.enginego.org/</loc>
-    <lastmod>2018-01-08T00:10:14+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.enginego.org/basics/</loc>
     <lastmod>2018-01-08T00:10:14+08:00</lastmod>
   </url>
   
@@ -29,11 +29,6 @@
   
   <url>
     <loc>https://www.enginego.org/dockers/macos%E5%AE%89%E8%A3%85docker%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2018-01-08T00:10:14+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.enginego.org/basics/%E5%BC%80%E5%A7%8B/</loc>
     <lastmod>2018-01-08T00:10:14+08:00</lastmod>
   </url>
   

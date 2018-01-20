@@ -75,17 +75,6 @@ PS C:\Users\Docker&amp;gt; docker --version Docker version 17.03.0-ce, build 60c
     </item>
     
     <item>
-      <title>为什么要写这篇教程</title>
-      <link>https://www.enginego.org/basics/%E5%BC%80%E5%A7%8B/</link>
-      <pubDate>Mon, 08 Jan 2018 00:10:14 +0800</pubDate>
-      
-      <guid>https://www.enginego.org/basics/%E5%BC%80%E5%A7%8B/</guid>
-      <description>欢迎学习计算机基础 我希望写一本电子书着重于计算机的基础，不单单为了EngineGirls的学员，同时也为了所有想入门学习计算机的人。无论你是什么年龄，什么学历，我都非常欢迎。
-我大学结束之后开始接触编程，周围没有会编程的朋友，而且我是非常多疑问的那种人，很多时候我在网上搜寻不到答案，这个常常令我很崩溃。
-不要妄想当看完这本电子书就能明白计算机的基础。我推荐可以上udacity和coursera的课程，优秀的工程师讲解加上习题可以让你更加巩固。</description>
-    </item>
-    
-    <item>
       <title>协议</title>
       <link>https://www.enginego.org/basics/%E5%8D%8F%E8%AE%AE/</link>
       <pubDate>Mon, 08 Jan 2018 00:10:14 +0800</pubDate>
