@@ -13,17 +13,17 @@
     <title>DNS查询 :: Engine GO</title>
     
     
-    <link href="/css/nucleus.css?1519565038" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1519565038" rel="stylesheet">
-    <link href="/css/hybrid.css?1519565038" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1519565038" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1519565038" rel="stylesheet">
-    <link href="/css/auto-complete.css?1519565038" rel="stylesheet">
-    <link href="/css/theme.css?1519565038" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1519565038" rel="stylesheet">
+    <link href="/css/nucleus.css?1519568434" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1519568434" rel="stylesheet">
+    <link href="/css/hybrid.css?1519568434" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1519568434" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1519568434" rel="stylesheet">
+    <link href="/css/auto-complete.css?1519568434" rel="stylesheet">
+    <link href="/css/theme.css?1519568434" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1519568434" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1519565038"></script>
+    <script src="/js/jquery-2.x.min.js?1519568434"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -68,15 +68,15 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1519565038"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1519565038"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1519568434"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1519568434"></script>
 <script type="text/javascript">
     
         
         var baseurl = "https://www.enginego.org";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1519565038"></script>
+<script type="text/javascript" src="/js/search.js?1519568434"></script>
 
     
   </div>
@@ -407,19 +407,20 @@
 <pre><code>http://www.apple.com
 </code></pre>
 
-<p>今天你准备买iPhoneX，你打开浏览器输入www.apple.com。回车，浏览器跳到苹果的官网，然后把iPhoneX的沙龙照显示出来。浏览器是如何找到这些内容并且显示出来的呢？</p>
+<p>今天你准备买iPhoneX，你打开浏览器输入www.apple.com。回车，浏览器跳到苹果的官网，然后把iPhoneX的沙龙照显示出来。浏览器是如何通过www.apple.com这个域名找到内容并且正确显示出来的呢？</p>
 
-<p>我小的时候网络还在起步阶段，家家户户都准备着一本比字典还要厚的黄页来专门记载每户的电话号码。记得有一次我打给魏同学问作业，字母表先翻到W，然后找到他的名字，再找到对应的电话号码。难以置信吧，我现在回想起来也觉得。</p>
+<p>我小的时候网络还在起步阶段，家家户户都准备着一本比字典还要厚的黄页来专门记载每户的电话号码。记得有一次我打给魏同学问作业，字母表先翻到W，然后根据他的家庭地址猜测哪个是他家的电话（因为黄页通常都记载家长的名字），最后找到对应的电话号码打过去。难以置信吧，我现在回想起来也觉得。</p>
 
 <p>![feel_old]()</p>
 
-<p>其实互联网一开始也是这么，互联网刚诞生不久的时候，只有一些高校和科学家在用，全部的联网机器加起来才300多台。每台机器都有一个类似黄页的文件（hosts文件）。专门记载这个域名对应哪个ip地址，这个文件的内容就像：</p>
+<p>其实互联网一开始也是这么，互联网刚诞生不久的时候，只有一些高校和科学家在用，全部的联网机器加起来才300多台。每台机器都有一个类似黄页的文件（称为hosts文件）。专门记载这个域名对应哪个ip地址。 你可以打开电脑查看自己的hosts文件</p>
 
-<p>www.enginegirls.org 31.41.59.26
+<p>文件的内容就像：</p>
+
+<pre><code>www.enginego.org 104.24.120.11
 www.apple.com 119.145.144.223
-www.ieee.org  23.38.177.118</p>
-
-<p>当有了ip地址之后，就能访问那台计算机获取到我们想要的信息了。至于怎么获取我们会在ip地址这一节里面介绍。这个阶段域名其实就是ip的别名，</p>
+www.ieee.org  23.38.177.118
+</code></pre>
 
 <p>问题随着时间发展出现了，小时候的黄页每年买一本，要是在一年中你更换了电话号码，其他人也就找不到你了。互联网也是，每个小时都有新的域名被注册，新的主机加入互联网，如果还只是继续更新一个文件会有几个问题。1. 主机数量太多了，现在已经超过10亿台设备接入互联网，每次查询的话都要从这里面查会比较慢。2. 大部分的网站用户根本不会上，就像大部分在黄页上的人我都不会联系。每上线一个小网站就更新全球的电脑这样显然小题大做了。那么有什么方法可以解决这个问题呢？</p>
 
@@ -435,6 +436,12 @@ www.ieee.org  23.38.177.118</p>
 （没错，hosts文件还没有退出时代）如果hosts文件有对应的内容，例如上面的</p>
 
 <pre><code>www.apple.com 119.145.144.223
+
+Windows
+c:\windows\system32\drivers\etc\hosts
+
+macOS
+/etc/hosts
 </code></pre>
 
 <p>那么计算机就会直接使用这个ip</p></li>
@@ -684,20 +691,20 @@ www.ieee.org  23.38.177.118</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1519565038"></script>
-    <script src="/js/perfect-scrollbar.min.js?1519565038"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1519565038"></script>
-    <script src="/js/jquery.sticky.js?1519565038"></script>
-    <script src="/js/featherlight.min.js?1519565038"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1519565038"></script>
-    <script src="/js/highlight.pack.js?1519565038"></script>
+    <script src="/js/clipboard.min.js?1519568434"></script>
+    <script src="/js/perfect-scrollbar.min.js?1519568434"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1519568434"></script>
+    <script src="/js/jquery.sticky.js?1519568434"></script>
+    <script src="/js/featherlight.min.js?1519568434"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1519568434"></script>
+    <script src="/js/highlight.pack.js?1519568434"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1519565038"></script>
-    <script src="/js/learn.js?1519565038"></script>
-    <script src="/js/hugo-learn.js?1519565038"></script>
+    <script src="/js/modernizr.custom.71422.js?1519568434"></script>
+    <script src="/js/learn.js?1519568434"></script>
+    <script src="/js/hugo-learn.js?1519568434"></script>
 
-    <link href="/mermaid/mermaid.css?1519565038" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1519565038"></script>
+    <link href="/mermaid/mermaid.css?1519568434" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1519568434"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
