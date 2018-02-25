@@ -17,7 +17,8 @@
       <pubDate>Mon, 08 Jan 2018 00:10:14 +0800</pubDate>
       
       <guid>https://www.enginego.org/basics/dns%E6%9F%A5%E8%AF%A2/</guid>
-      <description>作者：Windson Yang 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+      <description>作者：Windson Yang
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 http://www.apple.com  今天你准备买iPhoneX，你打开浏览器输入www.apple.com。回车，浏览器跳到苹果的官网，然后把iPhoneX的沙龙照显示出来。浏览器是如何找到这些内容并且显示出来的呢？
 我小的时候网络还在起步阶段，家家户户都准备着一本比字典还要厚的黄页来专门记载每户的电话号码。记得有一次我打给魏同学问作业，字母表先翻到W，然后找到他的名字，再找到对应的电话号码。难以置信吧，我现在回想起来也觉得。
 ![feel_old]()
@@ -80,7 +81,8 @@ PS C:\Users\Docker&amp;gt; docker --version Docker version 17.03.0-ce, build 60c
       <pubDate>Mon, 08 Jan 2018 00:10:14 +0800</pubDate>
       
       <guid>https://www.enginego.org/basics/%E5%8D%8F%E8%AE%AE/</guid>
-      <description>作者：Windson Yang 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+      <description>作者：Windson Yang
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 计算机使用了非常多协议，大家接触得比较多的是HTTP, TCP/IP, FTP等，那么到底什么是协议呢？计算机中的协议和我们现实生活中签的协议其实挺像，双方都按照协议上的条约发送，接受数据。举个例子，你和你的朋友通过短信约定明天吃饭的时间地点。日常生活的话信息内容可以是
  明天下午5点在我家等
  或者
@@ -100,7 +102,8 @@ PS C:\Users\Docker&amp;gt; docker --version Docker version 17.03.0-ce, build 60c
       <pubDate>Mon, 08 Jan 2018 00:10:14 +0800</pubDate>
       
       <guid>https://www.enginego.org/basics/%E5%9F%9F%E5%90%8D/</guid>
-      <description> 作者：Windson Yang 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+      <description> 作者：Windson Yang
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 计算机知识往往互相关联，要真正了解域名是什么，必须先了解什么是URI。这里有一些常见的例子。
 https://www.apple.com http://www.w3c.org ftp://example.org/resource.txt file:///Users/example/hello.jpg  最后两个大家可能不太熟悉，以最后一个为例子，你们可以尝试把自己电脑中任意的文件拖放到浏览器中，浏览器会去猜这个文件类型，一些常见的文件类型例如图片，浏览器可以判断并渲染出来。同时浏览器的地址栏也会变成file开头。这个例子中的file就是这个URI所使用的协议。常见的协议还有
 HTTP 超文本传输协议 SMTP 邮件协议 telnet 终端传输协议 DNS 域名系统协议 DHCP 动态主机配置协议  好吧，我承认部分对于一般大众不是很常见，不过如果你想认真学习编程，起码看到这些名词的时候知道是什么。感兴趣的学生可以前往Lists of network protocols。那么协议又是什么呢？其实协议的本质非常简单。
@@ -114,7 +117,8 @@ HTTP 超文本传输协议 SMTP 邮件协议 telnet 终端传输协议 DNS 域�
       <pubDate>Mon, 08 Jan 2018 00:10:14 +0800</pubDate>
       
       <guid>https://www.enginego.org/basics/%E5%9F%BA%E7%A1%80%E6%9C%AF%E8%AF%AD/</guid>
-      <description> 作者：Windson Yang 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+      <description> 作者：Windson Yang
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 服务端 很简单，服务器就是一台**24小时运行**，运行着**专为服务器设计的系统**的**高性能计算机**。它也是由内存，硬盘，CPU组成。不过它会根据这台服务器的用途来配置不同的组件。有些服务器专门用来存储文件，图片，那么它就需要更大的硬盘，对CPU的要求就没那么高。有些专门用来进行高密度的计算，例如视频转格式，数据分析那么就要更快的CPU。 服务器会根据不同客户端的请求返回不同的内容，当你使用浏览器访问一个页面的时候，实际上浏览器就是寻找该页面对应的服务器获取相应的图片和文字内容。  客户端 常见的客户端包括浏览器，手机，它请求服务器需要的资源，然后客户端解析返回的内容并且显示给用户。  </description>
     </item>
     
@@ -124,7 +128,8 @@ HTTP 超文本传输协议 SMTP 邮件协议 telnet 终端传输协议 DNS 域�
       <pubDate>Mon, 08 Jan 2018 00:10:14 +0800</pubDate>
       
       <guid>https://www.enginego.org/basics/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%BC%96%E7%A0%81/</guid>
-      <description>作者：Windson Yang 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+      <description>作者：Windson Yang
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 在打开文件或者邮件的时候，你一定会遇到像这样的字符串乱码的问题：
 É��OÇ��  学习编程的过程一定会遇到Unicode, UTF-8, ASCII, Latin-1这些编码术语。要了解字符串编码，必须要了解计算机的一些基础知识，例如字符串如何存储与表示，如果知识希望靠运气来解决或者避开它，反而会在一次次盲目的尝试中浪费更多的时间。这篇文章的每一节都非常重要，不能跳过。所以请花上15分钟静下心读吧：
 ![like_unicode]()
@@ -145,7 +150,8 @@ y = x * 2  每个x都有对应并且唯一的一个y值对应，x与y组成的�
       <pubDate>Mon, 08 Jan 2018 00:10:14 +0800</pubDate>
       
       <guid>https://www.enginego.org/basics/%E8%B7%AF%E5%BE%84/</guid>
-      <description>作者：Windson Yang 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+      <description>作者：Windson Yang
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 当前路径 当你打开终端的时候，会看到例如：
 Windsons C:\usr\foo\: OSX WindsondeMacBook-Air:/usr/foo/  这里的&amp;rdquo;C:\usr\foo\&amp;ldquo;和&amp;rdquo;/usr/foo/&amp;ldquo;指当前执行指令的路径。也就是你的*当前路径*，你在终端中输入的指令，默认针对的就是当前路径，假如你输入&amp;rdquo;ls&amp;rdquo;(macOX)/&amp;ldquo;dir&amp;rdquo;(Windows)，计算机会理解成&amp;rdquo;ls/dir /usr/foo/&amp;ldquo;，所以会列出*当前路径中&amp;rdquo;/usr/foo/&amp;ldquo;下面的所有文件。
 那什么是绝对路径和相对路径呢？ 举个现实生活的例子： Cherry在路上遇到Sunkist，它问Sunkist的公司地址在哪里，Sunkist可能有两种答案：
@@ -171,7 +177,8 @@ C:\whatever\sunkist\:  就可以</description>
       <pubDate>Mon, 08 Jan 2018 00:10:14 +0800</pubDate>
       
       <guid>https://www.enginego.org/basics/%E7%BB%88%E7%AB%AF/</guid>
-      <description>作者：Windson Yang 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+      <description>作者：Windson Yang
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 终端是一个可以通过命令行执行其他程序的程序 如果你曾经用过DOS系统，对这张图片应该不会陌生： (图片来源维基百科)
 如果你没有接触过DOS这样久远的系统，你可以尝试先打开自己计算机的终端
 macOS: 同时按住&amp;quot;control&amp;quot;+&amp;quot;space&amp;quot;键，在搜索框输入termianl，&amp;quot;回车&amp;quot; Windows 7：打开&amp;quot;开始&amp;quot;菜单，在搜索框里输入cmd，&amp;quot;回车&amp;quot; Windows 8+：同时按住&amp;quot;win&amp;quot;+&amp;quot;Q&amp;quot;键，然后在弹出的搜索框里输入cmd，&amp;quot;回车&amp;quot;  成功打开之后你会看到计算机打开了一个类似上面图片的一个程序。光标会停留在某一行。类似：
