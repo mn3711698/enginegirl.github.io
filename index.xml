@@ -199,5 +199,95 @@ find /path/to/base/dir/* -type f -ctime +10 -delete   而且只要跑同一个�
 如果你使用对的是Windows系统请注意，Windows有自己的一套特殊指令, 我不建议大家使用Windows来学习编程，相对来说macOX与Linux系统对开发者（也就是你）更加友好，使用他们会节约你很多时间。不过这不代表你需要额外买一台电脑才能学习编程，只需要安装双系统或者虚拟系统就好，如果你没有接触过，没关系。我们会一步步介绍，你可以先在Windows中安装Docker，然后就可以在Windows系统中使用Linux了。</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>https://www.enginego.org/basics/ping/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.enginego.org/basics/ping/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.enginego.org/basics/%E5%85%AC%E7%A7%81%E9%92%A5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.enginego.org/basics/%E5%85%AC%E7%A7%81%E9%92%A5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.enginego.org/basics/%E5%86%85%E5%AD%98/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.enginego.org/basics/%E5%86%85%E5%AD%98/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.enginego.org/basics/%E5%A0%86%E6%A0%88/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.enginego.org/basics/%E5%A0%86%E6%A0%88/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.enginego.org/basics/%E5%B5%8C%E5%A5%97%E5%AD%97/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.enginego.org/basics/%E5%B5%8C%E5%A5%97%E5%AD%97/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.enginego.org/basics/%E6%8A%93%E5%8C%85/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.enginego.org/basics/%E6%8A%93%E5%8C%85/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.enginego.org/basics/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.enginego.org/basics/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.enginego.org/basics/%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.enginego.org/basics/%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.enginego.org/basics/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.enginego.org/basics/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.enginego.org/basics/%E8%BF%9B%E7%A8%8B/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.enginego.org/basics/%E8%BF%9B%E7%A8%8B/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
