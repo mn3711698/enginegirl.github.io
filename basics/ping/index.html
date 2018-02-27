@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
 
-    <title>协议 :: Engine GO</title>
+    <title>Ping命令 :: Engine GO</title>
     
     
     <link href="/css/nucleus.css?1519747621" rel="stylesheet">
@@ -33,7 +33,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/basics/%E5%8D%8F%E8%AE%AE/">
+  <body class="" data-url="/basics/ping/">
     <nav id="sidebar" class="">
 
 
@@ -117,7 +117,7 @@
  
   
     
-      <li data-nav-id="/basics/ping/" title="Ping命令" class="dd-item ">
+      <li data-nav-id="/basics/ping/" title="Ping命令" class="dd-item active">
         <a href="/basics/ping/">
         Ping命令
         
@@ -155,7 +155,7 @@
  
   
     
-      <li data-nav-id="/basics/%E5%8D%8F%E8%AE%AE/" title="协议" class="dd-item active">
+      <li data-nav-id="/basics/%E5%8D%8F%E8%AE%AE/" title="协议" class="dd-item ">
         <a href="/basics/%E5%8D%8F%E8%AE%AE/">
         协议
         
@@ -558,7 +558,7 @@
             
           
           
-            <a href='/'>basics</a> > <a href='/basics/'>basics</a> > 协议
+            <a href='/'>basics</a> > <a href='/basics/'>basics</a> > Ping命令
           
          
           
@@ -582,62 +582,24 @@
         
         <div id="body-inner">
           
-            <h1>协议</h1>
+            <h1>Ping命令</h1>
           
 
         
 
 
-<p>作者：Windson Yang</p>
+<p>我们经常听到ping这个命令，这个是操作系统的命令之一，如果你在终端中输入</p>
 
-<p>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
-
-<p>计算机使用了非常多协议，大家接触得比较多的是HTTP, TCP/IP, FTP等，那么到底什么是协议呢？计算机中的协议和我们现实生活中签的协议其实挺像，双方都按照协议上的条约发送，接受数据。举个例子，你和你的朋友通过短信约定明天吃饭的时间地点。日常生活的话信息内容可以是</p>
-
-<blockquote>
-<p>明天下午5点在我家等</p>
-</blockquote>
-
-<p>或者</p>
-
-<blockquote>
-<p>明天在我家等吧，下午5点</p>
-</blockquote>
-
-<p>这两个信息大家都能理解，不过计算机就像强迫症的人一样，它们会先从一些流行的协议中找一个然后双方遵守，例如协议A</p>
-
-<blockquote>
-<p>这条信息必须由两行组成，第一行是时间，时间必须是24小时制，第二行是地点，地点必须是我家，你家两个中的其中一个。</p>
-</blockquote>
-
-<p>这样发出来的信息就会是：</p>
-
-<p>明天17点
-我家</p>
-
-<p>这样有什么优点呢？第一，无论对计算机或者人类来说，信息都变得有序和容易处理。当我们知道信息遵守协议A的时候，我们不需要阅读信息都知道第一行的内容会是时间，第二行会是地点。第二，这样只要遵守协议A的人都能对信息进行处理，即使现在你换个人发送信息，他也能和你互相沟通。第三，容易分层，计算机传输数据有可能会使用多层的传输协议，这样协议与协议之间也能轻松地相互沟通。</p>
-
-<p>举个常见的例子，当你使用浏览器访问www.apple.com，浏览器其实是按照HTTP协议的约定向苹果服务器发出这个信息：</p>
-
-<pre><code>第一行是请求方法和协议版本，
-第二行是请求的URL。
-第三行是连接是否持久化。
-...
-
-GET / HTTP/1.1\r\n
-Host: www.apple.com\r\n
-Connection: keep-alive\r\n
-Pragma: no-cache\r\n
-Cache-Control: no-cache\r\n
-Upgrade-Insecure-Requests: 1\r\n
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36\r\n
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8\r\n
-DNT: 1\r\n
-Accept-Encoding: gzip, deflate, br\r\n
-Accept-Language: en,zh;q=0.9,en-US;q=0.8,zh-CN;q=0.7\r\n
+<pre><code>ping www.enginggo.org
 </code></pre>
 
-<p>在HTTP协议里面这些信息统称为HTTP的请求头部（每行最后的\r\n是换行符，服务器读取到\r\n就知道接下来的内容是下一个头部信息）。它们大多有固定的选项，服务器拿到数据之后就可以直接对照协议来分析数据。想了解更多的学生可以参考[An overview of HTTP]（<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview）">https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview）</a></p>
+<p>[Ping截图]()</p>
+
+<p>你会看到类似这样的信息返回，后面的time因人而异，表示的是你的电脑发送一个数据请求包访问www.enginggo.org然后返回，来回总共的时间。</p>
+
+<p>这个指令主要是用来检测主机存活的，什么意思呢？我们先假定服务器和ip和域名是一一对应的关系，也就是说每个域名对应一个ip，背后都有一台主机。ping这个指令就是判断这个域名背后的主机有没有开。我们当然会相信苹果官网24小时都能访问，因为它要提供服务给全球不同时区的人。不过有些情况，某些主机可能会关闭，这时候就可以用ping指令去测试，如果time没有返回timeout的话，那代表这台主机起码开了。当然，如果timeout也不一定代表主机关闭啦，也有可能主机不对ping命令进行回应。</p>
+
+<p>有时候当我们无法上网，网络管理员或者计算机宅男朋友会说，你ping一下网关，或者你ping一下什么网看看。ping网关如果正常的话，代表局域网中你和路由器之间连接正常。如果ping某个网站正常的话，代表路由器与网站之间的连接正常。同时你也可以用time来判断你访问某个网站的时间。</p>
 
 
 <footer class=" footline" >
@@ -690,6 +652,23 @@ Accept-Language: en,zh;q=0.9,en-US;q=0.8,zh-CN;q=0.7\r\n
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                         
                         
                     
@@ -724,26 +703,6 @@ Accept-Language: en,zh;q=0.9,en-US;q=0.8,zh-CN;q=0.7\r\n
             
             
                 
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
                     
                 
                 
@@ -1022,10 +981,10 @@ Accept-Language: en,zh;q=0.9,en-US;q=0.8,zh-CN;q=0.7\r\n
 
 
         
-            <a class="nav nav-prev" href="/basics/dns%E6%9F%A5%E8%AF%A2/" title="DNS查询"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/basics/" title="basics"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/basics/%E5%9F%9F%E5%90%8D/" title="域名" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/basics/dns%E6%9F%A5%E8%AF%A2/" title="DNS查询" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

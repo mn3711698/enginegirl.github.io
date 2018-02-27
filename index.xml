@@ -6,10 +6,23 @@
     <description>Recent content in basics on Engine GO</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 Jan 2018 00:10:14 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 27 Feb 2018 00:10:14 +0800</lastBuildDate>
     
 	<atom:link href="https://www.enginego.org/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ping命令</title>
+      <link>https://www.enginego.org/basics/ping/</link>
+      <pubDate>Tue, 27 Feb 2018 00:10:14 +0800</pubDate>
+      
+      <guid>https://www.enginego.org/basics/ping/</guid>
+      <description>我们经常听到ping这个命令，这个是操作系统的命令之一，如果你在终端中输入
+ping www.enginggo.org  [Ping截图]()
+你会看到类似这样的信息返回，后面的time因人而异，表示的是你的电脑发送一个数据请求包访问www.enginggo.org然后返回，来回总共的时间。
+这个指令主要是用来检测主机存活的，什么意思呢？我们先假定服务器和ip和域名是一一对应的关系，也就是说每个域名对应一个ip，背后都有一台主机。ping这个指令就是判断这个域名背后的主机有没有开。我们当然会相信苹果官网24小时都能访问，因为它要提供服务给全球不同时区的人。不过有些情况，某些主机可能会关闭，这时候就可以用ping指令去测试，如果time没有返回timeout的话，那代表这台主机起码开了。当然，如果timeout也不一定代表主机关闭啦，也有可能主机不对ping命令进行回应。
+有时候当我们无法上网，网络管理员或者计算机宅男朋友会说，你ping一下网关，或者你ping一下什么网看看。ping网关如果正常的话，代表局域网中你和路由器之间连接正常。如果ping某个网站正常的话，代表路由器与网站之间的连接正常。同时你也可以用time来判断你访问某个网站的时间。</description>
+    </item>
     
     <item>
       <title>DNS查询</title>
@@ -197,15 +210,6 @@ Python3 hello.py  其实就是告诉计算机用什么程序（Python）执行�
 find /path/to/base/dir/* -type f -ctime +10 -delete   而且只要跑同一个系统就不用担心命令会执行出错。（不用担心Word2003与Wrod2007的兼容问题）
  容易定制，使用指令的好处是很容易根据需求来修改，加入想删除的是所有超过10天之前创建的文件夹，只需要修改&amp;rsquo;-type f&amp;rsquo;为&amp;rsquo;-type d&amp;rsquo;即可，这里type代表的是指令针对什么类型操作，f是files，d这是directory。  当然，要学会基本的指令也要花时间，例如一个find指令就有超过50个参数（这个命令比较特殊，参数比较多，我也常不记得，想用的时候通过系统自带的man page搜索就好）。
 如果你使用对的是Windows系统请注意，Windows有自己的一套特殊指令, 我不建议大家使用Windows来学习编程，相对来说macOX与Linux系统对开发者（也就是你）更加友好，使用他们会节约你很多时间。不过这不代表你需要额外买一台电脑才能学习编程，只需要安装双系统或者虚拟系统就好，如果你没有接触过，没关系。我们会一步步介绍，你可以先在Windows中安装Docker，然后就可以在Windows系统中使用Linux了。</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://www.enginego.org/basics/ping/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.enginego.org/basics/ping/</guid>
-      <description></description>
     </item>
     
     <item>
