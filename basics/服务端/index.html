@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
 
-    <title>macOS系统安装docker教程 :: Engine GO</title>
+    <title>基础术语 :: Engine GO</title>
     
     
     <link href="/css/nucleus.css?1519833659" rel="stylesheet">
@@ -33,7 +33,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/dockers/macos%E5%AE%89%E8%A3%85docker%E6%95%99%E7%A8%8B/">
+  <body class="" data-url="/basics/%E6%9C%8D%E5%8A%A1%E7%AB%AF/">
     <nav id="sidebar" class="">
 
 
@@ -93,7 +93,7 @@
   
     
     <li data-nav-id="/basics/" title="basics" class="dd-item 
-        
+        parent
         
         
         ">
@@ -212,7 +212,7 @@
  
   
     
-      <li data-nav-id="/basics/%E6%9C%8D%E5%8A%A1%E7%AB%AF/" title="基础术语" class="dd-item ">
+      <li data-nav-id="/basics/%E6%9C%8D%E5%8A%A1%E7%AB%AF/" title="基础术语" class="dd-item active">
         <a href="/basics/%E6%9C%8D%E5%8A%A1%E7%AB%AF/">
         基础术语
         
@@ -429,7 +429,7 @@
   
     
     <li data-nav-id="/dockers/" title="dockers" class="dd-item 
-        parent
+        
         
         
         ">
@@ -472,7 +472,7 @@
  
   
     
-      <li data-nav-id="/dockers/macos%E5%AE%89%E8%A3%85docker%E6%95%99%E7%A8%8B/" title="macOS系统安装docker教程" class="dd-item active">
+      <li data-nav-id="/dockers/macos%E5%AE%89%E8%A3%85docker%E6%95%99%E7%A8%8B/" title="macOS系统安装docker教程" class="dd-item ">
         <a href="/dockers/macos%E5%AE%89%E8%A3%85docker%E6%95%99%E7%A8%8B/">
         macOS系统安装docker教程
         
@@ -539,7 +539,7 @@
             
           
           
-            <a href='/'>basics</a> > <a href='/dockers/'>dockers</a> > macOS系统安装docker教程
+            <a href='/'>basics</a> > <a href='/basics/'>basics</a> > 基础术语
           
          
           
@@ -551,7 +551,18 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#服务端">服务端</a></li>
+<li><a href="#客户端">客户端</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -563,51 +574,30 @@
         
         <div id="body-inner">
           
-            <h1>macOS系统安装docker教程</h1>
+            <h1>基础术语</h1>
           
 
         
 
 
-<p>作者：Windson Yang
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
 
-<p>(官方英文教程)[<a href="https://docs.docker.com/toolbox/toolbox_install_mac/">https://docs.docker.com/toolbox/toolbox_install_mac/</a>]</p>
 
-<ul>
-<li>系统必须满足以下全部要求：
+<p>作者：Windson Yang</p>
 
-<ul>
-<li>2010后的苹果电脑，支持英特尔MMU内存虚拟</li>
-<li>10.10.3或者更新的苹果系统</li>
-<li>从Docker1.13版本（准备推出）之后不再支持10.10版本（OS X 10.10 Yosemite）</li>
-<li>不能安装4.3.30版本之前的VirtualBox（默认系统并没有这个软件）</li>
-</ul></li>
-</ul>
+<p>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
 
-<ol>
-<li>下载软件<a href="https://download.docker.com/mac/stable/Docker.dmg">Docker for macOS</a></li>
+<h3 id="服务端">服务端</h3>
 
-<li><p>双击Docker.dmg安装</p>
+<pre><code>很简单，服务器就是一台**24小时运行**，运行着**专为服务器设计的系统**的**高性能计算机**。它也是由内存，硬盘，CPU组成。不过它会根据这台服务器的用途来配置不同的组件。有些服务器专门用来存储文件，图片，那么它就需要更大的硬盘，对CPU的要求就没那么高。有些专门用来进行高密度的计算，例如视频转格式，数据分析那么就要更快的CPU。
+服务器会根据不同客户端的请求返回不同的内容，当你使用浏览器访问一个页面的时候，实际上浏览器就是寻找该页面对应的服务器获取相应的图片和文字内容。
+</code></pre>
 
-<p><img src="https://raw.githubusercontent.com/EngineGirl/basic-tutorial/master/imgs/install_docker/macOX/docker-app-drag.png" alt="docker-app-drap" /></p></li>
+<h3 id="客户端">客户端</h3>
 
-<li><p>双击应用程序中的Docker.app来启动Docker</p>
+<pre><code>常见的客户端包括浏览器，手机，它请求服务器需要的资源，然后客户端解析返回的内容并且显示给用户。
+</code></pre>
 
-<p><img src="https://raw.githubusercontent.com/EngineGirl/basic-tutorial/master/imgs/install_docker/macOX/docker-app-in-apps.png" alt="docker-app-inapp" /></p></li>
-
-<li><p>系统会请求你输入密码来启动Docker，Docker需要特殊权限来安装网络组件</p></li>
-
-<li><p>然后可以在屏幕右上角看到Docker的标志</p>
-
-<p><img src="https://github.com/EngineGirl/basic-tutorial/blob/master/imgs/install_docker/macOX/whale-in-menu-bar.png?raw=true" alt="docker-app-inapp" /></p></li>
-
-<li><p>可以点击这个标志浏览设置</p>
-
-<p><img src="https://github.com/EngineGirl/basic-tutorial/blob/master/imgs/install_docker/macOX/docker-menu.png?raw=true" alt="docker-app-inapp" /></p></li>
-
-<li><p>如此简单就安装成功啦，可以吃点巧克力奖励下自己了。:D</p></li>
-</ol>
+<p><img src="https://raw.githubusercontent.com/EngineGirl/basic-tutorial/master/imgs/basic/server_broswer.png" alt="server_broswer" /></p>
 
 
 <footer class=" footline" >
@@ -646,8 +636,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -661,6 +649,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -742,21 +733,6 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -773,6 +749,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -913,38 +892,21 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
             
         
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
             
         
@@ -954,6 +916,34 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -976,10 +966,10 @@
 
 
         
-            <a class="nav nav-prev" href="/dockers/windows%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85docker%E6%95%99%E7%A8%8B/" title="Windows安装Docker教程"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/basics/%E5%9F%9F%E5%90%8D/" title="域名"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/dockers/windows%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85docker%E6%95%99%E7%A8%8B/" title="Windows安装Docker教程" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/basics/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%BC%96%E7%A0%81/" title="字符串编码" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

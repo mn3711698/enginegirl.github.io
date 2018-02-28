@@ -25,6 +25,17 @@ ping www.enginggo.org  [Ping截图]()
     </item>
     
     <item>
+      <title>公私钥</title>
+      <link>https://www.enginego.org/basics/%E5%85%AC%E7%A7%81%E9%92%A5/</link>
+      <pubDate>Tue, 27 Feb 2018 00:10:14 +0800</pubDate>
+      
+      <guid>https://www.enginego.org/basics/%E5%85%AC%E7%A7%81%E9%92%A5/</guid>
+      <description>这是一个非常重要的话题，我接触到很多开发者对于公钥和私钥只是一知半解，其实它的原理非常简单。
+我们一般认识的密码／密钥类似保险柜，你设置密码成0335，那么打开的密码也是0335，这种叫做对称密钥，也就是开锁和关锁用的是同一个密码。另外一种关闭的密码与打开的密码不同，叫做非对称密钥。在网络传输中，如果你要和其他人传输一段重要的信息，例如你最怕的蔬菜的名字。你想要加密传输，那么你可以把这段信息通过密钥加密，例如你要传输的是
+芹菜，苦瓜，香菜  </description>
+    </item>
+    
+    <item>
       <title>DNS查询</title>
       <link>https://www.enginego.org/basics/dns%E6%9F%A5%E8%AF%A2/</link>
       <pubDate>Mon, 08 Jan 2018 00:10:14 +0800</pubDate>
@@ -130,10 +141,10 @@ HTTP 超文本传输协议 SMTP 邮件协议 telnet 终端传输协议 DNS 域�
     
     <item>
       <title>基础术语</title>
-      <link>https://www.enginego.org/basics/%E5%9F%BA%E7%A1%80%E6%9C%AF%E8%AF%AD/</link>
+      <link>https://www.enginego.org/basics/%E6%9C%8D%E5%8A%A1%E7%AB%AF/</link>
       <pubDate>Mon, 08 Jan 2018 00:10:14 +0800</pubDate>
       
-      <guid>https://www.enginego.org/basics/%E5%9F%BA%E7%A1%80%E6%9C%AF%E8%AF%AD/</guid>
+      <guid>https://www.enginego.org/basics/%E6%9C%8D%E5%8A%A1%E7%AB%AF/</guid>
       <description> 作者：Windson Yang
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 服务端 很简单，服务器就是一台**24小时运行**，运行着**专为服务器设计的系统**的**高性能计算机**。它也是由内存，硬盘，CPU组成。不过它会根据这台服务器的用途来配置不同的组件。有些服务器专门用来存储文件，图片，那么它就需要更大的硬盘，对CPU的要求就没那么高。有些专门用来进行高密度的计算，例如视频转格式，数据分析那么就要更快的CPU。 服务器会根据不同客户端的请求返回不同的内容，当你使用浏览器访问一个页面的时候，实际上浏览器就是寻找该页面对应的服务器获取相应的图片和文字内容。  客户端 常见的客户端包括浏览器，手机，它请求服务器需要的资源，然后客户端解析返回的内容并且显示给用户。  </description>
@@ -214,15 +225,6 @@ find /path/to/base/dir/* -type f -ctime +10 -delete   而且只要跑同一个�
     
     <item>
       <title></title>
-      <link>https://www.enginego.org/basics/%E5%85%AC%E7%A7%81%E9%92%A5/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.enginego.org/basics/%E5%85%AC%E7%A7%81%E9%92%A5/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>https://www.enginego.org/basics/%E5%86%85%E5%AD%98/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -263,15 +265,6 @@ find /path/to/base/dir/* -type f -ctime +10 -delete   而且只要跑同一个�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.enginego.org/basics/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://www.enginego.org/basics/%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.enginego.org/basics/%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
       <description></description>
     </item>
     
