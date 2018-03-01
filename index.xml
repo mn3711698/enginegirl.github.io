@@ -60,7 +60,10 @@ www.apple.com 119.145.144.223  那么计算机就会直接使用这个IP地址 �
 Windows c:\windows\system32\drivers\etc\hosts macOS /etc/hosts  DNS服务器查询 当计算机在前两个方法都没有找到对应的ip，就会进行dns查询，其实就是问一下最近的子域名服务器（默认是ISP运营商提供，在国内就是中国电信，中国联通，中国移动这几家），从它们中获取到ip地址，而子域名服务器自己会定时从根域名服务器中获取最新的内容。这样，每次我就不用保存和更新全世界所有网站对应的ip，上哪个网就查询哪个。
   Q&amp;amp;A
  Q: 那么是不是破坏这13组根域名服务器就能破坏互联网的查询功能呢？例如别人如果输入苹果的域名却跳到一个其他的网站呢。
- A: 是的。很遗憾它分布在全世界各个地区，很难同时攻击它们 :D Q: 浏览器直接输入DNS查询到的苹果的IP地址，是不是就能访问到www.apple.com呢？ A: 很遗憾地说，在现代的互联网，大部分情况下是不可以的。  </description>
+ A: 是的。很遗憾它分布在全世界各个地区，很难同时攻击它们 :D
+ Q: 浏览器直接输入DNS查询到的苹果的IP地址，是不是就能访问到www.apple.com呢？
+ A: 很遗憾地说，在现代的互联网，大部分情况下是不可以的。
+  </description>
     </item>
     
     <item>
@@ -111,17 +114,17 @@ PS C:\Users\Docker&amp;gt; docker --version Docker version 17.03.0-ce, build 60c
       <guid>https://www.enginego.org/basics/%E5%8D%8F%E8%AE%AE/</guid>
       <description>作者：Windson Yang
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-计算机使用了非常多协议，大家接触得比较多的是HTTP, TCP/IP, FTP等，那么到底什么是协议呢？计算机中的协议和我们现实生活中签的协议其实挺像，双方都按照协议上的条约发送，接受数据。举个例子，你和你的朋友通过短信约定明天吃饭的时间地点。日常生活的话信息内容可以是
- 明天下午5点在我家等
- 或者
- 明天在我家等吧，下午5点
- 这两个信息大家都能理解，不过计算机就像强迫症的人一样，它们会先从一些流行的协议中找一个然后双方遵守，例如协议A
- 这条信息必须由两行组成，第一行是时间，时间必须是24小时制，第二行是地点，地点必须是我家，你家两个中的其中一个。
- 这样发出来的信息就会是：
-明天17点 我家
-这样有什么优点呢？第一，无论对计算机或者人类来说，信息都变得有序和容易处理。当我们知道信息遵守协议A的时候，我们不需要阅读信息都知道第一行的内容会是时间，第二行会是地点。第二，这样只要遵守协议A的人都能对信息进行处理，即使现在你换个人发送信息，他也能和你互相沟通。第三，容易分层，计算机传输数据有可能会使用多层的传输协议，这样协议与协议之间也能轻松地相互沟通。
-举个常见的例子，当你使用浏览器访问www.apple.com，浏览器其实是按照HTTP协议的约定向苹果服务器发出这个信息：
-第一行是请求方法和协议版本， 第二行是请求的URL。 第三行是连接是否持久化。 ... GET / HTTP/1.1\r\n Host: www.apple.com\r\n Connection: keep-alive\r\n Pragma: no-cache\r\n Cache-Control: no-cache\r\n Upgrade-Insecure-Requests: 1\r\n User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36\r\n Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8\r\n DNT: 1\r\n Accept-Encoding: gzip, deflate, br\r\n Accept-Language: en,zh;q=0.9,en-US;q=0.8,zh-CN;q=0.7\r\n  在HTTP协议里面这些信息统称为HTTP的请求头部（每行最后的\r\n是换行符，服务器读取到\r\n就知道接下来的内容是下一个头部信息）。它们大多有固定的选项，服务器拿到数据之后就可以直接对照协议来分析数据。想了解更多的学生可以参考[An overview of HTTP]（https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview）</description>
+计算机使用了多种多样的协议，大家接触得比较多的是HTTP, TCP/IP, FTP等，计算机中的协议和我们现实生活中签的协议其实挺像，双方都按照协议上的条约发送，接受数据。举个例子，你和你的朋友通过短信约定明天吃饭的时间地点。日常生活的话信息内容可以是
+ 明天 上午9点 在公司等
+ 即使改变文字的顺序
+ 明天 在公司等吧， 上午9点
+ 这两个信息一般人都能理解，不过计算机不一样，你可以把计算机当成患强迫症的朋友，它会要求你发的信息，前两个字一定是日期，后面4个字一定是12进制时间，最后是地点
+ 明天 &amp;ndash;日期&amp;ndash; 上午9点 &amp;ndash;时间&amp;ndash; 在公司等 &amp;ndash;地点&amp;ndash;
+ 只要你遵守这个规定发送信息给计算机，那么你们就互相遵守了一个协议。
+这样有什么优点呢？ 1. 这样只要遵守协议A的人都能对信息进行处理，即使现在你换个人发送信息，他也能和你互相沟通。 2. 无论对计算机或者人类来说，信息都变得有序和容易处理。当我们知道信息遵守协议A的时候，我们不需要阅读信息都知道第一行的内容会是时间，第二行会是地点。
+举个常见的例子，当你使用浏览器访问www.apple.com，浏览器其实是按照HTTP协议的约定向苹果服务器发出信息：
+第一行是请求方法和协议版本， 第二行是请求的URL。 第三行是连接是否持久化。 ...  真实发送的信息是：
+GET / HTTP/1.1\r\n Host: www.apple.com\r\n Connection: keep-alive\r\n Pragma: no-cache\r\n Cache-Control: no-cache\r\n Upgrade-Insecure-Requests: 1\r\n User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36\r\n Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8\r\n DNT: 1\r\n Accept-Encoding: gzip, deflate, br\r\n Accept-Language: en,zh;q=0.</description>
     </item>
     
     <item>
@@ -130,13 +133,12 @@ PS C:\Users\Docker&amp;gt; docker --version Docker version 17.03.0-ce, build 60c
       <pubDate>Mon, 08 Jan 2018 00:10:14 +0800</pubDate>
       
       <guid>https://www.enginego.org/basics/%E5%9F%9F%E5%90%8D/</guid>
-      <description> 作者：Windson Yang
+      <description>作者：Windson Yang
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 计算机知识往往互相关联，要真正了解域名是什么，必须先了解什么是URI。这里有一些常见的例子。
 https://www.apple.com http://www.w3c.org ftp://example.org/resource.txt file:///Users/example/hello.jpg  最后两个大家可能不太熟悉，以最后一个为例子，你们可以尝试把自己电脑中任意的文件拖放到浏览器中，浏览器会去猜这个文件类型，一些常见的文件类型例如图片，浏览器可以判断并渲染出来。同时浏览器的地址栏也会变成file开头。这个例子中的file就是这个URI所使用的协议。常见的协议还有
 HTTP 超文本传输协议 SMTP 邮件协议 telnet 终端传输协议 DNS 域名系统协议 DHCP 动态主机配置协议  好吧，我承认部分对于一般大众不是很常见，不过如果你想认真学习编程，起码看到这些名词的时候知道是什么。感兴趣的学生可以前往Lists of network protocols。那么协议又是什么呢？其实协议的本质非常简单。
-域名（Domain names）是互联网基础架构的关键部分。它们为互联网上任何可用的网页服务器提供了人类可读的地址。 任何连上互联网的电脑都可以通过一个公共IP地址访问到，对于IPv4来说，这个地址由32位组成（它们通常写成四个范围在0~255以内，由点分隔的数字组成，比如173.194.121.32），而对于IPv6来说，这个地址由128位组成，通常写成八组由冒号分隔的四进制数(e.g., 2027:0da8:8b73:0000:0000:8a2e:0370:1337).  域名解析 当购买了域名之后，可以在购买处设置绑定域名 61.91.161.217 clients1.google.com  DNS解析 并且设置DNS解析
-   主机记录 记录内容 线路类型 TTL 记录值     @ A 全网默认 600 52.43.176.46   www A 全网默认 600 52.43.176.46    </description>
+域名（Domain names）是互联网基础架构的关键部分。它们为互联网上任何可用的网页服务器提供了人类可读的地址。 任何连上互联网的电脑都可以通过一个公共IP地址访问到，对于IPv4来说，这个地址由32位组成（它们通常写成四个范围在0~255以内，由点分隔的数字组成，比如173.194.121.32），而对于IPv6来说，这个地址由128位组成，通常写成八组由冒号分隔的四进制数(e.g., 2027:0da8:8b73:0000:0000:8a2e:0370:1337).  </description>
     </item>
     
     <item>
