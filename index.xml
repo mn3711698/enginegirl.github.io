@@ -17,11 +17,11 @@
       <pubDate>Tue, 27 Feb 2018 00:10:14 +0800</pubDate>
       
       <guid>https://www.enginego.org/basics/ping/</guid>
-      <description>有时候当我们无法上网，会计算机的朋友会说，你ping一下网关，或者你ping一个网站看看。ping这个命令，其实是操作系统的命令之一，如果你在终端中输入
+      <description>有时候当我们无法上网，会计算机的朋友会说，你ping一下网关，或者你ping一个网站看看。ping这个命令，其实是操作系统的命令之一，你在终端中输入ping加上域名／网关地址
 ping www.enginggo.org  如果返回：
-64 bytes from 104.24.121.11: icmp_seq=0 ttl=54 time=170.383 ms 64 bytes from 104.24.121.11: icmp_seq=1 ttl=54 time=170.053 ms 64 bytes from 104.24.121.11: icmp_seq=2 ttl=54 time=171.298 ms 64 bytes from 104.24.121.11: icmp_seq=3 ttl=54 time=170.352 ms 64 bytes from 104.24.121.11: icmp_seq=4 ttl=54 time=170.636 ms ...  翻译过来就是， &amp;gt; 从我的计算机发送64个字节的数据到104.24.121.11（这个是经过[DNS解析]()后的www.enginego.org的ip地址，从发送到接受对方返回总共经过了170.xxx毫秒。代表www.enginego.org对应的那台服务器是开启并且响应ping指令的。
-如果返回：
-PING www.enginego.org (104.24.121.11): 56 data bytes Request timeout for icmp_seq 0 Request timeout for icmp_seq 1 Request timeout for icmp_seq 2 Request timeout for icmp_seq 3  这就代表连接超时，访问失败。原因有可能是本地计算机网络的问题，也有可能是对应的服务器关闭或者不响应ping指令。</description>
+64 bytes from 104.24.121.11: icmp_seq=0 ttl=54 time=170.383 ms 64 bytes from 104.24.121.11: icmp_seq=1 ttl=54 time=170.053 ms 64 bytes from 104.24.121.11: icmp_seq=2 ttl=54 time=171.298 ms 64 bytes from 104.24.121.11: icmp_seq=3 ttl=54 time=170.352 ms 64 bytes from 104.24.121.11: icmp_seq=4 ttl=54 time=170.636 ms ...   从我的计算机发送64个字节的数据到104.24.121.11（这个是经过[DNS解析]()后的www.enginego.org的ip地址，从发送到接受对方返回总共经过了170.xxx毫秒。代表www.enginego.org对应的那台服务器是开启并且响应ping指令的。
+ 如果返回：
+PING www.enginego.org (104.24.121.11): 56 data bytes Request timeout for icmp_seq 0 Request timeout for icmp_seq 1 Request timeout for icmp_seq 2 Request timeout for icmp_seq 3   这就代表连接超时，访问失败。原因有可能是本地计算机网络问题，也有可能是对应的服务器关闭或者不响应ping指令。</description>
     </item>
     
     <item>
@@ -33,6 +33,15 @@ PING www.enginego.org (104.24.121.11): 56 data bytes Request timeout for icmp_se
       <description>这是一个非常重要的话题，我接触到很多开发者对于公钥和私钥只是一知半解，其实它的原理非常简单。
 我们一般认识的密码／密钥类似保险柜，你设置密码成0335，那么打开的密码也是0335，这种叫做对称密钥，也就是开锁和关锁用的是同一个密码。另外一种关闭的密码与打开的密码不同，叫做非对称密钥。在网络传输中，如果你要和其他人传输一段重要的信息，例如你最怕的蔬菜的名字。你想要加密传输，那么你可以把这段信息通过密钥加密，例如你要传输的是
 芹菜，苦瓜，香菜  </description>
+    </item>
+    
+    <item>
+      <title>学什么语言</title>
+      <link>https://www.enginego.org/basics/%E5%AD%A6%E4%BB%80%E4%B9%88%E8%AF%AD%E8%A8%80/</link>
+      <pubDate>Tue, 27 Feb 2018 00:10:14 +0800</pubDate>
+      
+      <guid>https://www.enginego.org/basics/%E5%AD%A6%E4%BB%80%E4%B9%88%E8%AF%AD%E8%A8%80/</guid>
+      <description>要学什么计算机语言呢？</description>
     </item>
     
     <item>
@@ -234,19 +243,19 @@ find /path/to/base/dir/* -type f -ctime +10 -delete   而且只要跑同一个�
     
     <item>
       <title></title>
-      <link>https://www.enginego.org/basics/%E5%A0%86%E6%A0%88/</link>
+      <link>https://www.enginego.org/basics/%E5%89%8D%E7%AB%AFor%E5%90%8E%E7%AB%AF/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.enginego.org/basics/%E5%A0%86%E6%A0%88/</guid>
+      <guid>https://www.enginego.org/basics/%E5%89%8D%E7%AB%AFor%E5%90%8E%E7%AB%AF/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>https://www.enginego.org/basics/%E5%AD%A6%E4%BB%80%E4%B9%88%E8%AF%AD%E8%A8%80/</link>
+      <link>https://www.enginego.org/basics/%E5%A0%86%E6%A0%88/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.enginego.org/basics/%E5%AD%A6%E4%BB%80%E4%B9%88%E8%AF%AD%E8%A8%80/</guid>
+      <guid>https://www.enginego.org/basics/%E5%A0%86%E6%A0%88/</guid>
       <description></description>
     </item>
     
