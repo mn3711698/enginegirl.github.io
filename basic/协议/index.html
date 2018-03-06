@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
 
-    <title>macOS系统安装docker教程 :: Engine GO</title>
+    <title>协议 :: Engine GO</title>
     
     
     <link href="/css/nucleus.css?1520341952" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/dockers/macos%E5%AE%89%E8%A3%85docker%E6%95%99%E7%A8%8B/">
+  <body class="" data-url="/basic/%E5%8D%8F%E8%AE%AE/">
     <nav id="sidebar" class="">
 
 
@@ -78,7 +78,7 @@
   
     
     <li data-nav-id="/basic/" title="basics" class="dd-item 
-        
+        parent
         
         
         ">
@@ -178,7 +178,7 @@
  
   
     
-      <li data-nav-id="/basic/%E5%8D%8F%E8%AE%AE/" title="协议" class="dd-item ">
+      <li data-nav-id="/basic/%E5%8D%8F%E8%AE%AE/" title="协议" class="dd-item active">
         <a href="/basic/%E5%8D%8F%E8%AE%AE/">
         协议
         
@@ -452,7 +452,7 @@
   
     
     <li data-nav-id="/dockers/" title="dockers" class="dd-item 
-        parent
+        
         
         
         ">
@@ -495,7 +495,7 @@
  
   
     
-      <li data-nav-id="/dockers/macos%E5%AE%89%E8%A3%85docker%E6%95%99%E7%A8%8B/" title="macOS系统安装docker教程" class="dd-item active">
+      <li data-nav-id="/dockers/macos%E5%AE%89%E8%A3%85docker%E6%95%99%E7%A8%8B/" title="macOS系统安装docker教程" class="dd-item ">
         <a href="/dockers/macos%E5%AE%89%E8%A3%85docker%E6%95%99%E7%A8%8B/">
         macOS系统安装docker教程
         
@@ -562,7 +562,7 @@
             
           
           
-            <a href='/'>basics</a> > <a href='/dockers/'>dockers</a> > macOS系统安装docker教程
+            <a href='/'>basics</a> > <a href='/basic/'>basics</a> > 协议
           
          
           
@@ -586,51 +586,75 @@
         
         <div id="body-inner">
           
-            <h1>macOS系统安装docker教程</h1>
+            <h1>协议</h1>
           
 
         
 
 
-<p>作者：Windson Yang
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<p>作者：Windson Yang</p>
 
-<p>(官方英文教程)[<a href="https://docs.docker.com/toolbox/toolbox_install_mac/">https://docs.docker.com/toolbox/toolbox_install_mac/</a>]</p>
+<p>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+
+<p>计算机使用了多种多样的协议，大家接触得比较多的是HTTP, TCP/IP, FTP等，计算机中的协议和我们现实生活中签的协议其实挺像，双方都按照协议上的条约发送，接受数据。举个例子，你和你的朋友通过短信约定明天吃饭的时间地点。日常生活的话信息内容可以是</p>
+
+<blockquote>
+<p>明天
+上午9点
+在公司等</p>
+</blockquote>
+
+<p>即使改变文字的顺序</p>
+
+<blockquote>
+<p>明天
+在公司等吧，
+上午9点</p>
+</blockquote>
+
+<p>这两个信息一般人都能理解，不过计算机不一样，你可以把计算机当成患强迫症的朋友，它会要求你发的信息，前两个字一定是日期，后面4个字一定是12进制时间，最后是地点</p>
+
+<blockquote>
+<p>明天     &ndash;日期&ndash;
+上午9点  &ndash;时间&ndash;
+在公司等 &ndash;地点&ndash;</p>
+</blockquote>
+
+<p><strong>只要你遵守这个规定发送信息给计算机，那么你们就互相遵守了一个协议。</strong></p>
+
+<p>这样有什么优点呢？
+1. 这样只要遵守协议A的人都能对信息进行处理，即使现在你换个人发送信息，他也能和你互相沟通。
+2. 无论对计算机或者人类来说，信息都变得有序和容易处理。当我们知道信息遵守协议A的时候，我们不需要阅读信息都知道第一行的内容会是时间，第二行会是地点。</p>
+
+<p>举个常见的例子，当你使用浏览器访问www.apple.com，浏览器其实是按照HTTP协议的约定向苹果服务器发出信息：</p>
+
+<pre><code>第一行是请求方法和协议版本，
+第二行是请求的URL。
+第三行是连接是否持久化。
+...
+</code></pre>
+
+<p>真实发送的信息是：</p>
+
+<pre><code>GET / HTTP/1.1\r\n
+Host: www.apple.com\r\n
+Connection: keep-alive\r\n
+Pragma: no-cache\r\n
+Cache-Control: no-cache\r\n
+Upgrade-Insecure-Requests: 1\r\n
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36\r\n
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8\r\n
+DNT: 1\r\n
+Accept-Encoding: gzip, deflate, br\r\n
+Accept-Language: en,zh;q=0.9,en-US;q=0.8,zh-CN;q=0.7\r\n
+</code></pre>
+
+<p>在HTTP协议里面这些信息统称为HTTP的请求头部（每行最后的\r\n是换行符，服务器读取到\r\n就知道接下来的内容是下一行）。它们大多有固定的选项，服务器拿到这条信息之后就可以直接对照协议的顺序来返回数据。想了解更多的朋友可以参考[An overview of HTTP]（<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview）">https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview）</a></p>
 
 <ul>
-<li>系统必须满足以下全部要求：
-
-<ul>
-<li>2010后的苹果电脑，支持英特尔MMU内存虚拟</li>
-<li>10.10.3或者更新的苹果系统</li>
-<li>从Docker1.13版本（准备推出）之后不再支持10.10版本（OS X 10.10 Yosemite）</li>
-<li>不能安装4.3.30版本之前的VirtualBox（默认系统并没有这个软件）</li>
-</ul></li>
+<li>Q: API和协议有什么关系</li>
+<li>A: 有时候工程师也会称API为协议，可以这样理解，当一组API非常有名，例如HTTP，FTP，大家都知道的情况下，我们可以称它为协议，如果一组API只是公司内部使用，或者团队内使用那么就只是API。</li>
 </ul>
-
-<ol>
-<li>下载软件<a href="https://download.docker.com/mac/stable/Docker.dmg">Docker for macOS</a></li>
-
-<li><p>双击Docker.dmg安装</p>
-
-<p><img src="https://raw.githubusercontent.com/EngineGirl/basic-tutorial/master/imgs/install_docker/macOX/docker-app-drag.png" alt="docker-app-drap" /></p></li>
-
-<li><p>双击应用程序中的Docker.app来启动Docker</p>
-
-<p><img src="https://raw.githubusercontent.com/EngineGirl/basic-tutorial/master/imgs/install_docker/macOX/docker-app-in-apps.png" alt="docker-app-inapp" /></p></li>
-
-<li><p>系统会请求你输入密码来启动Docker，Docker需要特殊权限来安装网络组件</p></li>
-
-<li><p>然后可以在屏幕右上角看到Docker的标志</p>
-
-<p><img src="https://github.com/EngineGirl/basic-tutorial/blob/master/imgs/install_docker/macOX/whale-in-menu-bar.png?raw=true" alt="docker-app-inapp" /></p></li>
-
-<li><p>可以点击这个标志浏览设置</p>
-
-<p><img src="https://github.com/EngineGirl/basic-tutorial/blob/master/imgs/install_docker/macOX/docker-menu.png?raw=true" alt="docker-app-inapp" /></p></li>
-
-<li><p>如此简单就安装成功啦，可以吃点巧克力奖励下自己了。:D</p></li>
-</ol>
 
 
 <footer class=" footline" >
@@ -669,8 +693,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -684,6 +706,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -749,21 +774,6 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -780,6 +790,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -968,38 +981,21 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
             
         
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
             
         
@@ -1009,6 +1005,34 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -1031,10 +1055,10 @@
 
 
         
-            <a class="nav nav-prev" href="/dockers/windows%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85docker%E6%95%99%E7%A8%8B/" title="Windows安装Docker教程"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/basic/dns%E6%9F%A5%E8%AF%A2/" title="DNS查询"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/dockers/windows%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85docker%E6%95%99%E7%A8%8B/" title="Windows安装Docker教程" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/basic/%E5%9F%9F%E5%90%8D/" title="域名" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
 
-    <title>macOS系统安装docker教程 :: Engine GO</title>
+    <title>相对路径，绝对路径 :: Engine GO</title>
     
     
     <link href="/css/nucleus.css?1520341952" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/dockers/macos%E5%AE%89%E8%A3%85docker%E6%95%99%E7%A8%8B/">
+  <body class="" data-url="/basic/%E8%B7%AF%E5%BE%84/">
     <nav id="sidebar" class="">
 
 
@@ -78,7 +78,7 @@
   
     
     <li data-nav-id="/basic/" title="basics" class="dd-item 
-        
+        parent
         
         
         ">
@@ -254,7 +254,7 @@
  
   
     
-      <li data-nav-id="/basic/%E8%B7%AF%E5%BE%84/" title="相对路径，绝对路径" class="dd-item ">
+      <li data-nav-id="/basic/%E8%B7%AF%E5%BE%84/" title="相对路径，绝对路径" class="dd-item active">
         <a href="/basic/%E8%B7%AF%E5%BE%84/">
         相对路径，绝对路径
         
@@ -452,7 +452,7 @@
   
     
     <li data-nav-id="/dockers/" title="dockers" class="dd-item 
-        parent
+        
         
         
         ">
@@ -495,7 +495,7 @@
  
   
     
-      <li data-nav-id="/dockers/macos%E5%AE%89%E8%A3%85docker%E6%95%99%E7%A8%8B/" title="macOS系统安装docker教程" class="dd-item active">
+      <li data-nav-id="/dockers/macos%E5%AE%89%E8%A3%85docker%E6%95%99%E7%A8%8B/" title="macOS系统安装docker教程" class="dd-item ">
         <a href="/dockers/macos%E5%AE%89%E8%A3%85docker%E6%95%99%E7%A8%8B/">
         macOS系统安装docker教程
         
@@ -562,7 +562,7 @@
             
           
           
-            <a href='/'>basics</a> > <a href='/dockers/'>dockers</a> > macOS系统安装docker教程
+            <a href='/'>basics</a> > <a href='/basic/'>basics</a> > 相对路径，绝对路径
           
          
           
@@ -574,7 +574,22 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#当前路径">当前路径</a>
+<ul>
+<li><a href="#那什么是绝对路径和相对路径呢">那什么是绝对路径和相对路径呢？</a></li>
+<li><a href="#如何切换路径">如何切换路径</a></li>
+<li><a href="#如何在终端显示当前的绝对路径">如何在终端显示当前的绝对路径</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -586,51 +601,120 @@
         
         <div id="body-inner">
           
-            <h1>macOS系统安装docker教程</h1>
+            <h1>相对路径，绝对路径</h1>
           
 
         
 
 
-<p>作者：Windson Yang
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
 
-<p>(官方英文教程)[<a href="https://docs.docker.com/toolbox/toolbox_install_mac/">https://docs.docker.com/toolbox/toolbox_install_mac/</a>]</p>
 
-<ul>
-<li>系统必须满足以下全部要求：
+<p>作者：Windson Yang</p>
 
-<ul>
-<li>2010后的苹果电脑，支持英特尔MMU内存虚拟</li>
-<li>10.10.3或者更新的苹果系统</li>
-<li>从Docker1.13版本（准备推出）之后不再支持10.10版本（OS X 10.10 Yosemite）</li>
-<li>不能安装4.3.30版本之前的VirtualBox（默认系统并没有这个软件）</li>
-</ul></li>
-</ul>
+<p>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+
+<h3 id="当前路径">当前路径</h3>
+
+<p>当你打开终端的时候，会看到例如：</p>
+
+<pre><code>Windsons
+C:\usr\foo\:
+
+OSX
+WindsondeMacBook-Air:/usr/foo/
+</code></pre>
+
+<p>这里的&rdquo;C:\usr\foo\&ldquo;和&rdquo;/usr/foo/&ldquo;指当前执行指令的路径。也就是你的*当前路径*，你在终端中输入的指令，默认针对的就是当前路径，假如你输入&rdquo;ls&rdquo;(macOX)/&ldquo;dir&rdquo;(Windows)，计算机会理解成&rdquo;ls/dir /usr/foo/&ldquo;，所以会列出*当前路径中&rdquo;/usr/foo/&ldquo;下面的所有文件。</p>
+
+<h4 id="那什么是绝对路径和相对路径呢">那什么是绝对路径和相对路径呢？</h4>
+
+<p>举个现实生活的例子：
+Cherry在路上遇到Sunkist，它问Sunkist的公司地址在哪里，Sunkist可能有两种答案：</p>
 
 <ol>
-<li>下载软件<a href="https://download.docker.com/mac/stable/Docker.dmg">Docker for macOS</a></li>
-
-<li><p>双击Docker.dmg安装</p>
-
-<p><img src="https://raw.githubusercontent.com/EngineGirl/basic-tutorial/master/imgs/install_docker/macOX/docker-app-drag.png" alt="docker-app-drap" /></p></li>
-
-<li><p>双击应用程序中的Docker.app来启动Docker</p>
-
-<p><img src="https://raw.githubusercontent.com/EngineGirl/basic-tutorial/master/imgs/install_docker/macOX/docker-app-in-apps.png" alt="docker-app-inapp" /></p></li>
-
-<li><p>系统会请求你输入密码来启动Docker，Docker需要特殊权限来安装网络组件</p></li>
-
-<li><p>然后可以在屏幕右上角看到Docker的标志</p>
-
-<p><img src="https://github.com/EngineGirl/basic-tutorial/blob/master/imgs/install_docker/macOX/whale-in-menu-bar.png?raw=true" alt="docker-app-inapp" /></p></li>
-
-<li><p>可以点击这个标志浏览设置</p>
-
-<p><img src="https://github.com/EngineGirl/basic-tutorial/blob/master/imgs/install_docker/macOX/docker-menu.png?raw=true" alt="docker-app-inapp" /></p></li>
-
-<li><p>如此简单就安装成功啦，可以吃点巧克力奖励下自己了。:D</p></li>
+<li>中国广东省广州市思哲路石室大厦</li>
+<li>以这里为起点，西南方向500米的石室大厦</li>
 </ol>
+
+<p>这两个答案都正确，第一个答案从国家到省份城市巨细无遗地描述称为绝对路径， 第二个答案以当前的位置为起点所描述的称为相对路径。</p>
+
+<p>例如：foo文件夹的绝对路径是</p>
+
+<pre><code>C:\Administor\foo\
+</code></pre>
+
+<p>你想要列出这个文件夹里面的所有文件，你可以告诉计算机这个文件夹的完整地址，也就是<em>绝对路径</em></p>
+
+<pre><code>dir C:\Administor\foo\
+</code></pre>
+
+<p>也可以根据当前自己的位置找这个文件（这时候输入的就是相对路径），假如你打开终端，当前路径是</p>
+
+<pre><code>C:\Administor\bar\:
+</code></pre>
+
+<p>那么你也可以这样列出：</p>
+
+<pre><code>dir ..\foo\
+</code></pre>
+
+<p>在路径命令中&rdquo;.&ldquo;以及&rdquo;..&ldquo;这两个符号有特殊意义，分别代表当前路径以及上一级目录，也就是说如果你当前路径是：</p>
+
+<pre><code>C:\Administor\bar\
+</code></pre>
+
+<p>那么</p>
+
+<pre><code>.\ = C:\Administor\bar\
+..\ = C:\Administor\
+</code></pre>
+
+<p>当我们要找这个文件夹</p>
+
+<pre><code>C:\Administor\foo\
+</code></pre>
+
+<p>需要先回到上一层目录</p>
+
+<pre><code>dir ..\
+</code></pre>
+
+<p>然后再使用cd命令进入bar目录</p>
+
+<pre><code>cd bar\
+</code></pre>
+
+<h4 id="如何切换路径">如何切换路径</h4>
+
+<p>可以使用cd指令</p>
+
+<pre><code>cd [PATH]
+</code></pre>
+
+<p>这里的path既可以是绝对路径也可以是相对路径，如果当前路径为：</p>
+
+<pre><code>C:\Administor\foo\:
+</code></pre>
+
+<p>你要跳到</p>
+
+<pre><code>C:\whatever\sunkist\:
+</code></pre>
+
+<p>就可以</p>
+
+<pre><code>cd C:\whatever\sunkist\
+# 或者
+cd ..\..\whatever\sunkist\
+</code></pre>
+
+<h4 id="如何在终端显示当前的绝对路径">如何在终端显示当前的绝对路径</h4>
+
+<pre><code>pwd (macOX)
+cd (Windows)
+</code></pre>
+
+<p>如果你写好了一个程序&rdquo;example.py&rdquo;，放在&rdquo;/usr/bar/&ldquo;中，你想要运行这个程序，不能直接&rdquo;python example.py&rdquo;运行，因为你现在并不在&rdquo;/usr/bar/&ldquo;中，你可以选择*切换路径*然后执行命令。计算机虽然看起来很神奇，但是它并不知道你要运行的文件放在哪里。</p>
 
 
 <footer class=" footline" >
@@ -669,8 +753,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -685,21 +767,8 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
+                        
                     
                 
                 
@@ -829,6 +898,42 @@
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                 
                 
 
@@ -952,6 +1057,38 @@
             
         
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
             
             
@@ -971,59 +1108,6 @@
             
         
                     
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
             
         
         
@@ -1031,10 +1115,10 @@
 
 
         
-            <a class="nav nav-prev" href="/dockers/windows%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85docker%E6%95%99%E7%A8%8B/" title="Windows安装Docker教程"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/basic/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%BC%96%E7%A0%81/" title="字符串编码"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/dockers/windows%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85docker%E6%95%99%E7%A8%8B/" title="Windows安装Docker教程" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/basic/%E7%BB%88%E7%AB%AF/" title="终端，命令行, shell" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

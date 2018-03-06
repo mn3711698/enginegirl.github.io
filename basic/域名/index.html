@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
 
-    <title>macOS系统安装docker教程 :: Engine GO</title>
+    <title>域名 :: Engine GO</title>
     
     
     <link href="/css/nucleus.css?1520341952" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/dockers/macos%E5%AE%89%E8%A3%85docker%E6%95%99%E7%A8%8B/">
+  <body class="" data-url="/basic/%E5%9F%9F%E5%90%8D/">
     <nav id="sidebar" class="">
 
 
@@ -78,7 +78,7 @@
   
     
     <li data-nav-id="/basic/" title="basics" class="dd-item 
-        
+        parent
         
         
         ">
@@ -197,7 +197,7 @@
  
   
     
-      <li data-nav-id="/basic/%E5%9F%9F%E5%90%8D/" title="域名" class="dd-item ">
+      <li data-nav-id="/basic/%E5%9F%9F%E5%90%8D/" title="域名" class="dd-item active">
         <a href="/basic/%E5%9F%9F%E5%90%8D/">
         域名
         
@@ -452,7 +452,7 @@
   
     
     <li data-nav-id="/dockers/" title="dockers" class="dd-item 
-        parent
+        
         
         
         ">
@@ -495,7 +495,7 @@
  
   
     
-      <li data-nav-id="/dockers/macos%E5%AE%89%E8%A3%85docker%E6%95%99%E7%A8%8B/" title="macOS系统安装docker教程" class="dd-item active">
+      <li data-nav-id="/dockers/macos%E5%AE%89%E8%A3%85docker%E6%95%99%E7%A8%8B/" title="macOS系统安装docker教程" class="dd-item ">
         <a href="/dockers/macos%E5%AE%89%E8%A3%85docker%E6%95%99%E7%A8%8B/">
         macOS系统安装docker教程
         
@@ -562,7 +562,7 @@
             
           
           
-            <a href='/'>basics</a> > <a href='/dockers/'>dockers</a> > macOS系统安装docker教程
+            <a href='/'>basics</a> > <a href='/basic/'>basics</a> > 域名
           
          
           
@@ -586,51 +586,38 @@
         
         <div id="body-inner">
           
-            <h1>macOS系统安装docker教程</h1>
+            <h1>域名</h1>
           
 
         
 
 
-<p>作者：Windson Yang
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<p>作者：Windson Yang</p>
 
-<p>(官方英文教程)[<a href="https://docs.docker.com/toolbox/toolbox_install_mac/">https://docs.docker.com/toolbox/toolbox_install_mac/</a>]</p>
+<p>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
 
-<ul>
-<li>系统必须满足以下全部要求：
+<p>计算机知识往往互相关联，要真正了解域名是什么，必须先了解什么是URI。这里有一些常见的例子。</p>
 
-<ul>
-<li>2010后的苹果电脑，支持英特尔MMU内存虚拟</li>
-<li>10.10.3或者更新的苹果系统</li>
-<li>从Docker1.13版本（准备推出）之后不再支持10.10版本（OS X 10.10 Yosemite）</li>
-<li>不能安装4.3.30版本之前的VirtualBox（默认系统并没有这个软件）</li>
-</ul></li>
-</ul>
+<pre><code>https://www.apple.com
+http://www.w3c.org
+ftp://example.org/resource.txt
+file:///Users/example/hello.jpg
+</code></pre>
 
-<ol>
-<li>下载软件<a href="https://download.docker.com/mac/stable/Docker.dmg">Docker for macOS</a></li>
+<p>最后两个大家可能不太熟悉，以最后一个为例子，你们可以尝试把自己电脑中任意的文件拖放到浏览器中，浏览器会去猜这个文件类型，一些常见的文件类型例如图片，浏览器可以判断并渲染出来。同时浏览器的地址栏也会变成file开头。这个例子中的file就是这个URI所使用的协议。常见的协议还有</p>
 
-<li><p>双击Docker.dmg安装</p>
+<pre><code>HTTP 超文本传输协议
+SMTP 邮件协议
+telnet 终端传输协议
+DNS 域名系统协议
+DHCP 动态主机配置协议
+</code></pre>
 
-<p><img src="https://raw.githubusercontent.com/EngineGirl/basic-tutorial/master/imgs/install_docker/macOX/docker-app-drag.png" alt="docker-app-drap" /></p></li>
+<p>好吧，我承认部分对于一般大众不是很常见，不过如果你想认真学习编程，起码看到这些名词的时候知道是什么。感兴趣的学生可以前往<a href="https://en.wikipedia.org/wiki/Lists_of_network_protocols">Lists of network protocols</a>。那么协议又是什么呢？其实协议的本质非常简单。</p>
 
-<li><p>双击应用程序中的Docker.app来启动Docker</p>
-
-<p><img src="https://raw.githubusercontent.com/EngineGirl/basic-tutorial/master/imgs/install_docker/macOX/docker-app-in-apps.png" alt="docker-app-inapp" /></p></li>
-
-<li><p>系统会请求你输入密码来启动Docker，Docker需要特殊权限来安装网络组件</p></li>
-
-<li><p>然后可以在屏幕右上角看到Docker的标志</p>
-
-<p><img src="https://github.com/EngineGirl/basic-tutorial/blob/master/imgs/install_docker/macOX/whale-in-menu-bar.png?raw=true" alt="docker-app-inapp" /></p></li>
-
-<li><p>可以点击这个标志浏览设置</p>
-
-<p><img src="https://github.com/EngineGirl/basic-tutorial/blob/master/imgs/install_docker/macOX/docker-menu.png?raw=true" alt="docker-app-inapp" /></p></li>
-
-<li><p>如此简单就安装成功啦，可以吃点巧克力奖励下自己了。:D</p></li>
-</ol>
+<pre><code>域名（Domain names）是互联网基础架构的关键部分。它们为互联网上任何可用的网页服务器提供了人类可读的地址。
+任何连上互联网的电脑都可以通过一个公共IP地址访问到，对于IPv4来说，这个地址由32位组成（它们通常写成四个范围在0~255以内，由点分隔的数字组成，比如173.194.121.32），而对于IPv6来说，这个地址由128位组成，通常写成八组由冒号分隔的四进制数(e.g., 2027:0da8:8b73:0000:0000:8a2e:0370:1337).
+</code></pre>
 
 
 <footer class=" footline" >
@@ -669,8 +656,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -684,6 +669,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -765,21 +753,6 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -796,6 +769,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -968,38 +944,21 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
             
         
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
             
         
@@ -1009,6 +968,34 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -1031,10 +1018,10 @@
 
 
         
-            <a class="nav nav-prev" href="/dockers/windows%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85docker%E6%95%99%E7%A8%8B/" title="Windows安装Docker教程"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/basic/%E5%8D%8F%E8%AE%AE/" title="协议"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/dockers/windows%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85docker%E6%95%99%E7%A8%8B/" title="Windows安装Docker教程" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/basic/%E6%9C%8D%E5%8A%A1%E7%AB%AF/" title="基础术语" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
