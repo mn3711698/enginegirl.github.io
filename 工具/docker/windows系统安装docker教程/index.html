@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
 
-    <title>目录 :: Engine GO</title>
+    <title>Windows安装Docker教程 :: Engine GO</title>
     
     
     <link href="/css/nucleus.css?1520344662" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/">
+  <body class="" data-url="/%E5%B7%A5%E5%85%B7/docker/windows%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85docker%E6%95%99%E7%A8%8B/">
     <nav id="sidebar" class="">
 
 
@@ -522,7 +522,7 @@
   
     
     <li data-nav-id="/%E5%B7%A5%E5%85%B7/" title="工具教程" class="dd-item 
-        
+        parent
         
         
         ">
@@ -549,7 +549,7 @@
   
     
     <li data-nav-id="/%E5%B7%A5%E5%85%B7/docker/" title="docker教程" class="dd-item 
-        
+        parent
         
         
         ">
@@ -573,7 +573,7 @@
  
   
     
-      <li data-nav-id="/%E5%B7%A5%E5%85%B7/docker/windows%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85docker%E6%95%99%E7%A8%8B/" title="Windows安装Docker教程" class="dd-item ">
+      <li data-nav-id="/%E5%B7%A5%E5%85%B7/docker/windows%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85docker%E6%95%99%E7%A8%8B/" title="Windows安装Docker教程" class="dd-item active">
         <a href="/%E5%B7%A5%E5%85%B7/docker/windows%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85docker%E6%95%99%E7%A8%8B/">
         Windows安装Docker教程
         
@@ -667,35 +667,240 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>目录</a> > <a href='/%E5%B7%A5%E5%85%B7/'>工具教程</a> > <a href='/%E5%B7%A5%E5%85%B7/docker/'>docker教程</a> > Windows安装Docker教程
+          
+         
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#windows安装docker教程">Windows安装Docker教程</a></li>
+</ul></li>
+<li><a href="#安装前须知">安装前须知</a></li>
+<li><a href="#开始安装">开始安装</a>
+<ul>
+<li><a href="#启动docker">启动Docker</a></li>
+<li><a href="#验证安装成功">验证安装成功</a></li>
+</ul></li>
+<li><a href="#第二节">第二节</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
 
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>Windows安装Docker教程</h1>
           
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> navigation</a>
-</span>
-
- 
 
 
-<h3 id="计算机基础首页">计算机基础首页</h3>
 
-<p>作者：Windson Yang</p>
+<p>作者：Windson Yang
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
 
-<p>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<h4 id="windows安装docker教程">Windows安装Docker教程</h4>
 
-<p>在我建立EngineGirls的时候，面向的基本都是零基础的学员，她们希望能学习数据分析，网络爬虫，人工智能并且可以运用到她们的工作中。在教学的过程中，我发现她们往往缺乏计算机的基础知识。例如她们并不了解终端（Terminal），路径（PATH），服务器（Server）的作用。所以最后即使她们可以依葫芦画瓢写出一个应用，也并没有学到真正的知识。所以我写这本书希望解释计算机基础的术语与常见问题。</p>
+<p><a href="https://docs.docker.com/docker-for-windows/install/#download-docker-for-windows">官方英文教程</a></p>
 
-<p>不要妄想当看完这本电子书就能明白计算机的基础。我推荐可以上<a href="https://cn.udacity.com/courses/all">udacity</a>的初级教程，通过优秀的工程师的讲解加上习题可以巩固学习的知识。</p>
+<h3 id="安装前须知">安装前须知</h3>
+
+<p>你的系统需满足以下几个条件，如果不满足以下要求，请参考<a href="#第二节">第二节</a></p>
+
+<ul>
+<li><p>确保你电脑安装了64位的Windows 10 Pro, Enterprise或者Education(1511 November update, Build 10586 or later)版本。</p></li>
+
+<li><p>如果你的电脑安装了VirtualBox（一个虚拟机软件，默认系统没有安装）请注意，Windows的Docker版本因为需要Microsoft Hyper-V来运作，安装之后会令VirtualBox无效。</p></li>
+
+<li><p>必须启动虚拟化（默认启动），可以在任务管理中找到这一项确保enabled</p>
+
+<p>Windows8检查</p>
+
+<p>点击开始 &gt; 任务管理 &gt; 性能 &gt; CPU</p>
+
+<p><img src="https://raw.githubusercontent.com/EngineGirl/basic-tutorial/master/imgs/install_docker/Windows/win-virtualization-enabled.png" alt="windows-virtualization" /></p>
+
+<p>黄色的Virtualization为Enabled即可</p>
+
+<p>Windows7检查</p>
+
+<p>运行<a href="http://www.microsoft.com/en-us/download/details.aspx?id=592">Microsoft® Hardware-Assisted Virtualization Detection Tool</a>工具，然后按照步骤来检测。</p></li>
+</ul>
+
+<blockquote>
+<p>Docker建立的容器和镜像会被计算机上面的所有用户共享，多账号的系统中要注意数据安全问题。</p>
+</blockquote>
+
+<h3 id="开始安装">开始安装</h3>
+
+<ol>
+<li>下载<a href="https://download.docker.com/win/stable/InstallDocker.msi">Docker稳定版</a></li>
+<li>双击下载文件夹中的InstallDocker.msi文件。</li>
+<li>阅读协议内容觉得没问题之后点击接受协议（不接受将无法安装:O)，然后安装。</li>
+</ol>
+
+<blockquote>
+<p>一般软件应该安装在非系统盘（C盘）中，这样即使以后需要重装系统，软件也不会丢失。安装路径不要包含中文）</p>
+</blockquote>
+
+<ol>
+<li>输入系统管理员密码使Docker可以安装网络组件。</li>
+<li>完成</li>
+</ol>
+
+<p><img src="https://raw.githubusercontent.com/EngineGirl/basic-tutorial/master/imgs/install_docker/Windows/installer-finishes.png" alt="windows-docker-install-finished" /></p>
+
+<h4 id="启动docker">启动Docker</h4>
+
+<p>安装完成后Docker会自动启动，你可以从状态栏看到Docker正在运作
+<img src="https://raw.githubusercontent.com/EngineGirl/basic-tutorial/master/imgs/install_docker/Windows/win-install-success-popup-cloud.png" alt="win-install-success-popup-cloud" /></p>
+
+<h4 id="验证安装成功">验证安装成功</h4>
+
+<p>运行<a href="#../基础知识/终端.md">终端</a>(cmd.exe或者PowerShell)</p>
+
+<pre><code>PS C:\Users\Docker&gt; docker --version
+Docker version 17.03.0-ce, build 60ccb22
+</code></pre>
+
+<p>看到Docker version提示的字样代表安装成功了</p>
+
+<h3 id="第二节">第二节</h3>
+
+<p>如果不满足条件（例如你使用的是Windows7或者Windows8系统）我们需要安装另外一款工具来运行Docker</p>
+
+<p>###安装前准备
+- 先确保自己的Windows系统是Windows7以上（Windows7, Windows8，Windows10都可以）的64位系统，可以通过这里确定<a href="https://support.microsoft.com/zh-cn/help/827218/how-to-determine-whether-a-computer-is-running-a-32-bit-version-or-64-bit-version-of-the-windows-operating-system">Windows系统版本</a>，如果不是64位的话请更新64位的系统。</p>
+
+<ul>
+<li><p>必须启动虚拟化（默认启动），可以在任务管理中找到这一项确保enabled</p>
+
+<p>Windows8检查</p>
+
+<p>点击开始 &gt; 任务管理 &gt; 性能 &gt; CPU</p>
+
+<p><img src="https://raw.githubusercontent.com/EngineGirl/basic-tutorial/master/imgs/install_docker/Windows/win-virtualization-enabled.png" alt="windows-virtualization" /></p>
+
+<p>黄色的Virtualization为Enabled即可</p>
+
+<p>Windows7检查</p>
+
+<p>运行<a href="http://www.microsoft.com/en-us/download/details.aspx?id=592">Microsoft® Hardware-Assisted Virtualization Detection Tool</a>工具，然后按照步骤来检测。</p></li>
+</ul>
+
+<p>###开始安装</p>
+
+<ol>
+<li>确保自己没有运行Virtual Box（默认系统没有按照这个软件）</li>
+<li>点击右边链接下载<a href="https://download.docker.com/win/stable/DockerToolbox.exe">Docker Toolbox</a></li>
+<li>下载完毕后双击安装，如果这时候系统问你是不是允许程序修改，点击Yes</li>
+<li>默认选项直到安装完毕</li>
+</ol>
+
+<p>###验证安装成功</p>
+
+<ol>
+<li>双击打开Docker Toolbox
+<img src="https://raw.githubusercontent.com/EngineGirl/basic-tutorial/master/imgs/install_docker/Windows/icon-set.png" alt="Docker Toolbox Icon" /></li>
+<li>点击Yes获取修改权限</li>
+<li>然后系统会进行一些操作，你会看到以下的图片
+<img src="https://raw.githubusercontent.com/EngineGirl/basic-tutorial/master/imgs/install_docker/Windows/b2d_shell.png" alt="Docker Toolbox Bash" /></li>
+
+<li><p>看到这个$符号就代表启动完成，这时候在终端输入</p>
+
+<pre><code>docker run hello-world
+</code></pre></li>
+</ol>
+
+<p>然后看到：</p>
+
+<pre><code>$ docker run hello-world
+Unable to find image 'hello-world:latest' locally
+Pulling repository hello-world
+91c95931e552: Download complete
+a8219747be10: Download complete
+Status: Downloaded newer image for hello-world:latest
+Hello from Docker.
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker Engine CLI client contacted the Docker Engine daemon.
+ 2. The Docker Engine daemon pulled the &quot;hello-world&quot; image from the Docker Hub.
+    (Assuming it was not already locally available.)
+ 3. The Docker Engine daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker Engine daemon streamed that output to the Docker Engine CLI client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+For more examples and ideas, visit:
+ https://docs.docker.com/userguide/
+</code></pre>
+
+<p>就代表Docker已经成功安装并且可以运行啦。</p>
+
+
+<footer class=" footline" >
 	
-  
-        
-            </div> 
+</footer>
+
+
         
         </div> 
         
@@ -1068,6 +1273,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1083,6 +1289,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1090,6 +1297,45 @@
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
                     
                         
             
@@ -1107,41 +1353,6 @@
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -1152,8 +1363,10 @@
 
 
         
+            <a class="nav nav-prev" href="/%E5%B7%A5%E5%85%B7/docker/" title="docker教程"> <i class="fa fa-chevron-left"></i></a>
         
-            <a class="nav nav-next" href="/%E5%9F%BA%E7%A1%80/" title="基础知识" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+            <a class="nav nav-next" href="/%E5%B7%A5%E5%85%B7/docker/macos%E5%AE%89%E8%A3%85docker%E6%95%99%E7%A8%8B/" title="macOS系统安装docker教程" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
@@ -1183,3 +1396,4 @@
 
   </body>
 </html>
+

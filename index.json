@@ -1,160 +1,188 @@
 [
 {
-	"uri": "https://www.enginego.org/basic/",
-	"title": "basics",
+	"uri": "https://www.enginego.org/%E5%B7%A5%E5%85%B7/docker/",
+	"title": "docker教程",
 	"tags": [],
 	"description": "",
-	"content": " 本章主要解释计算机的基础组成和术语 "
+	"content": " 安装以及使用docker "
 },
 {
-	"uri": "https://www.enginego.org/dockers/",
-	"title": "dockers",
+	"uri": "https://www.enginego.org/%E5%B7%A5%E5%85%B7/wireshark/",
+	"title": "wireshark教程",
+	"tags": [],
+	"description": "",
+	"content": " 安装以及使用wireshark "
+},
+{
+	"uri": "https://www.enginego.org/%E5%9F%BA%E7%A1%80/",
+	"title": "基础知识",
+	"tags": [],
+	"description": "",
+	"content": " 基础知识 "
+},
+{
+	"uri": "https://www.enginego.org/%E5%B7%A5%E5%85%B7/",
+	"title": "工具教程",
 	"tags": [],
 	"description": "",
 	"content": " 配置基础开发环境 我们开始安装一些工具来方便我们学习编程，一般初接触编程的同学使用的都是Windows系统或者macOS系统。从这节课开始我们将使用Linux系统来学习编程，不同于Windows以及macOS系统，\n Linux系统是一个开源(open source)系统，也就是说它的所有源代码都可以让大家浏览以及审核，提出修改。\n 如何在Windows系统或者macOS系统上运行Linux系统呢？我们可以使用Docker来在本地使用Linux系统。\n"
 },
 {
+	"uri": "https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/",
+	"title": "常见问题",
+	"tags": [],
+	"description": "",
+	"content": " 常见问题 "
+},
+{
+	"uri": "https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/",
+	"title": "术语",
+	"tags": [],
+	"description": "",
+	"content": " 基础术语 "
+},
+{
 	"uri": "https://www.enginego.org/",
-	"title": "basics",
+	"title": "目录",
 	"tags": [],
 	"description": "",
 	"content": " 计算机基础首页 作者：Windson Yang\n著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。\n在我建立EngineGirls的时候，面向的基本都是零基础的学员，她们希望能学习数据分析，网络爬虫，人工智能并且可以运用到她们的工作中。在教学的过程中，我发现她们往往缺乏计算机的基础知识。例如她们并不了解终端（Terminal），路径（PATH），服务器（Server）的作用。所以最后即使她们可以依葫芦画瓢写出一个应用，也并没有学到真正的知识。所以我写这本书希望解释计算机基础的术语与常见问题。\n不要妄想当看完这本电子书就能明白计算机的基础。我推荐可以上udacity的初级教程，通过优秀的工程师的讲解加上习题可以巩固学习的知识。\n"
 },
 {
-	"uri": "https://www.enginego.org/basic/ping/",
+	"uri": "https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/ping%E5%91%BD%E4%BB%A4/",
 	"title": "Ping命令",
 	"tags": [],
 	"description": "",
-	"content": " 有时候当我们无法上网，会计算机的朋友会说，你ping一下网关，或者你ping一个网站看看。ping这个命令，其实是操作系统的命令之一，你在终端中输入ping加上域名／网关地址\nping www.enginggo.org  如果返回：\n64 bytes from 104.24.121.11: icmp_seq=0 ttl=54 time=170.383 ms 64 bytes from 104.24.121.11: icmp_seq=1 ttl=54 time=170.053 ms 64 bytes from 104.24.121.11: icmp_seq=2 ttl=54 time=171.298 ms 64 bytes from 104.24.121.11: icmp_seq=3 ttl=54 time=170.352 ms 64 bytes from 104.24.121.11: icmp_seq=4 ttl=54 time=170.636 ms ...   从我的计算机发送64个字节的数据到104.24.121.11（这个是经过[DNS解析]()后的www.enginego.org的ip地址，从发送到接受对方返回总共经过了170.xxx毫秒。代表www.enginego.org对应的那台服务器是开启并且响应ping指令的。\n 如果返回：\nPING www.enginego.org (104.24.121.11): 56 data bytes Request timeout for icmp_seq 0 Request timeout for icmp_seq 1 Request timeout for icmp_seq 2 Request timeout for icmp_seq 3   这就代表连接超时，访问失败。原因有可能是本地计算机网络问题，也有可能是对应的服务器关闭或者不响应ping指令。\n 网络诊断 当我们要连接互联网的时候，无论使用手机还是计算机，一般都要经过网关（路由器或者交换机），网关接受到请求包的时候然后经过NAT转换再连接到互联网。通常的网络诊断流程。\n 确认计算机到路由器的连接是否正常\nping 路由器/交换机地址   超时代表：\n 网线没有连接好 IP地址冲突   确认路由器到互联网的连接是否正常\nping 网站地址   超时代表：\n 路由器设置出错 DNS解析出错 服务器关闭或者不响应ping指令  ping指令是如何运行的 因为计算机传输的都是二进制数字，因为方便显示转换成十六进制，ping请求传输的其实是：\n0000 b0 7f b9 a3 68 36 98 e0 d9 9d a3 8f 08 00 45 00 0010 00 54 62 21 00 00 40 01 76 64 c0 a8 01 58 68 18 0020 78 0b 08 00 03 7e 3f 53 00 00 5a 9d 5d 71 00 03 0030 12 1a 08 09 0a 0b 0c 0d 0e 0f 10 11 12 13 14 15 0040 16 17 18 19 1a 1b 1c 1d 1e 1f 20 21 22 23 24 25 0050 26 27 28 29 2a 2b 2c 2d 2e 2f 30 31 32 33 34 35 0060 36 37  像在协议里面提到的，传输的内容都是按照事先约定的规则，上面传输的内容其实就是\n![]()\n数据里面指定了版本，发送请求的IP地址，接受请求的地址等等，如果大家对wireshark有了解，可以尝试打开wireshark之后再执行ping指令，可以看到数据对应的协议规则。这个是非常好的对数据流的一种了解的方式，只是从理论上去背诵远远不够。\n"
+	"content": " 作者：Windson Yang\n著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处（www.enginego.org）。\n有时候当我们无法上网，会计算机的朋友会说，你ping一下网关，或者你ping一个网站看看。ping这个命令，其实是操作系统的命令之一，你在终端中输入ping加上域名／网关地址\nping www.enginggo.org  如果返回：\n64 bytes from 104.24.121.11: icmp_seq=0 ttl=54 time=170.383 ms 64 bytes from 104.24.121.11: icmp_seq=1 ttl=54 time=170.053 ms 64 bytes from 104.24.121.11: icmp_seq=2 ttl=54 time=171.298 ms 64 bytes from 104.24.121.11: icmp_seq=3 ttl=54 time=170.352 ms 64 bytes from 104.24.121.11: icmp_seq=4 ttl=54 time=170.636 ms ...   从我的计算机发送64个字节的数据到104.24.121.11（这个是经过[DNS解析]()后的www.enginego.org的ip地址，从发送到接受对方返回总共经过了170.xxx毫秒。代表www.enginego.org对应的那台服务器是开启并且响应ping指令的。\n 如果返回：\nPING www.enginego.org (104.24.121.11): 56 data bytes Request timeout for icmp_seq 0 Request timeout for icmp_seq 1 Request timeout for icmp_seq 2 Request timeout for icmp_seq 3   这就代表连接超时，访问失败。原因有可能是本地计算机网络问题，也有可能是对应的服务器关闭或者不响应ping指令。\n 网络诊断 当我们要连接互联网的时候，无论使用手机还是计算机，一般都要经过网关（路由器或者交换机），网关接受到请求包的时候然后经过NAT转换再连接到互联网。通常的网络诊断流程。\n 确认计算机到路由器的连接是否正常\nping 路由器/交换机地址   超时代表：\n 网线没有连接好 IP地址冲突   确认路由器到互联网的连接是否正常\nping 网站地址   超时代表：\n 路由器设置出错 DNS解析出错 服务器关闭或者不响应ping指令  ping指令是如何运行的 因为计算机传输的都是二进制数字，因为方便显示转换成十六进制，ping请求传输的其实是：\n0000 b0 7f b9 a3 68 36 98 e0 d9 9d a3 8f 08 00 45 00 0010 00 54 62 21 00 00 40 01 76 64 c0 a8 01 58 68 18 0020 78 0b 08 00 03 7e 3f 53 00 00 5a 9d 5d 71 00 03 0030 12 1a 08 09 0a 0b 0c 0d 0e 0f 10 11 12 13 14 15 0040 16 17 18 19 1a 1b 1c 1d 1e 1f 20 21 22 23 24 25 0050 26 27 28 29 2a 2b 2c 2d 2e 2f 30 31 32 33 34 35 0060 36 37  像在协议里面提到的，传输的内容都是按照事先约定的规则，上面传输的内容其实就是\n![]()\n数据里面指定了版本，发送请求的IP地址，接受请求的地址等等，如果大家对wireshark有了解，可以尝试打开wireshark之后再执行ping指令，可以看到数据对应的协议规则。这个是非常好的对数据流的一种了解的方式，只是从理论上去背诵远远不够。\n"
 },
 {
-	"uri": "https://www.enginego.org/basic/%E5%85%AC%E7%A7%81%E9%92%A5/",
+	"uri": "https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/%E5%85%AC%E7%A7%81%E9%92%A5/",
 	"title": "公私钥",
 	"tags": [],
 	"description": "",
 	"content": "这是一个非常重要的话题，我接触到很多开发者对于公钥和私钥只是一知半解，其实它的原理非常简单。\n我们一般认识的密码／密钥类似保险柜，你设置密码成0335，那么打开的密码也是0335，这种叫做对称密钥，也就是开锁和关锁用的是同一个密码。另外一种关闭的密码与打开的密码不同，叫做非对称密钥。在网络传输中，如果你要和其他人传输一段重要的信息，例如你最怕的蔬菜的名字。你想要加密传输，那么你可以把这段信息通过密钥加密，例如你要传输的是\n芹菜，苦瓜，香菜  "
 },
 {
-	"uri": "https://www.enginego.org/basic/%E5%AD%A6%E4%BB%80%E4%B9%88%E8%AF%AD%E8%A8%80/",
-	"title": "学什么语言",
+	"uri": "https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E9%80%89%E6%8B%A9/",
+	"title": "编程语言选择",
 	"tags": [],
 	"description": "",
 	"content": "要学什么计算机语言呢？\n"
 },
 {
-	"uri": "https://www.enginego.org/basic/dns%E6%9F%A5%E8%AF%A2/",
+	"uri": "https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/dns%E6%9F%A5%E8%AF%A2/",
 	"title": "DNS查询",
 	"tags": [],
 	"description": "",
 	"content": "作者：Windson Yang\n著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处（www.enginego.org）。\n![域名browser]()\nhttps://www.apple.com  当你在浏览器输入https://www.apple.com。按下回车之后，浏览器跳到苹果的官网，把iPhoneX的介绍和图片显示出来。浏览器是如何通过https://www.apple.com这个域名找到iPhone的内容并且正确显示呢？第一步就要经过DNS查询。\nDNS查询其实很好理解，生活上比较贴近的例子就像打固定电话。在我小的时候网络还在起步阶段，家家户户都准备着一本比字典还要厚的黄页来专门记载每户的电话号码。记得有一次我打给魏同学问作业，需要先从黄页的字母表翻到W，接着根据他的家庭地址猜测哪个是他家的电话（因为黄页通常都记载家长的名字），最后找到对应的电话号码打过去。难以置信吧，我现在回想起来也觉得。\n![feel_old]()\n刚开始，互联网联网的电脑加起来才几千台。每台电脑都有一个类似黄页的文件（称为hosts文件）。用作记载哪个域名对应哪个IP地址。\nwww.enginego.org 104.24.120.11 www.apple.com 119.145.144.223 www.ieee.org 23.38.177.118  （每一行分别对应着域名和IP地址）\n当我们在浏览器输入域名的时候，浏览器会先查询这个hosts文件，找到对应的IP地址。然后再通过ip地址获取到服务器里面的资源，也就是iPhoneX的简介和图片。\n 为什么要使用域名？ 1. 容易记忆 计算机比较擅长处理数字，但是人类就差多了，要访问苹果官网要被那么多数字显然不现实。 2. 容易扩展 早期的计算机和IP地址是一一对应的关系，但是一台计算机的性能并不能承受大量用户的请求。而一个域名可以对应多个IP地址。这样不同地区的用户就会查询到不同的IP地址，公司也能使用多台服务器来提供服务了。\n 不过问题随着互联网的发展慢慢显现了，小时候的黄页每年买一本，要是在一年中你更换了电话号码，其他人也就找不到你了。互联网也是，每个小时都有新的域名被注册，新的主机加入互联网，如果还只是定时更新hosts文件会出现几个问题。 1. 主机数量太多了，现在已经超过10亿台设备接入互联网，每次查询的话都要从这里面查会比较慢。 2. 大部分的网站用户根本不会上，就像大部分在黄页上的人我都不会联系。每上线一个小网站就更新全球的电脑这样显然小题大做了。那么有什么方法可以解决这个问题呢？\n（很可惜，这是治标不治本的方法）\n现代的计算机DNS查询会经过这3个步骤，一旦查询到，就会返回结果，并且跳过剩下的步骤：\n 先查询浏览器有没有保留缓存 如果你之前访问过这个网站，那么浏览器会保存对应的ip地址，这样就能减少查询ip的时间。\n 查询本地的hosts文件 （没错，hosts文件还没有退出时代）如果hosts文件有对应的内容，例如上面的\nwww.apple.com 119.145.144.223  那么计算机就会直接使用这个IP地址 你可以看看自己电脑的hosts文件看看有没有对应的内容\nWindows c:\\windows\\system32\\drivers\\etc\\hosts macOS /etc/hosts  DNS服务器查询 当计算机在前两个方法都没有找到对应的ip，就会进行dns查询，其实就是问一下最近的子域名服务器（默认是ISP运营商提供，在国内就是中国电信，中国联通，中国移动这几家），从它们中获取到ip地址，而子域名服务器自己会定时从根域名服务器中获取最新的内容。这样，每次我就不用保存和更新全世界所有网站对应的ip，上哪个网就查询哪个。\n  Q\u0026amp;A\n Q: 那么是不是破坏这13组根域名服务器就能破坏互联网的查询功能呢？例如别人如果输入苹果的域名却跳到一个其他的网站呢。\n A: 是的。很遗憾它分布在全世界各个地区，很难同时攻击它们 :D\n Q: 浏览器直接输入DNS查询到的苹果的IP地址，是不是就能访问到www.apple.com呢？\n A: 很遗憾地说，在现代的互联网，大部分情况下是不可以的。\n  "
 },
 {
-	"uri": "https://www.enginego.org/dockers/windows%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85docker%E6%95%99%E7%A8%8B/",
+	"uri": "https://www.enginego.org/%E5%B7%A5%E5%85%B7/docker/windows%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85docker%E6%95%99%E7%A8%8B/",
 	"title": "Windows安装Docker教程",
 	"tags": [],
 	"description": "",
 	"content": " 作者：Windson Yang 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。\nWindows安装Docker教程 官方英文教程\n安装前须知 你的系统需满足以下几个条件，如果不满足以下要求，请参考第二节\n 确保你电脑安装了64位的Windows 10 Pro, Enterprise或者Education(1511 November update, Build 10586 or later)版本。\n 如果你的电脑安装了VirtualBox（一个虚拟机软件，默认系统没有安装）请注意，Windows的Docker版本因为需要Microsoft Hyper-V来运作，安装之后会令VirtualBox无效。\n 必须启动虚拟化（默认启动），可以在任务管理中找到这一项确保enabled\nWindows8检查\n点击开始 \u0026gt; 任务管理 \u0026gt; 性能 \u0026gt; CPU\n黄色的Virtualization为Enabled即可\nWindows7检查\n运行Microsoft® Hardware-Assisted Virtualization Detection Tool工具，然后按照步骤来检测。\n   Docker建立的容器和镜像会被计算机上面的所有用户共享，多账号的系统中要注意数据安全问题。\n 开始安装  下载Docker稳定版 双击下载文件夹中的InstallDocker.msi文件。 阅读协议内容觉得没问题之后点击接受协议（不接受将无法安装:O)，然后安装。   一般软件应该安装在非系统盘（C盘）中，这样即使以后需要重装系统，软件也不会丢失。安装路径不要包含中文）\n  输入系统管理员密码使Docker可以安装网络组件。 完成  启动Docker 安装完成后Docker会自动启动，你可以从状态栏看到Docker正在运作 验证安装成功 运行终端(cmd.exe或者PowerShell)\nPS C:\\Users\\Docker\u0026gt; docker --version Docker version 17.03.0-ce, build 60ccb22  看到Docker version提示的字样代表安装成功了\n第二节 如果不满足条件（例如你使用的是Windows7或者Windows8系统）我们需要安装另外一款工具来运行Docker\n###安装前准备 - 先确保自己的Windows系统是Windows7以上（Windows7, Windows8，Windows10都可以）的64位系统，可以通过这里确定Windows系统版本，如果不是64位的话请更新64位的系统。\n 必须启动虚拟化（默认启动），可以在任务管理中找到这一项确保enabled\nWindows8检查\n点击开始 \u0026gt; 任务管理 \u0026gt; 性能 \u0026gt; CPU\n黄色的Virtualization为Enabled即可\nWindows7检查\n运行Microsoft® Hardware-Assisted Virtualization Detection Tool工具，然后按照步骤来检测。\n  ###开始安装\n 确保自己没有运行Virtual Box（默认系统没有按照这个软件） 点击右边链接下载Docker Toolbox 下载完毕后双击安装，如果这时候系统问你是不是允许程序修改，点击Yes 默认选项直到安装完毕  ###验证安装成功\n 双击打开Docker Toolbox  点击Yes获取修改权限 然后系统会进行一些操作，你会看到以下的图片  看到这个$符号就代表启动完成，这时候在终端输入\ndocker run hello-world   然后看到：\n$ docker run hello-world Unable to find image 'hello-world:latest' locally Pulling repository hello-world 91c95931e552: Download complete a8219747be10: Download complete Status: Downloaded newer image for hello-world:latest Hello from Docker. This message shows that your installation appears to be working correctly. To generate this message, Docker took the following steps: 1. The Docker Engine CLI client contacted the Docker Engine daemon. 2. The Docker Engine daemon pulled the \u0026quot;hello-world\u0026quot; image from the Docker Hub. (Assuming it was not already locally available.) 3. The Docker Engine daemon created a new container from that image which runs the executable that produces the output you are currently reading. 4. The Docker Engine daemon streamed that output to the Docker Engine CLI client, which sent it to your terminal. To try something more ambitious, you can run an Ubuntu container with: $ docker run -it ubuntu bash For more examples and ideas, visit: https://docs.docker.com/userguide/  就代表Docker已经成功安装并且可以运行啦。\n"
 },
 {
-	"uri": "https://www.enginego.org/dockers/macos%E5%AE%89%E8%A3%85docker%E6%95%99%E7%A8%8B/",
+	"uri": "https://www.enginego.org/%E5%B7%A5%E5%85%B7/docker/macos%E5%AE%89%E8%A3%85docker%E6%95%99%E7%A8%8B/",
 	"title": "macOS系统安装docker教程",
 	"tags": [],
 	"description": "",
 	"content": "作者：Windson Yang 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。\n(官方英文教程)[https://docs.docker.com/toolbox/toolbox_install_mac/]\n 系统必须满足以下全部要求：  2010后的苹果电脑，支持英特尔MMU内存虚拟 10.10.3或者更新的苹果系统 从Docker1.13版本（准备推出）之后不再支持10.10版本（OS X 10.10 Yosemite） 不能安装4.3.30版本之前的VirtualBox（默认系统并没有这个软件）    下载软件Docker for macOS 双击Docker.dmg安装\n 双击应用程序中的Docker.app来启动Docker\n 系统会请求你输入密码来启动Docker，Docker需要特殊权限来安装网络组件\n 然后可以在屏幕右上角看到Docker的标志\n 可以点击这个标志浏览设置\n 如此简单就安装成功啦，可以吃点巧克力奖励下自己了。:D\n  "
 },
 {
-	"uri": "https://www.enginego.org/basic/%E5%8D%8F%E8%AE%AE/",
+	"uri": "https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/%E5%8D%8F%E8%AE%AE/",
 	"title": "协议",
 	"tags": [],
 	"description": "",
 	"content": "作者：Windson Yang\n著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。\n计算机使用了多种多样的协议，大家接触得比较多的是HTTP, TCP/IP, FTP等，计算机中的协议和我们现实生活中签的协议其实挺像，双方都按照协议上的条约发送，接受数据。举个例子，你和你的朋友通过短信约定明天吃饭的时间地点。日常生活的话信息内容可以是\n 明天 上午9点 在公司等\n 即使改变文字的顺序\n 明天 在公司等吧， 上午9点\n 这两个信息一般人都能理解，不过计算机不一样，你可以把计算机当成患强迫症的朋友，它会要求你发的信息，前两个字一定是日期，后面4个字一定是12进制时间，最后是地点\n 明天 \u0026ndash;日期\u0026ndash; 上午9点 \u0026ndash;时间\u0026ndash; 在公司等 \u0026ndash;地点\u0026ndash;\n 只要你遵守这个规定发送信息给计算机，那么你们就互相遵守了一个协议。\n这样有什么优点呢？ 1. 这样只要遵守协议A的人都能对信息进行处理，即使现在你换个人发送信息，他也能和你互相沟通。 2. 无论对计算机或者人类来说，信息都变得有序和容易处理。当我们知道信息遵守协议A的时候，我们不需要阅读信息都知道第一行的内容会是时间，第二行会是地点。\n举个常见的例子，当你使用浏览器访问www.apple.com，浏览器其实是按照HTTP协议的约定向苹果服务器发出信息：\n第一行是请求方法和协议版本， 第二行是请求的URL。 第三行是连接是否持久化。 ...  真实发送的信息是：\nGET / HTTP/1.1\\r\\n Host: www.apple.com\\r\\n Connection: keep-alive\\r\\n Pragma: no-cache\\r\\n Cache-Control: no-cache\\r\\n Upgrade-Insecure-Requests: 1\\r\\n User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36\\r\\n Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8\\r\\n DNT: 1\\r\\n Accept-Encoding: gzip, deflate, br\\r\\n Accept-Language: en,zh;q=0.9,en-US;q=0.8,zh-CN;q=0.7\\r\\n  在HTTP协议里面这些信息统称为HTTP的请求头部（每行最后的\\r\\n是换行符，服务器读取到\\r\\n就知道接下来的内容是下一行）。它们大多有固定的选项，服务器拿到这条信息之后就可以直接对照协议的顺序来返回数据。想了解更多的朋友可以参考[An overview of HTTP]（https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview）\n Q: API和协议有什么关系 A: 有时候工程师也会称API为协议，可以这样理解，当一组API非常有名，例如HTTP，FTP，大家都知道的情况下，我们可以称它为协议，如果一组API只是公司内部使用，或者团队内使用那么就只是API。  "
 },
 {
-	"uri": "https://www.enginego.org/basic/%E5%9F%9F%E5%90%8D/",
+	"uri": "https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/%E5%9F%9F%E5%90%8D/",
 	"title": "域名",
 	"tags": [],
 	"description": "",
 	"content": "作者：Windson Yang\n著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。\n计算机知识往往互相关联，要真正了解域名是什么，必须先了解什么是URI。这里有一些常见的例子。\nhttps://www.apple.com http://www.w3c.org ftp://example.org/resource.txt file:///Users/example/hello.jpg  最后两个大家可能不太熟悉，以最后一个为例子，你们可以尝试把自己电脑中任意的文件拖放到浏览器中，浏览器会去猜这个文件类型，一些常见的文件类型例如图片，浏览器可以判断并渲染出来。同时浏览器的地址栏也会变成file开头。这个例子中的file就是这个URI所使用的协议。常见的协议还有\nHTTP 超文本传输协议 SMTP 邮件协议 telnet 终端传输协议 DNS 域名系统协议 DHCP 动态主机配置协议  好吧，我承认部分对于一般大众不是很常见，不过如果你想认真学习编程，起码看到这些名词的时候知道是什么。感兴趣的学生可以前往Lists of network protocols。那么协议又是什么呢？其实协议的本质非常简单。\n域名（Domain names）是互联网基础架构的关键部分。它们为互联网上任何可用的网页服务器提供了人类可读的地址。 任何连上互联网的电脑都可以通过一个公共IP地址访问到，对于IPv4来说，这个地址由32位组成（它们通常写成四个范围在0~255以内，由点分隔的数字组成，比如173.194.121.32），而对于IPv6来说，这个地址由128位组成，通常写成八组由冒号分隔的四进制数(e.g., 2027:0da8:8b73:0000:0000:8a2e:0370:1337).  "
 },
 {
-	"uri": "https://www.enginego.org/basic/%E6%9C%8D%E5%8A%A1%E7%AB%AF/",
+	"uri": "https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/%E6%9C%8D%E5%8A%A1%E7%AB%AF/",
 	"title": "基础术语",
 	"tags": [],
 	"description": "",
 	"content": " 作者：Windson Yang\n著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。\n服务端 很简单，服务器就是一台**24小时运行**，运行着**专为服务器设计的系统**的**高性能计算机**。它也是由内存，硬盘，CPU组成。不过它会根据这台服务器的用途来配置不同的组件。有些服务器专门用来存储文件，图片，那么它就需要更大的硬盘，对CPU的要求就没那么高。有些专门用来进行高密度的计算，例如视频转格式，数据分析那么就要更快的CPU。 服务器会根据不同客户端的请求返回不同的内容，当你使用浏览器访问一个页面的时候，实际上浏览器就是寻找该页面对应的服务器获取相应的图片和文字内容。  客户端 常见的客户端包括浏览器，手机，它请求服务器需要的资源，然后客户端解析返回的内容并且显示给用户。  "
 },
 {
-	"uri": "https://www.enginego.org/basic/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%BC%96%E7%A0%81/",
+	"uri": "https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%BC%96%E7%A0%81/",
 	"title": "字符串编码",
 	"tags": [],
 	"description": "",
 	"content": " 作者：Windson Yang\n著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。\n在打开文件或者邮件的时候，你一定会遇到像这样的字符串乱码的问题：\nÉ��OÇ��  学习编程的过程一定会遇到Unicode, UTF-8, ASCII, Latin-1这些编码术语。要了解字符串编码，必须要了解计算机的一些基础知识，例如字符串如何存储与表示，如果知识希望靠运气来解决或者避开它，反而会在一次次盲目的尝试中浪费更多的时间。这篇文章的每一节都非常重要，不能跳过。所以请花上15分钟静下心读吧：\n![like_unicode]()\n基本名词 字符(Character） A B C 天 气 エ ン コ 😁  上面的用空格分割的都是单个字符，它代表对人类有意义的各种语言文字。\n字符串(Strings） Hello 天气 Hola  由多个字符组成的集合\n键值表(Hash Table) 一一对应的表，例如函数\ny = x * 2  每个x都有对应并且唯一的一个y值对应，x与y组成的集合就是键值表，其中一种形式：\n1 2 3 2 4 6  这里的每一个键(1, 2, 3)都有对应的值(2, 4, 6)\n编码（encode） 将字符串按照一定的模式（例如某些规则，或者根据一一对应的键值表（Hash Table））转换成二进制数字，然后显示或者存储\n解码（decode） 与编码相反，解码把二进制数字按照一定的模式转换成字符串显示\n计算机如何存储数据 计算机最初由西方国家设计以及发展，理所当然他们就使用了自己的语言作为常用的字符集，以英文为例，字符集包括大小写字母，数字加上一些标点符号和运算符号大概120个。因为早期的计算机存储资源非常宝贵（请自行搜索下3.5英寸软盘）。计算机科学家希望用最少的空间来存储字符。同时，计算机是使用二进制存储数据的，无论是文字，图片，数字还是其他数据，都是以数字\u0026rdquo;0\u0026rdquo;或者\u0026rdquo;1\u0026rdquo;存储起来的。举个例子，如果计算机要存储\u0026rdquo;BEE\u0026rdquo;这个字符串，它先根据一个字母与数字的转换表把字母转换成数字然后存储。我们把下面这个对应表叫做Cherry表，Cherry表使用二进制用3位就能表示8种不同的字符：\n000 001 010 011 100 101 110 111 A B C D E F G H  当我们打开文件编辑器，添加“BEE”这3个字母并保存为“BEE.txt”的时候，计算机会这样存储数据\n![BEE]()\n左边是数据所在的位置，右边是数据。\n当另外一个使用者使用文件编辑器打开，如果它知道这些数据是通过Cherry表转换的，它就可以根据Cherry表还原原有的字符串。\n001100100  它会通过后缀名猜测这个文件是文本文件，然后会先以3位为单位分割，根据我们一开始的对应表，转换成相应的字母。\n001 100 100 B E E  不过如果你使用图片浏览器来打开这个文件，或者用文本编辑器打开一张图片的话，很可能就会看到乱码，*因为不同形式的文件有不同的对应表*，对于图片浏览器来说，\u0026rdquo;001100100\u0026rdquo;也许是对应一个红色的像素点。 至于为什么000表示的A，001代表的是B，这是设计表的作者定义的，你只需要告诉计算机这个对应关系，计算机就会知道如何转换。 早期的计算机，字符串的表现形式和存储形式是一致的，001100100（表现形式）直接存储到硬盘中\n理解这个之后其实就很容易理解字符串编码和解码了！\n![happy]()\n字符串编码 二进制3位只能表达8个不同的字符，明显不够存储英文一共100多个字符，最简单的解决方案就是使用更多的位来保存，2的7次方128已经足够了，加多一位用作错误检查。而且计算机更喜欢处理8位为基数的数字（我们现在的计算机一般都是64位或者32位的）所以最后选择使用8位来存储字符，刚好一个字节。8位数字对应的表就更长了：\n![ascii-table]()\n计算机存储“Cherry”这个字符串，就会存储下面的“0”和“1”在硬盘内，读取的时候再对照上面的表显示出来就好。\n![cherry]()\n1000011 1101000 1100101 1110010 1110010 1111001 C h e r r y  ASCII编码 上面的表把\nC -\u0026gt; 1000011  这样的过程称为编码（encode），也就是说寻找一种模式（某些规则，或者对应表）来把字符串用二进制数字来显示并且保存。解码（decode）则相反，把二进制数字转换为字符串的过程。早期计算机科学家统一用这张表作编码，称为ASCII编码。现在问题来了：\n![unicode-problem]()\nASCII编码不够用，例如中文，常用字就几千个，其他亚洲语言也遇到这样的问题。所以以前国内流行的并不是ASCII编码，而是GBK编码。本质其实也一样，用两个字节，一张更大的表，用更多的位来表示字符。GBK的编码方式比较有趣，是可变长度的编码，一个小于127的字符的意义与原来相同，但两个大于127的字符连在一起时，就表示一个汉字。为了兼容ASCII编码，GBK使用了单字节编码和双字节编码。也就是说当我们把“Cherry”用GBK编码存储的时候，它依然会存储为\n1000011 1101000 1100101 1110010 1110010 1111001 C h e r r y  如果只存储ASCII编码出现的字符，那么解码的时候使用什么编码都不会出错\n只有当要存储一些没有出现在ASCII表中的字符，例如“Cherry 你好”，GBK编码会存储为\n1000011 1101000 1100101 1110010 1110010 1111001 100000 11000100 11100011 10111010 11000011 C h e r r y 空格 你 好  这时候“你”和“好”都是用两个字节保存，问题来了，如果使用GBK解码的时候，如果计算机读到ASCII出现的二进制数字，例如上面的“C”，“h”\u0026hellip;就会用ASCII来进行解码，当遇到ASCII表中没有的二进制数字，例如当他遇到“y”后面的第一个二进制数字\n11000100  它发现在ACSCII表中招不到对应的字符（11000100代表的是十进制188），它就知道这个是两个字节组成的GBK表专有的字符，于是它把\n11000100 11100011  找到GBK编码对应的“你”然后显示出来。不过这样就会遇到我们常见的编码问题，如果一个文件用GBK编码存储起来，然后用ASCII解码，就会出错。也就是说当你用GBK编码保存了文件，然后你的朋友使用ASCII编码打开就会报错。因为ASCII表中并没有对应的字符串显示。下面以python3为例\n\u0026gt;\u0026gt;\u0026gt; hello = \u0026quot;Cherry 你好\u0026quot; # 定义字符串 \u0026gt;\u0026gt;\u0026gt; hello_gbk = hello.encode('gb2312') # 用GBK编码把字符串转换成二进制 \u0026gt;\u0026gt;\u0026gt; hello_gbk # 这里是上面1的16进制表示 # b'Cherry \\xc4\\xe3\\xba\\xc3' = 1000011 1101000 1100101 1110010 1110010 1111001 100000 11000100 11100011 10111010 11000011 b'Cherry \\xc4\\xe3\\xba\\xc3' \u0026gt;\u0026gt;\u0026gt; hello_gbk.decode('ascii') # 如果用ASCII解码则报错，因为计算机在ASCII表中找不到对应的显示字符 Traceback (most recent call last): File \u0026quot;\u0026lt;stdin\u0026gt;\u0026quot;, line 1, in \u0026lt;module\u0026gt; UnicodeDecodeError: 'ascii' codec can't decode byte 0xc4 in position 7: ordinal not in range(128)  这个问题其实也容易解决，只需要在文档的信息上面添加这是用什么编码的，打开的时候选择对应的解码就好，不过另外一个问题就比较头痛，很多国家都开始使用自己的编码，例如日本使用Shift JIS，韩国使用KS X 1001。而且即使是中文，还有繁体中文，简体中文，编码经过发展也有几个不同版本。这样下去就越来越乱了，即使你知道文档里面存的是中文，也不知道用什么编码才能正确打开，有时候文档中没有包含编码信息的时候，计算机可能就会猜这是什么编码，举例\n\u0026gt;\u0026gt;\u0026gt; hello = \u0026quot;你好\u0026quot; \u0026gt;\u0026gt;\u0026gt; hello_gbk = hello.encode(\u0026quot;gb2312\u0026quot;) \u0026gt;\u0026gt;\u0026gt; hello_gbk b'\\xc4\\xe3\\xba\\xc3' \u0026gt;\u0026gt;\u0026gt; hello_gbk.decode(\u0026quot;Shift-JIS\u0026quot;) 'ﾄ羲ﾃ' \u0026gt;\u0026gt;\u0026gt; hello_gbk.decode(\u0026quot;utf-8\u0026quot;) Traceback (most recent call last): File \u0026quot;\u0026lt;stdin\u0026gt;\u0026quot;, line 1, in \u0026lt;module\u0026gt; UnicodeDecodeError: 'utf-8' codec can't decode byte 0xc4 in position 0: invalid continuation byte  在上面的例子“你好”经过GBK编码编程四个字节，之后用日本的Shift JIS版本居然也能显示出来，这个情况下虽然没有报错，但是显然不是我们想要的内容。只是Shift JIS中刚好有这四个字节对应的字符串而已，如果我们用另外一种编码UTF-8来解码，就会因为招不到对应的字符串而报错。\nUnicode 如果你足够聪明的话，最简单解决的方法就是，用足够长的二进制位来存储世界上所有字符串。这并不是痴人说梦，Unicode就是为此而生，其实很简单，每个国家的每个字符都编进去，最新的版本已经有 136,755个字符串了。例如你好，对应的是 4F60 597D。不同于之前的其他编码，Unicode只是规定了表现形式，至于如何存储则可以使用不同的编码，这个什么意思呢，例如“你好”这个字符串，如果直接使用四个字节保存的话，那么就是UTF-32编码，UTF-32编码是定长编码。很直观，既然用四个字节表达所有字符串了，那么保存的话直接用四个字节保存就好了。这没有任何技术上的问题，而且也运行得不错吧。\nUTF-8 UTF-8编码其实只是一种hack，因为UTF-32编码把所有字符都用四个字节保存，基本只用英文的人原本使用ASCII编码只需要一个字节，加上以前计算机的存储空间很贵，网络传输速度非常慢，平白无故增加三倍显然不乐意。于是计算机科学家开发了另外一个可变长度的编码UTF-8来存储Unicode编码。具体怎么实现呢？其实很简单，首先我们参考ASCII表，使用它所有的内容，当计算机读取到ASCII中有的内容，则按照ASCII表进行转换，然后像GBK编码一样按顺序，把一些常用的字符用两个字节来保存。少用的就保存为三个字节。所以即使你用UTF-8编码保存英文，用ASCII也能正确解码\n\u0026gt;\u0026gt;\u0026gt; hello = \u0026quot;hello\u0026quot; \u0026gt;\u0026gt;\u0026gt; hello.encode('utf-8') b'hello' \u0026gt;\u0026gt;\u0026gt; b'hello'.decode('ascii') 'hello'  这样即使旧的电脑也能正确地解码英文\nUTF-8与Unicode有什么关系？ Unicode虽然也是由数字组成，不过它把常用的字符也用了4个字节来保存，UTF-8是一种可变长度编码，把常用的保存为1个字节\n   character encoding bits     A UTF-8 01000001   A UTF-16 00000000 01000001   A UTF-32 00000000 00000000 00000000 01000001    "
 },
 {
-	"uri": "https://www.enginego.org/basic/%E8%B7%AF%E5%BE%84/",
+	"uri": "https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/%E8%B7%AF%E5%BE%84/",
 	"title": "相对路径，绝对路径",
 	"tags": [],
 	"description": "",
 	"content": " 作者：Windson Yang\n著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。\n当前路径 当你打开终端的时候，会看到例如：\nWindsons C:\\usr\\foo\\: OSX WindsondeMacBook-Air:/usr/foo/  这里的\u0026rdquo;C:\\usr\\foo\\\u0026ldquo;和\u0026rdquo;/usr/foo/\u0026ldquo;指当前执行指令的路径。也就是你的*当前路径*，你在终端中输入的指令，默认针对的就是当前路径，假如你输入\u0026rdquo;ls\u0026rdquo;(macOX)/\u0026ldquo;dir\u0026rdquo;(Windows)，计算机会理解成\u0026rdquo;ls/dir /usr/foo/\u0026ldquo;，所以会列出*当前路径中\u0026rdquo;/usr/foo/\u0026ldquo;下面的所有文件。\n那什么是绝对路径和相对路径呢？ 举个现实生活的例子： Cherry在路上遇到Sunkist，它问Sunkist的公司地址在哪里，Sunkist可能有两种答案：\n 中国广东省广州市思哲路石室大厦 以这里为起点，西南方向500米的石室大厦  这两个答案都正确，第一个答案从国家到省份城市巨细无遗地描述称为绝对路径， 第二个答案以当前的位置为起点所描述的称为相对路径。\n例如：foo文件夹的绝对路径是\nC:\\Administor\\foo\\  你想要列出这个文件夹里面的所有文件，你可以告诉计算机这个文件夹的完整地址，也就是绝对路径\ndir C:\\Administor\\foo\\  也可以根据当前自己的位置找这个文件（这时候输入的就是相对路径），假如你打开终端，当前路径是\nC:\\Administor\\bar\\:  那么你也可以这样列出：\ndir ..\\foo\\  在路径命令中\u0026rdquo;.\u0026ldquo;以及\u0026rdquo;..\u0026ldquo;这两个符号有特殊意义，分别代表当前路径以及上一级目录，也就是说如果你当前路径是：\nC:\\Administor\\bar\\  那么\n.\\ = C:\\Administor\\bar\\ ..\\ = C:\\Administor\\  当我们要找这个文件夹\nC:\\Administor\\foo\\  需要先回到上一层目录\ndir ..\\  然后再使用cd命令进入bar目录\ncd bar\\  如何切换路径 可以使用cd指令\ncd [PATH]  这里的path既可以是绝对路径也可以是相对路径，如果当前路径为：\nC:\\Administor\\foo\\:  你要跳到\nC:\\whatever\\sunkist\\:  就可以\ncd C:\\whatever\\sunkist\\ # 或者 cd ..\\..\\whatever\\sunkist\\  如何在终端显示当前的绝对路径 pwd (macOX) cd (Windows)  如果你写好了一个程序\u0026rdquo;example.py\u0026rdquo;，放在\u0026rdquo;/usr/bar/\u0026ldquo;中，你想要运行这个程序，不能直接\u0026rdquo;python example.py\u0026rdquo;运行，因为你现在并不在\u0026rdquo;/usr/bar/\u0026ldquo;中，你可以选择*切换路径*然后执行命令。计算机虽然看起来很神奇，但是它并不知道你要运行的文件放在哪里。\n"
 },
 {
-	"uri": "https://www.enginego.org/basic/%E7%BB%88%E7%AB%AF/",
+	"uri": "https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/%E7%BB%88%E7%AB%AF/",
 	"title": "终端，命令行, shell",
 	"tags": [],
 	"description": "",
 	"content": " 作者：Windson Yang\n著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。\n终端是一个可以通过命令行执行其他程序的程序 如果你曾经用过DOS系统，对这张图片应该不会陌生： (图片来源维基百科)\n如果你没有接触过DOS这样久远的系统，你可以尝试先打开自己计算机的终端\nmacOS: 同时按住\u0026quot;control\u0026quot;+\u0026quot;space\u0026quot;键，在搜索框输入termianl，\u0026quot;回车\u0026quot; Windows 7：打开\u0026quot;开始\u0026quot;菜单，在搜索框里输入cmd，\u0026quot;回车\u0026quot; Windows 8+：同时按住\u0026quot;win\u0026quot;+\u0026quot;Q\u0026quot;键，然后在弹出的搜索框里输入cmd，\u0026quot;回车\u0026quot;  成功打开之后你会看到计算机打开了一个类似上面图片的一个程序。光标会停留在某一行。类似：\nWindsondeMacBook-Air:~ windson$ |  接下来你可以通过这个程序执行不同的程序。基本所有编程语言（Python，C，C++）都可以通过终端来执行。你可以理解终端是一个执行其他程序的程序。 你在电影里面看到一个很酷的黑客对着一个黑的屏幕疯狂敲键盘，一般他们使用的就是这个程序。 当你看到这样的界面的时候，可以尝试输入一个命令，然后让终端执行。\nmacOS: \u0026quot;ls\u0026quot;+\u0026quot;回车\u0026quot; Windows: \u0026quot;dir\u0026quot;+\u0026quot;回车\u0026quot;  输入回车之后，你会发现终端显示出了一些文字，仔细观察的话你会发现其实是你电脑中某个目录下的文件。ls/dir这个命令就是用作*列出当前目录的文件*，当然这个命令还有很多参数，也就是你可以告诉计算机显示什么文件（隐藏／非隐藏），显示文件的什么内容（创建日期，大小），ls回车只会调用一个常用的默认配置，假如你想把隐藏文件也显示的话，在终端输入\nmacOS: \u0026quot;ls -a\u0026quot;+\u0026quot;回车\u0026quot; Windows: \u0026quot;dir -a\u0026quot;+\u0026quot;回车\u0026quot;  终端还有很多其他指令，大家可以参照自己的操作系统找相应的命令。除此之外，终端还可以执行其他程序，我们习惯了图形界面双击图标打开一个应用（或者称为快捷方式），计算机先通过后续名猜测需要用什么方式打开或者运行这个文件，如果是图片的话，计算机就会用图片浏览器打开，如果是可执行文件（Windows下的exe后缀），计算机会先找到该应用的位置，然后运行这个应用，这个可执行文件里面包含了应用运行需要加载哪些资源，如何运行。在终端的话，如果要运行一个Python语言写的程序hello.py。在安装好Python之后可以直接输入\nPython3 hello.py  其实就是告诉计算机用什么程序（Python）执行什么文件（hello.py）\n终端小tips ctrl + c ctrl + d ctrl + z ctrl + a/e/u/k  为什么要用终端 以前的计算机根本没有图形界面，只能对着这样黑乎乎的界面一行行输入指令，然后祈祷它不会出错。既然现在已经有图形界面了，为什么我们还需要学习用终端呢？\n 多功能，一般一个软件只会专注于一个功能，例如Word进行文字编辑，PowerPoint进行幻灯片编辑。但是你可以通过终端让计算机调用不同的程序完成多种多样的功能。\n 方便，对，一开始可能难以置信，但是使用终端确实比图形界面（GUI，也就是我们平时看到的带有按钮以及经过设计的界面）要方便。你可能也会曾经遇过某一款软件更新，你找不到原本功能的按钮在哪里了。（例如某段时间Windows系统就把把“开始”菜单隐藏了。或者应用程序更新你找不到原本的功能按钮在哪里。）使用命令（例如上面的\u0026rdquo;ls\u0026rdquo;／\u0026rdquo;dir\u0026rdquo;）的话即使更新你也不需要担心，当然一开始你会要记住这些指令。\n 高效，跨平台，跨机器，例如你要删除一个文件夹中（可能包含子文件夹）超过10天之前创建的所有文件，一般来说的话你需要一个个文件夹找，然后对每个文件夹里的文件进行时间排序，再手动删除，如果里面包含了100个文件夹那么会费很多时间，同时也容易出错。使用终端的话可以直接运行\nfind /path/to/base/dir/* -type f -ctime +10 -delete   而且只要跑同一个系统就不用担心命令会执行出错。（不用担心Word2003与Wrod2007的兼容问题）\n 容易定制，使用指令的好处是很容易根据需求来修改，加入想删除的是所有超过10天之前创建的文件夹，只需要修改\u0026rsquo;-type f\u0026rsquo;为\u0026rsquo;-type d\u0026rsquo;即可，这里type代表的是指令针对什么类型操作，f是files，d这是directory。  当然，要学会基本的指令也要花时间，例如一个find指令就有超过50个参数（这个命令比较特殊，参数比较多，我也常不记得，想用的时候通过系统自带的man page搜索就好）。\n如果你使用对的是Windows系统请注意，Windows有自己的一套特殊指令, 我不建议大家使用Windows来学习编程，相对来说macOX与Linux系统对开发者（也就是你）更加友好，使用他们会节约你很多时间。不过这不代表你需要额外买一台电脑才能学习编程，只需要安装双系统或者虚拟系统就好，如果你没有接触过，没关系。我们会一步步介绍，你可以先在Windows中安装Docker，然后就可以在Windows系统中使用Linux了。\n"
 },
 {
-	"uri": "https://www.enginego.org/basic/%E5%86%85%E5%AD%98/",
+	"uri": "https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/%E5%89%8D%E7%AB%AFor%E5%90%8E%E7%AB%AF/",
 	"title": "",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://www.enginego.org/basic/%E5%89%8D%E7%AB%AFor%E5%90%8E%E7%AB%AF/",
+	"uri": "https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/%E5%86%85%E5%AD%98/",
 	"title": "",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://www.enginego.org/basic/%E5%A0%86%E6%A0%88/",
+	"uri": "https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/%E5%A0%86%E6%A0%88/",
 	"title": "",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://www.enginego.org/basic/%E5%B5%8C%E5%A5%97%E5%AD%97/",
+	"uri": "https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/%E5%B5%8C%E5%A5%97%E5%AD%97/",
 	"title": "",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://www.enginego.org/basic/%E6%8A%93%E5%8C%85/",
+	"uri": "https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/%E6%8A%93%E5%8C%85/",
 	"title": "",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://www.enginego.org/basic/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/",
+	"uri": "https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/",
 	"title": "",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://www.enginego.org/basic/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/",
+	"uri": "https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/",
 	"title": "",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://www.enginego.org/basic/%E8%BF%9B%E7%A8%8B/",
+	"uri": "https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/%E8%BF%9B%E7%A8%8B/",
 	"title": "",
 	"tags": [],
 	"description": "",

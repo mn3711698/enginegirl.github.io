@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
 
-    <title>目录 :: Engine GO</title>
+    <title>终端，命令行, shell :: Engine GO</title>
     
     
     <link href="/css/nucleus.css?1520344662" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/">
+  <body class="" data-url="/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/%E7%BB%88%E7%AB%AF/">
     <nav id="sidebar" class="">
 
 
@@ -78,7 +78,7 @@
   
     
     <li data-nav-id="/%E5%9F%BA%E7%A1%80/" title="基础知识" class="dd-item 
-        
+        parent
         
         
         ">
@@ -215,7 +215,7 @@
   
     
     <li data-nav-id="/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/" title="术语" class="dd-item 
-        
+        parent
         
         
         ">
@@ -353,7 +353,7 @@
  
   
     
-      <li data-nav-id="/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/%E7%BB%88%E7%AB%AF/" title="终端，命令行, shell" class="dd-item ">
+      <li data-nav-id="/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/%E7%BB%88%E7%AB%AF/" title="终端，命令行, shell" class="dd-item active">
         <a href="/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/%E7%BB%88%E7%AB%AF/">
         终端，命令行, shell
         
@@ -667,35 +667,167 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>目录</a> > <a href='/%E5%9F%BA%E7%A1%80/'>基础知识</a> > <a href='/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/'>术语</a> > 终端，命令行, shell
+          
+         
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#终端是一个可以通过命令行执行其他程序的程序">终端是一个可以通过命令行执行其他程序的程序</a></li>
+</ul></li>
+<li><a href="#终端小tips">终端小tips</a></li>
+<li><a href="#为什么要用终端">为什么要用终端</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
 
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>终端，命令行, shell</h1>
           
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> navigation</a>
-</span>
-
- 
 
 
-<h3 id="计算机基础首页">计算机基础首页</h3>
 
 <p>作者：Windson Yang</p>
 
 <p>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
 
-<p>在我建立EngineGirls的时候，面向的基本都是零基础的学员，她们希望能学习数据分析，网络爬虫，人工智能并且可以运用到她们的工作中。在教学的过程中，我发现她们往往缺乏计算机的基础知识。例如她们并不了解终端（Terminal），路径（PATH），服务器（Server）的作用。所以最后即使她们可以依葫芦画瓢写出一个应用，也并没有学到真正的知识。所以我写这本书希望解释计算机基础的术语与常见问题。</p>
+<h4 id="终端是一个可以通过命令行执行其他程序的程序">终端是一个可以通过命令行执行其他程序的程序</h4>
 
-<p>不要妄想当看完这本电子书就能明白计算机的基础。我推荐可以上<a href="https://cn.udacity.com/courses/all">udacity</a>的初级教程，通过优秀的工程师的讲解加上习题可以巩固学习的知识。</p>
+<p>如果你曾经用过DOS系统，对这张图片应该不会陌生：
+<img src="https://raw.githubusercontent.com/EngineGirl/basic-tutorial/master/imgs/terminal/dos.png" alt="DOS" />
+(图片来源维基百科)</p>
+
+<p>如果你没有接触过DOS这样久远的系统，你可以尝试先打开自己计算机的终端</p>
+
+<pre><code>macOS: 同时按住&quot;control&quot;+&quot;space&quot;键，在搜索框输入termianl，&quot;回车&quot;
+Windows 7：打开&quot;开始&quot;菜单，在搜索框里输入cmd，&quot;回车&quot;
+Windows 8+：同时按住&quot;win&quot;+&quot;Q&quot;键，然后在弹出的搜索框里输入cmd，&quot;回车&quot;
+</code></pre>
+
+<p>成功打开之后你会看到计算机打开了一个类似上面图片的一个程序。光标会停留在某一行。类似：</p>
+
+<pre><code>WindsondeMacBook-Air:~ windson$ |
+</code></pre>
+
+<p>接下来你可以通过这个程序执行不同的程序。基本所有编程语言（Python，C，C++）都可以通过终端来执行。你可以理解终端是一个执行其他程序的程序。 你在电影里面看到一个很酷的黑客对着一个黑的屏幕疯狂敲键盘，一般他们使用的就是这个程序。
+当你看到这样的界面的时候，可以尝试输入一个命令，然后让终端执行。</p>
+
+<pre><code>macOS: &quot;ls&quot;+&quot;回车&quot;
+Windows: &quot;dir&quot;+&quot;回车&quot;
+</code></pre>
+
+<p>输入回车之后，你会发现终端显示出了一些文字，仔细观察的话你会发现其实是你电脑中某个目录下的文件。ls/dir这个命令就是用作*列出当前目录的文件*，当然这个命令还有很多参数，也就是你可以告诉计算机显示什么文件（隐藏／非隐藏），显示文件的什么内容（创建日期，大小），ls回车只会调用一个常用的默认配置，假如你想把隐藏文件也显示的话，在终端输入</p>
+
+<pre><code>macOS: &quot;ls -a&quot;+&quot;回车&quot;
+Windows: &quot;dir -a&quot;+&quot;回车&quot;
+</code></pre>
+
+<p>终端还有很多其他指令，大家可以参照自己的操作系统找相应的命令。除此之外，终端还可以执行其他程序，我们习惯了图形界面双击图标打开一个应用（或者称为快捷方式），计算机先通过后续名猜测需要用什么方式打开或者运行这个文件，如果是图片的话，计算机就会用图片浏览器打开，如果是可执行文件（Windows下的exe后缀），计算机会先找到该应用的位置，然后运行这个应用，这个可执行文件里面包含了应用运行需要加载哪些资源，如何运行。在终端的话，如果要运行一个Python语言写的程序hello.py。在安装好Python之后可以直接输入</p>
+
+<pre><code>Python3 hello.py
+</code></pre>
+
+<p>其实就是告诉计算机用什么程序（Python）执行什么文件（hello.py）</p>
+
+<h3 id="终端小tips">终端小tips</h3>
+
+<pre><code>ctrl + c
+ctrl + d
+ctrl + z
+ctrl + a/e/u/k
+</code></pre>
+
+<h3 id="为什么要用终端">为什么要用终端</h3>
+
+<p>以前的计算机根本没有图形界面，只能对着这样黑乎乎的界面一行行输入指令，然后祈祷它不会出错。既然现在已经有图形界面了，为什么我们还需要学习用终端呢？</p>
+
+<ol>
+<li><p>多功能，一般一个软件只会专注于一个功能，例如Word进行文字编辑，PowerPoint进行幻灯片编辑。但是你可以通过终端让计算机调用不同的程序完成多种多样的功能。</p></li>
+
+<li><p>方便，对，一开始可能难以置信，但是使用终端确实比图形界面（GUI，也就是我们平时看到的带有按钮以及经过设计的界面）要方便。你可能也会曾经遇过某一款软件更新，你找不到原本功能的按钮在哪里了。（例如某段时间Windows系统就把把“开始”菜单隐藏了。或者应用程序更新你找不到原本的功能按钮在哪里。）使用命令（例如上面的&rdquo;ls&rdquo;／&rdquo;dir&rdquo;）的话即使更新你也不需要担心，当然一开始你会要记住这些指令。</p></li>
+
+<li><p>高效，跨平台，跨机器，例如你要删除一个文件夹中（可能包含子文件夹）超过10天之前创建的所有文件，一般来说的话你需要一个个文件夹找，然后对每个文件夹里的文件进行时间排序，再手动删除，如果里面包含了100个文件夹那么会费很多时间，同时也容易出错。使用终端的话可以直接运行</p>
+
+<pre><code>find /path/to/base/dir/* -type f -ctime +10 -delete
+</code></pre></li>
+</ol>
+
+<p>而且只要跑同一个系统就不用担心命令会执行出错。（不用担心Word2003与Wrod2007的兼容问题）</p>
+
+<p><img src="https://raw.githubusercontent.com/EngineGirl/basic-tutorial/master/imgs/terminal/programming-animation.gif" alt="programing" /></p>
+
+<ol>
+<li>容易定制，使用指令的好处是很容易根据需求来修改，加入想删除的是所有超过10天之前创建的文件夹，只需要修改&rsquo;-type f&rsquo;为&rsquo;-type d&rsquo;即可，这里type代表的是指令针对什么类型操作，f是files，d这是directory。</li>
+</ol>
+
+<p>当然，要学会基本的指令也要花时间，例如一个find指令就有超过50个参数（这个命令比较特殊，参数比较多，我也常不记得，想用的时候通过系统自带的man page搜索就好）。</p>
+
+<p>如果你使用对的是Windows系统请注意，Windows有自己的一套特殊指令, 我不建议大家使用Windows来学习编程，相对来说macOX与Linux系统对开发者（也就是你）更加友好，使用他们会节约你很多时间。不过这不代表你需要额外买一台电脑才能学习编程，只需要安装双系统或者虚拟系统就好，如果你没有接触过，没关系。我们会一步步介绍，你可以先在Windows中安装<a href="#../Docker基础/Windows系统安装Docker教程.md">Docker</a>，然后就可以在Windows系统中使用Linux了。</p>
+
+
+<footer class=" footline" >
 	
-  
-        
-            </div> 
+</footer>
+
+
         
         </div> 
         
@@ -727,8 +859,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -745,18 +875,8 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
-            
-            
-                
+                        
                     
                 
                 
@@ -765,9 +885,6 @@
                     
                     
 
-                    
-            
-        
                     
                         
             
@@ -817,22 +934,6 @@
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
             
             
@@ -849,10 +950,30 @@
             
         
                     
+            
+        
+                    
                         
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -950,6 +1071,26 @@
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
                 
                 
 
@@ -1152,8 +1293,10 @@
 
 
         
+            <a class="nav nav-prev" href="/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/%E8%B7%AF%E5%BE%84/" title="相对路径，绝对路径"> <i class="fa fa-chevron-left"></i></a>
         
-            <a class="nav nav-next" href="/%E5%9F%BA%E7%A1%80/" title="基础知识" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+            <a class="nav nav-next" href="/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/%E5%86%85%E5%AD%98/" title="" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
@@ -1183,3 +1326,4 @@
 
   </body>
 </html>
+
