@@ -13,19 +13,19 @@
     <title>字符串编码 :: Engine GO</title>
     
     
-    <link href="/css/nucleus.css?1520351819" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1520351819" rel="stylesheet">
-    <link href="/css/hybrid.css?1520351819" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1520351819" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1520351819" rel="stylesheet">
-    <link href="/css/auto-complete.css?1520351819" rel="stylesheet">
-    <link href="/css/theme.css?1520351819" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1520351819" rel="stylesheet">
+    <link href="/css/nucleus.css?1520433786" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1520433786" rel="stylesheet">
+    <link href="/css/hybrid.css?1520433786" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1520433786" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1520433786" rel="stylesheet">
+    <link href="/css/auto-complete.css?1520433786" rel="stylesheet">
+    <link href="/css/theme.css?1520433786" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1520433786" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1520351819" rel="stylesheet">
+      <link href="/css/theme-blue.css?1520433786" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1520351819"></script>
+    <script src="/js/jquery-2.x.min.js?1520433786"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -53,15 +53,15 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1520351819"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1520351819"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1520433786"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1520433786"></script>
 <script type="text/javascript">
     
         
         var baseurl = "https://www.enginego.org";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1520351819"></script>
+<script type="text/javascript" src="/js/search.js?1520433786"></script>
 
     
   </div>
@@ -394,6 +394,25 @@
       <li data-nav-id="/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/%E7%BB%88%E7%AB%AF/" title="终端，命令行, shell" class="dd-item ">
         <a href="/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/%E7%BB%88%E7%AB%AF/">
         终端，命令行, shell
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/hook/" title="" class="dd-item ">
+        <a href="/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/hook/">
+        
         
         </a>
     </li>
@@ -808,13 +827,26 @@
 <pre><code>É��OÇ��，系统包括了...
 </code></pre>
 
-<p>或多或少也遇到Unicode, UTF-8, ASCII, Latin-1这些编码术语。要真正地理解字符串编码，必须要了解计算机的一些基础知识，例如字符串如何存储与表示。如果只是希望靠运气来解决或者避开它，反而会在一次次盲目的尝试中浪费更多的时间。这篇文章的每一节都非常重要，不能跳过。请花上15分钟静下心读吧：</p>
+<p>或多或少也遇到Unicode, UTF-8, ASCII, Latin-1这些编码术语。要真正地理解字符串编码，必须要了解计算机的一些基础知识，例如字符串如何转换，存储与表示。如果只是希望靠运气来解决或者避开它，反而会在一次次盲目的尝试中浪费更多的时间。这篇文章的每一节都非常重要，不能跳过。请花上15分钟静下心读吧：</p>
+
+<ol>
+<li><a href="#基础术语">基础术语</a></li>
+<li><a href="#计算机如何存储数据">计算机如何存储数据</a></li>
+</ol>
 
 <p>![like_unicode]()</p>
 
 <h3 id="基础术语">基础术语</h3>
 
 <p>先了解下字符串的基础术语</p>
+
+<ol>
+<li><a href="#字符">字符</a></li>
+<li><a href="#字符串">字符串</a></li>
+<li><a href="#键值表">键值表</a></li>
+<li><a href="#字符串编码">字符串编码</a></li>
+<li><a href="#字符串解码">字符串解码</a></li>
+</ol>
 
 <h4 id="字符-character">字符 (Character）</h4>
 
@@ -1420,6 +1452,22 @@ b'hello'
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1527,20 +1575,20 @@ b'hello'
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1520351819"></script>
-    <script src="/js/perfect-scrollbar.min.js?1520351819"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1520351819"></script>
-    <script src="/js/jquery.sticky.js?1520351819"></script>
-    <script src="/js/featherlight.min.js?1520351819"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1520351819"></script>
-    <script src="/js/highlight.pack.js?1520351819"></script>
+    <script src="/js/clipboard.min.js?1520433786"></script>
+    <script src="/js/perfect-scrollbar.min.js?1520433786"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1520433786"></script>
+    <script src="/js/jquery.sticky.js?1520433786"></script>
+    <script src="/js/featherlight.min.js?1520433786"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1520433786"></script>
+    <script src="/js/highlight.pack.js?1520433786"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1520351819"></script>
-    <script src="/js/learn.js?1520351819"></script>
-    <script src="/js/hugo-learn.js?1520351819"></script>
+    <script src="/js/modernizr.custom.71422.js?1520433786"></script>
+    <script src="/js/learn.js?1520433786"></script>
+    <script src="/js/hugo-learn.js?1520433786"></script>
 
-    <link href="/mermaid/mermaid.css?1520351819" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1520351819"></script>
+    <link href="/mermaid/mermaid.css?1520433786" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1520433786"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
