@@ -13,19 +13,19 @@
     <title>DNS查询 :: Engine GO</title>
     
     
-    <link href="/css/nucleus.css?1520516356" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1520516356" rel="stylesheet">
-    <link href="/css/hybrid.css?1520516356" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1520516356" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1520516356" rel="stylesheet">
-    <link href="/css/auto-complete.css?1520516356" rel="stylesheet">
-    <link href="/css/theme.css?1520516356" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1520516356" rel="stylesheet">
+    <link href="/css/nucleus.css?1520516654" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1520516654" rel="stylesheet">
+    <link href="/css/hybrid.css?1520516654" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1520516654" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1520516654" rel="stylesheet">
+    <link href="/css/auto-complete.css?1520516654" rel="stylesheet">
+    <link href="/css/theme.css?1520516654" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1520516654" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1520516356" rel="stylesheet">
+      <link href="/css/theme-blue.css?1520516654" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1520516356"></script>
+    <script src="/js/jquery-2.x.min.js?1520516654"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -53,15 +53,15 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1520516356"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1520516356"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1520516654"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1520516654"></script>
 <script type="text/javascript">
     
         
         var baseurl = "https://www.enginego.org";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1520516356"></script>
+<script type="text/javascript" src="/js/search.js?1520516654"></script>
 
     
   </div>
@@ -773,6 +773,8 @@
 <ul>
 <li>
 <ul>
+<li><a href="#dns查询">DNS查询</a></li>
+<li><a href="#为什么要使用域名">为什么要使用域名？</a></li>
 <li><a href="#q-a">Q&amp;A</a></li>
 </ul></li>
 </ul></li>
@@ -801,12 +803,11 @@
 
 <p>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处（www.enginego.org）。</p>
 
+<p>当你在浏览器输入<a href="https://www.apple.com。按下回车之后，浏览器跳到苹果的官网，把iPhoneX的介绍和图片显示出来。浏览器是如何通过https://www.apple.com这个域名找到iPhone的内容并且正确显示呢？第一步就要经过DNS查询。">https://www.apple.com。按下回车之后，浏览器跳到苹果的官网，把iPhoneX的介绍和图片显示出来。浏览器是如何通过https://www.apple.com这个域名找到iPhone的内容并且正确显示呢？第一步就要经过DNS查询。</a></p>
+
 <p><img src="https://raw.githubusercontent.com/EngineGirl/enginegirl.github.io/master/images/browser.png" alt="域名browser" /></p>
 
-<pre><code>https://www.apple.com
-</code></pre>
-
-<p>当你在浏览器输入<a href="https://www.apple.com。按下回车之后，浏览器跳到苹果的官网，把iPhoneX的介绍和图片显示出来。浏览器是如何通过https://www.apple.com这个域名找到iPhone的内容并且正确显示呢？第一步就要经过DNS查询。">https://www.apple.com。按下回车之后，浏览器跳到苹果的官网，把iPhoneX的介绍和图片显示出来。浏览器是如何通过https://www.apple.com这个域名找到iPhone的内容并且正确显示呢？第一步就要经过DNS查询。</a></p>
+<h3 id="dns查询">DNS查询</h3>
 
 <p>DNS查询其实很好理解，生活上比较贴近的例子就像用黄页找电话号码。在我小的时候网络还在起步阶段，家家户户都要准备一本比字典还要厚的黄页来专门记载每户的电话号码。有一次我打给魏同学问作业，先从黄页的字母表翻到W，接着根据他的家庭地址猜测哪个是他家的电话（因为黄页通常都记载家长的名字），最后才能找到对应的电话号码打过去。难以置信吧，我现在回想起来也觉得。</p>
 
@@ -823,17 +824,22 @@ www.ieee.org  23.38.177.118
 
 <p>当我们在浏览器输入域名的时候，浏览器会先查询这个hosts文件，找到对应的IP地址。然后再通过IP地址获取到服务器里面的资源，也就是iPhoneX的简介和图片。</p>
 
-<blockquote>
-<p>为什么要使用域名？
-1. 容易记忆
-        计算机比较擅长处理数字，但是人类就差多了，访问苹果官网要背那么多数字显然不现实。使用域名就像我们使用手机的通讯录一样，我们会为常用的电话号码添加联系人姓名，打电话的时候直接输入名字就可以拨打，不需要背电话号码。
-2. 容易扩展
-        早期的计算机和IP地址是一一对应的关系，但是一台计算机的性能并不能承受大量用户的请求。而一个域名可以对应多个IP地址。这样不同地区的用户就会查询到不同的IP地址，公司也能使用多台服务器来提供服务了。</p>
-</blockquote>
+<h3 id="为什么要使用域名">为什么要使用域名？</h3>
 
-<p>不过问题随着互联网的发展慢慢显现了，小时候的黄页每年买一本，要是在一年中你更换了电话号码，其他人也就找不到你了。互联网也是，每个小时都有新的域名被注册，新的主机加入互联网，如果还只是定时更新hosts文件会出现几个问题。
-    1. 主机数量太多了，现在已经超过10亿台设备接入互联网，每次查询的话都要从这里面查会比较慢。
-    2. 大部分的网站用户根本不会上，就像大部分在黄页上的人我都不会联系。每上线一个小网站就更新全球的电脑这样显然小题大做了。那么有什么方法可以解决这个问题呢？</p>
+<ol>
+<li>容易记忆
+    计算机比较擅长处理数字，但是人类就差多了，访问苹果官网要背那么多数字显然不现实。使用域名就像我们使用手机的通讯录一样，我们会为常用的电话号码添加联系人姓名，打电话的时候直接输入名字就可以拨打，不需要背电话号码。</li>
+<li>容易扩展
+    早期的计算机和IP地址是一一对应的关系，但是一台计算机的性能并不能承受大量用户的请求。而一个域名可以对应多个IP地址。这样不同地区的用户就会查询到不同的IP地址，公司也能使用多台服务器来提供服务了。
+<br /></li>
+</ol>
+
+<p>不过问题随着互联网的发展慢慢显现了，小时候的黄页每年买一本，要是在一年中你更换了电话号码，其他人也就找不到你了。互联网也是，每个小时都有新的域名被注册，新的主机加入互联网，如果还只是定时更新hosts文件会出现几个问题。</p>
+
+<ol>
+<li>主机数量太多了，现在已经超过10亿台设备接入互联网，每次查询的话都要从这里面查会比较慢。</li>
+<li>大部分的网站用户根本不会上，就像大部分在黄页上的人我都不会联系。每上线一个小网站就更新全球的电脑这样显然小题大做了。那么有什么方法可以解决这个问题呢？</li>
+</ol>
 
 <p><img src="https://raw.githubusercontent.com/EngineGirl/basic-tutorial/master/imgs/basic/%E6%9B%B4%E6%96%B0hosts.png" alt="更新hosts" />
 （很可惜，这是治标不治本的方法）</p>
@@ -1409,20 +1415,20 @@ macOS
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1520516356"></script>
-    <script src="/js/perfect-scrollbar.min.js?1520516356"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1520516356"></script>
-    <script src="/js/jquery.sticky.js?1520516356"></script>
-    <script src="/js/featherlight.min.js?1520516356"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1520516356"></script>
-    <script src="/js/highlight.pack.js?1520516356"></script>
+    <script src="/js/clipboard.min.js?1520516654"></script>
+    <script src="/js/perfect-scrollbar.min.js?1520516654"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1520516654"></script>
+    <script src="/js/jquery.sticky.js?1520516654"></script>
+    <script src="/js/featherlight.min.js?1520516654"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1520516654"></script>
+    <script src="/js/highlight.pack.js?1520516654"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1520516356"></script>
-    <script src="/js/learn.js?1520516356"></script>
-    <script src="/js/hugo-learn.js?1520516356"></script>
+    <script src="/js/modernizr.custom.71422.js?1520516654"></script>
+    <script src="/js/learn.js?1520516654"></script>
+    <script src="/js/hugo-learn.js?1520516654"></script>
 
-    <link href="/mermaid/mermaid.css?1520516356" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1520516356"></script>
+    <link href="/mermaid/mermaid.css?1520516654" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1520516654"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
