@@ -27,18 +27,18 @@ PING www.enginego.org (104.24.121.11): 56 data bytes Request timeout for icmp_se
     </item>
     
     <item>
-      <title>公私钥</title>
+      <title>公私钥（未完成）</title>
       <link>https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/%E5%85%AC%E7%A7%81%E9%92%A5/</link>
       <pubDate>Tue, 27 Feb 2018 00:10:14 +0800</pubDate>
       
       <guid>https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/%E5%85%AC%E7%A7%81%E9%92%A5/</guid>
-      <description>这是一个非常重要的话题，我接触到很多开发者对于公钥和私钥只是一知半解，其实它的原理非常简单。
+      <description>我接触到很多开发者对于公钥和私钥只是一知半解，其实它的原理非常简单。
 我们一般认识的密码／密钥类似保险柜，你设置密码成0335，那么打开的密码也是0335，这种叫做对称密钥，也就是开锁和关锁用的是同一个密码。另外一种关闭的密码与打开的密码不同，叫做非对称密钥。在网络传输中，如果你要和其他人传输一段重要的信息，例如你最怕的蔬菜的名字。你想要加密传输，那么你可以把这段信息通过密钥加密，例如你要传输的是
 芹菜，苦瓜，香菜  </description>
     </item>
     
     <item>
-      <title>编程语言选择</title>
+      <title>编程语言选择（未完成）</title>
       <link>https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E9%80%89%E6%8B%A9/</link>
       <pubDate>Tue, 27 Feb 2018 00:10:14 +0800</pubDate>
       
