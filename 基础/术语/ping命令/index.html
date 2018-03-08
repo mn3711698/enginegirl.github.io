@@ -13,19 +13,19 @@
     <title>Ping命令 :: Engine GO</title>
     
     
-    <link href="/css/nucleus.css?1520512647" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1520512647" rel="stylesheet">
-    <link href="/css/hybrid.css?1520512647" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1520512647" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1520512647" rel="stylesheet">
-    <link href="/css/auto-complete.css?1520512647" rel="stylesheet">
-    <link href="/css/theme.css?1520512647" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1520512647" rel="stylesheet">
+    <link href="/css/nucleus.css?1520514323" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1520514323" rel="stylesheet">
+    <link href="/css/hybrid.css?1520514323" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1520514323" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1520514323" rel="stylesheet">
+    <link href="/css/auto-complete.css?1520514323" rel="stylesheet">
+    <link href="/css/theme.css?1520514323" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1520514323" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1520512647" rel="stylesheet">
+      <link href="/css/theme-blue.css?1520514323" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1520512647"></script>
+    <script src="/js/jquery-2.x.min.js?1520514323"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -53,15 +53,15 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1520512647"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1520512647"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1520514323"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1520514323"></script>
 <script type="text/javascript">
     
         
         var baseurl = "https://www.enginego.org";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1520512647"></script>
+<script type="text/javascript" src="/js/search.js?1520514323"></script>
 
     
   </div>
@@ -775,7 +775,7 @@
 <ul>
 <li>
 <ul>
-<li><a href="#网络诊断">网络诊断</a></li>
+<li><a href="#如何网络诊断">如何网络诊断</a></li>
 <li><a href="#ping指令实际是如何实现的">ping指令实际是如何实现的</a></li>
 </ul></li>
 </ul></li>
@@ -837,9 +837,9 @@ Request timeout for icmp_seq 3
 <p>这就代表连接超时，访问失败。原因有可能是本地计算机网络问题，也有可能是对应的服务器关闭或者不响应ping指令。</p>
 </blockquote>
 
-<h4 id="网络诊断">网络诊断</h4>
+<h4 id="如何网络诊断">如何网络诊断</h4>
 
-<p>当我们要连接互联网的时候，无论使用手机还是计算机，一般都要经过网关（路由器或者交换机），网关接受到请求包的时候然后经过NAT转换再连接到互联网。通常的网络诊断流程。</p>
+<p>当我们要连接互联网的时候，无论使用手机还是计算机，一般都要经过网关（路由器或者交换机），网关接受到请求包的时候经过NAT转换再连接到互联网。通常的网络诊断流程。</p>
 
 <ol>
 <li><p>确认计算机到路由器的连接是否正常</p>
@@ -868,16 +868,18 @@ Request timeout for icmp_seq 3
     服务器关闭或者不响应ping指令
 </code></pre>
 
+<p>我们可以从这两步判断网络到底哪里出现了问题</p>
+
 <h4 id="ping指令实际是如何实现的">ping指令实际是如何实现的</h4>
 
-<p>其实ping，包括我们每天在用的HTTP请求，都是客户端（我们的ping程序）根据约定好的<a href="./协议/">协议规则</a>发送二进制数据到服务器，然后服务器再根据协议规则获取到二进制数据中的设置与数据。</p>
+<p>ping指令使用的是ICMP协议，就像我们每天在用的HTTP协议，客户端（我们的ping程序）根据约定好的<a href="./协议/">协议规则</a>发送二进制数据到服务器，然后服务器根据协议规则解析二进制数据中的设置与数据。 数据里面会指定使用第几个版本，发送请求的IP地址，接受请求的地址等等，如果大家对wireshark有了解，可以尝试打开wireshark之后再执行ping指令，然后查找ICMP协议对应的数据传输。</p>
 
-<p>这里出于方便显示转换成十六进制，当我使用计算机运行</p>
+<p>当我使用计算机运行（这里出于方便显示把传输的数据转换成十六进制）</p>
 
 <pre><code>ping www.enginggo.org
 </code></pre>
 
-<p>实际发送的是：</p>
+<p>实际发送的数据是：</p>
 
 <pre><code>0000   b0 7f b9 a3 68 36 98 e0 d9 9d a3 8f 08 00 45 00
 0010   00 54 69 21 00 00 40 01 6f 64 c0 a8 01 58 68 18
@@ -889,9 +891,15 @@ Request timeout for icmp_seq 3
 0060   36 37
 </code></pre>
 
-<p>数据里面指定了版本，发送请求的IP地址，接受请求的地址等等，如果大家对wireshark有了解，可以尝试打开wireshark之后再执行ping指令，然后查找ICMP协议对应的数据传输。</p>
+<p><img src="https://raw.githubusercontent.com/EngineGirl/enginegirl.github.io/master/images/ping/ping_wireshark.png" alt="ping_wireshark" /></p>
 
-<p>![ping_wireshark]()</p>
+<p>可以看到数据中包含了发送的类别，校验和，发送程序的进程编号，IP地址等等，例如</p>
+
+<blockquote>
+<p>c0 a8 01 58对应着10进制的192 168 1 88，也就是我的计算机的IP地址</p>
+</blockquote>
+
+<p>注意ping指令是不需要指定端口的，它是根据协议头部信息纪录的进程编号来辨识返回的数据的。</p>
 
 
 <footer class=" footline" >
@@ -1421,20 +1429,20 @@ Request timeout for icmp_seq 3
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1520512647"></script>
-    <script src="/js/perfect-scrollbar.min.js?1520512647"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1520512647"></script>
-    <script src="/js/jquery.sticky.js?1520512647"></script>
-    <script src="/js/featherlight.min.js?1520512647"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1520512647"></script>
-    <script src="/js/highlight.pack.js?1520512647"></script>
+    <script src="/js/clipboard.min.js?1520514323"></script>
+    <script src="/js/perfect-scrollbar.min.js?1520514323"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1520514323"></script>
+    <script src="/js/jquery.sticky.js?1520514323"></script>
+    <script src="/js/featherlight.min.js?1520514323"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1520514323"></script>
+    <script src="/js/highlight.pack.js?1520514323"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1520512647"></script>
-    <script src="/js/learn.js?1520512647"></script>
-    <script src="/js/hugo-learn.js?1520512647"></script>
+    <script src="/js/modernizr.custom.71422.js?1520514323"></script>
+    <script src="/js/learn.js?1520514323"></script>
+    <script src="/js/hugo-learn.js?1520514323"></script>
 
-    <link href="/mermaid/mermaid.css?1520512647" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1520512647"></script>
+    <link href="/mermaid/mermaid.css?1520514323" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1520514323"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
