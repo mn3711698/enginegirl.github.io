@@ -13,19 +13,19 @@
     <title>理解字符串编码 :: Engine GO</title>
     
     
-    <link href="/css/nucleus.css?1520780322" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1520780322" rel="stylesheet">
-    <link href="/css/hybrid.css?1520780322" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1520780322" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1520780322" rel="stylesheet">
-    <link href="/css/auto-complete.css?1520780322" rel="stylesheet">
-    <link href="/css/theme.css?1520780322" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1520780322" rel="stylesheet">
+    <link href="/css/nucleus.css?1520782329" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1520782329" rel="stylesheet">
+    <link href="/css/hybrid.css?1520782329" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1520782329" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1520782329" rel="stylesheet">
+    <link href="/css/auto-complete.css?1520782329" rel="stylesheet">
+    <link href="/css/theme.css?1520782329" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1520782329" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1520780322" rel="stylesheet">
+      <link href="/css/theme-blue.css?1520782329" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1520780322"></script>
+    <script src="/js/jquery-2.x.min.js?1520782329"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -53,15 +53,15 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1520780322"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1520780322"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1520782329"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1520782329"></script>
 <script type="text/javascript">
     
         
         var baseurl = "https://www.enginego.org";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1520780322"></script>
+<script type="text/javascript" src="/js/search.js?1520782329"></script>
 
     
   </div>
@@ -826,7 +826,7 @@
 <pre><code>UnicodeDecodeError: 'ascii' codec can't decode byte 0xc4
 </code></pre>
 
-<p>或多或少也遇到Unicode, UTF-8, ASCII, Latin-1这些编码术语。要真正地理解字符串编码，必须要了解计算机的一些基础知识，例如字符串如何存储与转换。如果只是希望靠运气来解决或者避开它，反而会在一次次盲目的尝试中浪费更多的时间。</p>
+<p>同时或多或少也遇到Unicode, UTF-8, ASCII, Latin-1这些编码术语。要真正地理解字符串编码，必须要了解计算机的一些基础知识，例如字符串如何存储与转换。如果只是希望靠运气来解决或者避开它，反而会在一次次盲目的尝试中浪费更多的时间。</p>
 
 <ol>
 <li><a href="#基础术语">基础术语</a></li>
@@ -881,7 +881,7 @@
 
 <h4 id="字符串编码与解码">字符串编码与解码</h4>
 
-<p>字符串编码值将字符串按照一定的模式（例如按照键值表(Hash Table)的转换）转换成二进制数字，然后显示或者存储。如果按照上面的键值表，要把字符串&rdquo;123&rdquo;存储起来的话，先要转换成对应的&rdquo;2, 4, 6&rdquo;。因为计算机实际存储的是二进制数据，所以最终存储的值是</p>
+<p>编码指将字符串按照一定的模式（例如按照键值表的转换）转换成二进制数字，然后显示或者存储。如果按照上面的键值表，要把字符串&rdquo;123&rdquo;存储起来的话，先要转换成对应的&rdquo;246&rdquo;。因为计算机实际存储的是二进制数据，所以最终存储的值是</p>
 
 <pre><code>0010 0100 0110
    2    4    6
@@ -942,7 +942,7 @@
   B   E   E 
 </code></pre>
 
-<p>当再次使用文件编辑器打开这个文件，计算机会猜测应该使用哪个表来把二进制数据还原为字符串，如果它猜对了，使用EngineGo表还原的话，就会重新得到&rdquo;BEE&rdquo;。不过如果计算机猜错了，使用其他键值表来打开这个文件的话，那么就会还原不到&rdquo;BEE&rdquo;，最终得到的是根据它使用的键值表对应的内容，可能会报错，也可能是乱码。</p>
+<p>当读取文件的时候，计算机会猜测应该使用哪个表来把二进制数据还原为字符串，如果它猜对了，使用EngineGo表还原的话，就会重新得到&rdquo;BEE&rdquo;这个字符串。不过如果计算机猜错了，使用其他键值表来打开这个文件的话，最终可能会报错，也可能是乱码。</p>
 
 <p>理解了这个之后，其实就很容易理解字符串编码和解码了！</p>
 
@@ -950,7 +950,7 @@
 
 <h3 id="ascii编码">ASCII编码</h3>
 
-<p>3位二进制数字只能表达8个不同的字符，明显不够存储英文一共100多个字符，最简单的解决方案就是使用更多的位来保存，7位能表示128个字符，加多1位用作错误检查。最后选择使用8位来存储字符，称为一个字节。而且计算机更喜欢处理8位为基数的数字（我们现在的计算机一般都是64位或者32位的）。8位数字对应的表就更长了（为了方便阅读把二进制转换成了十进制）：</p>
+<p>3位二进制数字只能表达8个不同的字符，明显不够存储英文一共100多个字符，最简单的解决方案就是使用更多的位来保存，7位能表示128个字符，加多1位用作错误检查。最后选择使用8位来存储字符，称为一个字节。8位数字对应的表就更长了（为了方便阅读把二进制转换成了十进制）：</p>
 
 <table>
 <thead>
@@ -1367,7 +1367,7 @@ Traceback (most recent call last):
 UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-1: ordinal not in range(128)
 </code></pre>
 
-<p>同理，使用ASCII解码就无法解析你使用GBK编码保存的二进制数据</p>
+<p>同理，使用ASCII解码就无法解析使用GBK编码保存的二进制数据</p>
 
 <pre><code>&gt;&gt;&gt; b'\xc4\xe3\xba\xc3'.decode('ascii')
 Traceback (most recent call last):
@@ -1391,7 +1391,7 @@ Traceback (most recent call last):
 UnicodeDecodeError: 'ascii' codec can't decode byte 0xc4 in position 0: ordinal not in range(128)
 </code></pre>
 
-<p>在上面的例子“你好”经过GBK编码变成4个字节，之后用日本的Shift JIS版本能显示出来，这个情况下虽然没有报错，但是显然不是我们想要的内容。只是Shift JIS中刚好有这4个字节对应的字符串而已，如果我们用ASCII表来解码，就会因为找不到对应的字符串而报错。</p>
+<p>在上面的例子“你好”经过GBK编码变成4个字节，之后用日本的Shift JIS版本能显示出来，这个情况下虽然没有报错，但是计算机也不知道他猜错了，因为这显然不是我们存储的内容。只是Shift JIS中刚好有这4个字节对应的字符串而已，如果我们用ASCII表来解码，就会因为找不到对应的字符串而报错。</p>
 
 <h4 id="unicode">Unicode</h4>
 
@@ -1444,7 +1444,7 @@ Unicode特别的地方，它只指定了表示形式，而存储形式则可以�
 
 <h3 id="总结">总结</h3>
 
-<p>UTF-8编码是现在标准的解决方案，当遇到乱码或者编码出错的时候，先想想原本数据是有什么编码存储的，有没有用对应的方法解码。</p>
+<p>UTF-8编码是现在标准的解决方案，当遇到乱码或者编码出错的时候，先想想原本数据是用什么编码存储的，然后使用对应的方式解码就好。单纯从二进制数据是无法判断它是用什么编码存储的。</p>
 
 
 <footer class=" footline" >
@@ -1974,20 +1974,20 @@ Unicode特别的地方，它只指定了表示形式，而存储形式则可以�
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1520780322"></script>
-    <script src="/js/perfect-scrollbar.min.js?1520780322"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1520780322"></script>
-    <script src="/js/jquery.sticky.js?1520780322"></script>
-    <script src="/js/featherlight.min.js?1520780322"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1520780322"></script>
-    <script src="/js/highlight.pack.js?1520780322"></script>
+    <script src="/js/clipboard.min.js?1520782329"></script>
+    <script src="/js/perfect-scrollbar.min.js?1520782329"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1520782329"></script>
+    <script src="/js/jquery.sticky.js?1520782329"></script>
+    <script src="/js/featherlight.min.js?1520782329"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1520782329"></script>
+    <script src="/js/highlight.pack.js?1520782329"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1520780322"></script>
-    <script src="/js/learn.js?1520780322"></script>
-    <script src="/js/hugo-learn.js?1520780322"></script>
+    <script src="/js/modernizr.custom.71422.js?1520782329"></script>
+    <script src="/js/learn.js?1520782329"></script>
+    <script src="/js/hugo-learn.js?1520782329"></script>
 
-    <link href="/mermaid/mermaid.css?1520780322" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1520780322"></script>
+    <link href="/mermaid/mermaid.css?1520782329" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1520782329"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
