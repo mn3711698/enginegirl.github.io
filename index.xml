@@ -248,18 +248,24 @@ C:\whatever\sunkist\:  就可以</description>
       <guid>https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/%E7%BB%88%E7%AB%AF/</guid>
       <description>作者：Windson Yang
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处（www.enginego.org）。
-终端是一个可以通过命令行执行其他程序的程序 如果你曾经用过DOS系统，对这张图片应该不会陌生： (图片来源维基百科)
-如果你没有接触过DOS这样久远的系统，你可以尝试先打开自己计算机的终端
-macOS: 同时按住&amp;quot;control&amp;quot;+&amp;quot;space&amp;quot;键，在搜索框输入termianl，&amp;quot;回车&amp;quot; Windows 7：打开&amp;quot;开始&amp;quot;菜单，在搜索框里输入cmd，&amp;quot;回车&amp;quot; Windows 8+：同时按住&amp;quot;win&amp;quot;+&amp;quot;Q&amp;quot;键，然后在弹出的搜索框里输入cmd，&amp;quot;回车&amp;quot;  成功打开之后你会看到计算机打开了一个类似上面图片的一个程序。光标会停留在某一行。类似：
-WindsondeMacBook-Air:~ windson$ |  接下来你可以通过这个程序执行不同的程序。基本所有编程语言（Python，C，C++）都可以通过终端来执行。你可以理解终端是一个执行其他程序的程序。 你在电影里面看到一个很酷的黑客对着一个黑的屏幕疯狂敲键盘，一般他们使用的就是这个程序。 当你看到这样的界面的时候，可以尝试输入一个命令，然后让终端执行。
-macOS: &amp;quot;ls&amp;quot;+&amp;quot;回车&amp;quot; Windows: &amp;quot;dir&amp;quot;+&amp;quot;回车&amp;quot;  输入回车之后，你会发现终端显示出了一些文字，仔细观察的话你会发现其实是你电脑中某个目录下的文件。ls/dir这个命令就是用作*列出当前目录的文件*，当然这个命令还有很多参数，也就是你可以告诉计算机显示什么文件（隐藏／非隐藏），显示文件的什么内容（创建日期，大小），ls回车只会调用一个常用的默认配置，假如你想把隐藏文件也显示的话，在终端输入
-macOS: &amp;quot;ls -a&amp;quot;+&amp;quot;回车&amp;quot; Windows: &amp;quot;dir -a&amp;quot;+&amp;quot;回车&amp;quot;  终端还有很多其他指令，大家可以参照自己的操作系统找相应的命令。除此之外，终端还可以执行其他程序，我们习惯了图形界面双击图标打开一个应用（或者称为快捷方式），计算机先通过后续名猜测需要用什么方式打开或者运行这个文件，如果是图片的话，计算机就会用图片浏览器打开，如果是可执行文件（Windows下的exe后缀），计算机会先找到该应用的位置，然后运行这个应用，这个可执行文件里面包含了应用运行需要加载哪些资源，如何运行。在终端的话，如果要运行一个Python语言写的程序hello.py。在安装好Python之后可以直接输入
-Python3 hello.py  其实就是告诉计算机用什么程序（Python）执行什么文件（hello.py）
-终端小tips ctrl + c ctrl + d ctrl + z ctrl + a/e/u/k  为什么要用终端 以前的计算机根本没有图形界面，只能对着这样黑乎乎的界面一行行输入指令，然后祈祷它不会出错。既然现在已经有图形界面了，为什么我们还需要学习用终端呢？
- 多功能，一般一个软件只会专注于一个功能，例如Word进行文字编辑，PowerPoint进行幻灯片编辑。但是你可以通过终端让计算机调用不同的程序完成多种多样的功能。
- 方便，对，一开始可能难以置信，但是使用终端确实比图形界面（GUI，也就是我们平时看到的带有按钮以及经过设计的界面）要方便。你可能也会曾经遇过某一款软件更新，你找不到原本功能的按钮在哪里了。（例如某段时间Windows系统就把把“开始”菜单隐藏了。或者应用程序更新你找不到原本的功能按钮在哪里。）使用命令（例如上面的&amp;rdquo;ls&amp;rdquo;／&amp;rdquo;dir&amp;rdquo;）的话即使更新你也不需要担心，当然一开始你会要记住这些指令。
- 高效，跨平台，跨机器，例如你要删除一个文件夹中（可能包含子文件夹）超过10天之前创建的所有文件，一般来说的话你需要一个个文件夹找，然后对每个文件夹里的文件进行时间排序，再手动删除，如果里面包含了100个文件夹那么会费很多时间，同时也容易出错。使用终端的话可以直接运行
-find /path/to/base/dir/* -type f -ctime +10 -delete   而且只要跑同一个系统就不用担心命令会执行出错。（不用担心Word2003与Wrod2007的兼容问题）</description>
+使用终端是我们开始编程的第一步，无论是运行程序，或者了解计算机的基本信息都需要用到。让我们愉快地和它玩耍把。
+![have_fun]()
+ 终端的用途 为什么要用终端  终端的用途 我们平时习惯了图形界面，例如双击图标打开一个文件，计算机会先通过后续名(.jpg，.png, .txt)去猜测用什么程序打开或者运行文件，如果是图片的话，计算机就会用图片浏览器打开，如果是可执行文件（macOS下的dmg后缀文件，Windows下的exe后缀文件），计算机会先找到该应用的在硬盘中的位置，然后根据可执行文件里面包含的信息（需要加载什么资源）来运行程序。例如，当计算机安装了python程序之后，在终端输入：
+python hello.py  就是让计算机使用python程序来运行hello.py这个文件。
+简单总结，终端是一个可以通过命令来执行其他程序的程序。
+你可以尝试先打开自己计算机的终端：
+ macOS: 同时按住&amp;rdquo;control&amp;rdquo;+&amp;ldquo;space&amp;rdquo;键，在搜索框输入termianl，&amp;rdquo;回车&amp;rdquo;
+Windows 7：打开&amp;rdquo;开始&amp;rdquo;菜单，在搜索框里输入cmd，&amp;rdquo;回车&amp;rdquo;
+Windows 8+：同时按住&amp;rdquo;win&amp;rdquo;+&amp;ldquo;Q&amp;rdquo;键，然后在弹出的搜索框里输入cmd，&amp;rdquo;回车&amp;rdquo;
+ 成功打开之后你会看到计算机打开了一个类似上面图片的一个程序。光标会停留在某一行。类似：
+WindsondeMacBook-Air:~ windson$ |  接下来你可以通过这个程序执行不同的程序。要使用这个程序的话也需要使用指定的命令，统称为bash。你可以尝试输入一个命令，然后让终端执行。
+ macOS: &amp;ldquo;ls&amp;rdquo;+&amp;ldquo;回车&amp;rdquo;
+Windows: &amp;ldquo;dir&amp;rdquo;+&amp;ldquo;回车&amp;rdquo;
+ 输入回车之后，你会发现终端显示出了一些文字，仔细观察的话你会发现其实是你电脑中某个目录下的文件。ls/dir这个命令就是列出当前目录的文件。 当然这个命令还有很多参数，也就是你可以告诉计算机显示什么文件（隐藏／非隐藏），显示文件的详细内容（创建日期，大小），ls/dir只会调用一个常用的默认配置，假如你想把隐藏文件也显示的话，在终端输入
+ macOS: &amp;ldquo;ls -a&amp;rdquo;+&amp;ldquo;回车&amp;rdquo;
+Windows: &amp;ldquo;dir -a&amp;rdquo;+&amp;ldquo;回车&amp;rdquo;
+ 终端还有很多其他命令，例如ping命令可以用作网络诊断。
+ping www.apple.com 64 bytes from 27.148.139.136: icmp_seq=0 ttl=54 time=21.056 ms 64 bytes from 27.148.139.136: icmp_seq=1 ttl=54 time=21.575 ms 64 bytes from 27.</description>
     </item>
     
     <item>

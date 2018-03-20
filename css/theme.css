@@ -1,4 +1,6 @@
 @charset "UTF-8";
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
+
 #top-github-link, #body #breadcrumbs {
     position: relative;
     top: 50%;
@@ -25,7 +27,7 @@
 @font-face {
     font-family: 'Work Sans';
     font-style: normal;
-    font-weight: 300;
+    font-weight: 400;
     src: url("../fonts/Work_Sans_300.eot?#iefix") format("embedded-opentype"), url("../fonts/Work_Sans_300.woff") format("woff"), url("../fonts/Work_Sans_300.woff2") format("woff2"), url("../fonts/Work_Sans_300.svg#WorkSans") format("svg"), url("../fonts/Work_Sans_300.ttf") format("truetype");
 }
 @font-face {
@@ -146,7 +148,7 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
     border: 0;
     padding: 0 25px 0 30px;
     margin: 0;
-    font-weight: 300;
+    font-weight: 400;
 }
 .searchbox input::-webkit-input-placeholder {
     color: rgba(255, 255, 255, 0.6);
@@ -423,8 +425,8 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
     max-width: 80%;
 }
 #chapter h3 {
-    font-family: "Work Sans", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
-    font-weight: 300;
+    font-family: "Roboto", "Work Sans", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    font-weight: 400;
     text-align: center;
 }
 #chapter h1 {
@@ -444,13 +446,13 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
     margin: 0;
 }
 body {
-    font-family: "Work Sans", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
-    font-weight: 300;
+    font-family: "Roboto", "Work Sans", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    font-weight: 400;
     line-height: 1.6;
     font-size: 18px !important;
 }
 h2, h3, h4, h5, h6 {
-    font-family: "Work Sans", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    font-family: "Roboto", "Work Sans", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
     text-rendering: optimizeLegibility;
     color: #5e5e5e;
     font-weight: 400;
@@ -797,7 +799,7 @@ td {
     z-index: 1000000;
     display: none;
     padding: 5px 8px;
-    font: normal normal 11px/1.5 "Work Sans", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    font: normal normal 11px/1.5 "Roboto", "Work Sans", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
     color: #fff;
     text-align: center;
     text-decoration: none;
