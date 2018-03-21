@@ -18,12 +18,12 @@
       
       <guid>https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/ping%E5%91%BD%E4%BB%A4/</guid>
       <description>作者：Windson Yang
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处（www.enginego.org）。
-有时候当我们无法上网，会计算机的朋友会说，你ping一下网关，或者你ping一个网站看看。ping这个命令，其实是操作系统自带的命令之一，你在终端中输入ping加上域名／网关地址
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处 (www.enginego.org)。
+ 基础版 进阶版  基础版 什么是ping命令 有时候当我们无法上网，会计算机的朋友会说，你ping一下网关，或者你ping一个网站看看。ping这个命令，其实是操作系统自带的命令之一，如果在终端中输入：
 ping www.enginggo.org  正常的话会返回：
-64 bytes from 104.24.121.11: icmp_seq=0 ttl=54 time=170.383 ms 64 bytes from 104.24.121.11: icmp_seq=1 ttl=54 time=170.053 ms 64 bytes from 104.24.121.11: icmp_seq=2 ttl=54 time=171.298 ms 64 bytes from 104.24.121.11: icmp_seq=3 ttl=54 time=170.352 ms 64 bytes from 104.24.121.11: icmp_seq=4 ttl=54 time=170.636 ms ...   从我的计算机发送64个字节的数据到104.24.121.11（这个是经过DNS查询后的www.enginego.org的ip地址，从发送到接受对方返回总共经过了170.xxx毫秒。代表www.enginego.org对应的那台服务器是开启并且响应ping指令的。
- 如果返回：
-PING www.enginego.org (104.24.121.11): 56 data bytes Request timeout for icmp_seq 0 Request timeout for icmp_seq 1 Request timeout for icmp_seq 2 Request timeout for icmp_seq 3   这就代表连接超时，访问失败。原因有可能是本地计算机网络问题，也有可能是对应的服务器关闭或者不响应ping指令。</description>
+64 bytes from 104.24.121.11: icmp_seq=0 ttl=54 time=170.383 ms 64 bytes from 104.24.121.11: icmp_seq=1 ttl=54 time=170.053 ms 64 bytes from 104.24.121.11: icmp_seq=2 ttl=54 time=171.298 ms 64 bytes from 104.24.121.11: icmp_seq=3 ttl=54 time=170.352 ms 64 bytes from 104.24.121.11: icmp_seq=4 ttl=54 time=170.636 ms ...  从我的计算机发送64个字节的数据到104.24.121.11 (这个是经过DNS查询后的www.enginego.org的ip地址)，从发送到接受对方返回总共经过了170.xxx毫秒。代表www.enginego.org对应的那台服务器是开启并且响应ping指令的。
+如果返回：
+PING www.enginego.org (104.24.121.11): 56 data bytes Request timeout for icmp_seq 0 Request timeout for icmp_seq 1 Request timeout for icmp_seq 2 Request timeout for icmp_seq 3  这就代表连接超时，访问失败。原因有可能是本地计算机网络问题，也有可能是对应的服务器关闭或者不响应ping指令。</description>
     </item>
     
     <item>
@@ -241,7 +241,7 @@ C:\whatever\sunkist\:  就可以</description>
     </item>
     
     <item>
-      <title>终端，命令行, shell</title>
+      <title>终端，命令行</title>
       <link>https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/%E7%BB%88%E7%AB%AF/</link>
       <pubDate>Mon, 08 Jan 2018 00:10:14 +0800</pubDate>
       
@@ -249,22 +249,25 @@ C:\whatever\sunkist\:  就可以</description>
       <description>作者：Windson Yang
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处（www.enginego.org）。
 使用终端是我们开始编程的第一步，无论是运行程序，或者了解计算机的基本信息都需要用到。让我们愉快地和它玩耍把。
- 终端的用途 为什么要用终端  终端的用途 我们平时习惯了图形界面，例如双击图标打开一个文件，计算机会先通过后续名(.jpg，.png, .txt)去猜测用什么程序打开或者运行文件，如果是图片的话，计算机就会用图片浏览器打开，如果是可执行文件（macOS下的dmg后缀文件，Windows下的exe后缀文件），计算机会先找到该应用的在硬盘中的位置，然后根据可执行文件里面包含的信息（需要加载什么资源）来运行程序。例如，当计算机安装了python程序之后，在终端输入：
-python hello.py  就是让计算机使用python程序来运行hello.py这个文件。
-简单总结，终端是一个可以通过命令来执行其他程序的程序。
-你可以尝试先打开自己计算机的终端：
+ 基础版 进阶版  基础版  什么是终端 为什么要用终端  什么是终端 图形界面 我们平时习惯了使用图形界面，当我们双击图标打开文件，计算机会先通过后续去猜测用什么程序运行文件，如果是图片(.jpg, .png)的话，计算机就会用图片浏览器打开，如果是可执行文件(macOS下的dmg后缀文件，Windows下的exe后缀文件)，计算机会先找到该应用的在硬盘中的位置，然后根据可执行文件里面包含的信息（需要加载什么资源）来运行程序。
+命令行界面 在计算机刚开始发展的时候，并没有那么容易上手的操作界面，大家都是通过一个黑乎乎的程序输入命令，然后等待计算机执行。它有点像：
+![terminal]()
+这时候如果你需要打开一个文件，如果它是短文本文件，需要用cat指令：
+cat normal.txt  如果是图片的话，对不起，没有办法。:&amp;lt; 如果要运行一个python的hello程序，在安装了python软件之后，在终端直接输入
+python hello.py  到最后，你会发现图形界面与命令行界面本质是一样的，运行程序或者打开文件都需要 1. 安装对应的软件 2. 指定用什么程序来运行（图形界面会根据后缀名帮你选择用什么程序来打开。）
+亲自试试吧 你可以尝试先打开自己计算机的终端：
  macOS: 同时按住&amp;rdquo;control&amp;rdquo;+&amp;ldquo;space&amp;rdquo;键，在搜索框输入termianl，&amp;rdquo;回车&amp;rdquo;
 Windows 7：打开&amp;rdquo;开始&amp;rdquo;菜单，在搜索框里输入cmd，&amp;rdquo;回车&amp;rdquo;
 Windows 8+：同时按住&amp;rdquo;win&amp;rdquo;+&amp;ldquo;Q&amp;rdquo;键，然后在弹出的搜索框里输入cmd，&amp;rdquo;回车&amp;rdquo;
- 成功打开之后你会看到计算机打开了一个类似上面图片的一个程序。光标会停留在某一行。类似：
-WindsondeMacBook-Air:~ windson$ |  接下来你可以通过这个程序执行不同的程序。要使用这个程序的话也需要使用指定的命令，统称为bash。你可以尝试输入一个命令，然后让终端执行。
+ 成功打开之后，光标会停留在某一行。类似：
+WindsondeMacBook-Air:~ windson$ |  因为和计算机交互需要遵守一定的指令规则，终端默认会运行一个程序，常见的是bash或者sh，你可以尝试输入一个命令，然后让终端执行。
  macOS: &amp;ldquo;ls&amp;rdquo;+&amp;ldquo;回车&amp;rdquo;
 Windows: &amp;ldquo;dir&amp;rdquo;+&amp;ldquo;回车&amp;rdquo;
  输入回车之后，你会发现终端显示出了一些文字，仔细观察的话你会发现其实是你电脑中某个目录下的文件。ls/dir这个命令就是列出当前目录的文件。 当然这个命令还有很多参数，也就是你可以告诉计算机显示什么文件（隐藏／非隐藏），显示文件的详细内容（创建日期，大小），ls/dir只会调用一个常用的默认配置，假如你想把隐藏文件也显示的话，在终端输入
  macOS: &amp;ldquo;ls -a&amp;rdquo;+&amp;ldquo;回车&amp;rdquo;
 Windows: &amp;ldquo;dir -a&amp;rdquo;+&amp;ldquo;回车&amp;rdquo;
  终端还有很多其他命令，例如ping命令可以用作网络诊断。
-ping www.apple.com 64 bytes from 27.148.139.136: icmp_seq=0 ttl=54 time=21.056 ms 64 bytes from 27.148.139.136: icmp_seq=1 ttl=54 time=21.575 ms 64 bytes from 27.</description>
+ping www.apple.com 64 bytes from 27.</description>
     </item>
     
     <item>
