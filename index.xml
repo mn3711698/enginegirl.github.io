@@ -221,33 +221,6 @@ y = x * 2  每个x都对应着唯一的一个y值，x与y组成的集合就是�
     </item>
     
     <item>
-      <title>相对路径，绝对路径</title>
-      <link>https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/%E8%B7%AF%E5%BE%84/</link>
-      <pubDate>Mon, 08 Jan 2018 00:10:14 +0800</pubDate>
-      
-      <guid>https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/%E8%B7%AF%E5%BE%84/</guid>
-      <description>作者：Windson Yang
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处（www.enginego.org）。
-当前路径 当你打开终端的时候，会看到例如：
-Windsons C:\usr\foo\: OSX WindsondeMacBook-Air:/usr/foo/  这里的&amp;rdquo;C:\usr\foo\&amp;ldquo;和&amp;rdquo;/usr/foo/&amp;ldquo;指当前执行指令的路径。也就是你的*当前路径*，你在终端中输入的指令，默认针对的就是当前路径，假如你输入&amp;rdquo;ls&amp;rdquo;(macOX)/&amp;ldquo;dir&amp;rdquo;(Windows)，计算机会理解成&amp;rdquo;ls/dir /usr/foo/&amp;ldquo;，所以会列出*当前路径中&amp;rdquo;/usr/foo/&amp;ldquo;下面的所有文件。
-那什么是绝对路径和相对路径呢？ 举个现实生活的例子： Cherry在路上遇到Sunkist，它问Sunkist的公司地址在哪里，Sunkist可能有两种答案：
- 中国广东省广州市思哲路石室大厦 以这里为起点，西南方向500米的石室大厦  这两个答案都正确，第一个答案从国家到省份城市巨细无遗地描述称为绝对路径， 第二个答案以当前的位置为起点所描述的称为相对路径。
-例如：foo文件夹的绝对路径是
-C:\Administor\foo\  你想要列出这个文件夹里面的所有文件，你可以告诉计算机这个文件夹的完整地址，也就是绝对路径
-dir C:\Administor\foo\  也可以根据当前自己的位置找这个文件（这时候输入的就是相对路径），假如你打开终端，当前路径是
-C:\Administor\bar\:  那么你也可以这样列出：
-dir ..\foo\  在路径命令中&amp;rdquo;.&amp;ldquo;以及&amp;rdquo;..&amp;ldquo;这两个符号有特殊意义，分别代表当前路径以及上一级目录，也就是说如果你当前路径是：
-C:\Administor\bar\  那么
-.\ = C:\Administor\bar\ ..\ = C:\Administor\  当我们要找这个文件夹
-C:\Administor\foo\  需要先回到上一层目录
-dir ..\  然后再使用cd命令进入bar目录
-cd bar\  如何切换路径 可以使用cd指令
-cd [PATH]  这里的path既可以是绝对路径也可以是相对路径，如果当前路径为：
-C:\Administor\foo\:  你要跳到
-C:\whatever\sunkist\:  就可以</description>
-    </item>
-    
-    <item>
       <title>终端</title>
       <link>https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/%E7%BB%88%E7%AB%AF/</link>
       <pubDate>Mon, 08 Jan 2018 00:10:14 +0800</pubDate>
@@ -257,12 +230,11 @@ C:\whatever\sunkist\:  就可以</description>
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处（www.enginego.org）。
 使用终端是我们开始编程的第一步，无论是运行程序，或者了解计算机的基本信息都需要用到。让我们愉快地和它玩耍把。
  基础版 进阶版  基础版  什么是终端 为什么要用终端  什么是终端 图形界面 我们平时习惯了使用图形界面，当我们双击图标打开文件，计算机会先通过后续去猜测用什么程序运行文件，如果是图片(.jpg, .png)的话，计算机就会用图片浏览器打开，如果是可执行文件(macOS下的dmg后缀文件，Windows下的exe后缀文件)，计算机会先找到该应用的在硬盘中的位置，然后根据可执行文件里面包含的信息（需要加载什么资源）来运行程序。
-命令行界面 在计算机刚开始发展的时候，并没有那么容易上手的操作界面，大家都是通过一个黑乎乎的程序输入命令，然后等待计算机执行。它有点像：
-![terminal]()
-这时候如果你需要打开一个文件，如果它是短文本文件，需要用cat指令：
-cat normal.txt  如果是图片的话，需要安装额外的组件。:&amp;lt; 如果要运行一个python的hello程序，在安装了python软件之后，在终端直接输入
-python hello.py  到最后，你会发现图形界面与命令行界面本质是一样的，运行程序或者打开文件都需要 1. 安装对应的软件 2. 指定用什么程序来运行（图形界面会根据后缀名帮你选择用什么程序来打开。）
-亲自试试吧 你可以尝试先打开自己计算机的终端：
+命令行界面 在计算机刚开始发展的时候，并没有那么容易上手的操作界面，大家都是通过一个黑乎乎的程序输入命令，然后等待计算机执行。
+这时候如果你需要打开一个名为normal.txt的文本文件，可以用cat命令：
+cat normal.txt  要打开图片的话，需要安装额外的软件来打开。如果要运行一个python的hello.py程序，在安装了python软件之后，在终端直接输入
+python hello.py  其实，图形界面与命令行界面运行的本质是一样的，运行程序或者打开文件：
+ 安装对应的软件 指定程序运行 (图形界面会根据后缀名帮你选择用什么程序来打开。)  亲自试试吧 你可以尝试先打开自己计算机的终端：
  macOS: 同时按住&amp;rdquo;control&amp;rdquo;+&amp;ldquo;space&amp;rdquo;键，在搜索框输入termianl，&amp;rdquo;回车&amp;rdquo;
 Windows 7：打开&amp;rdquo;开始&amp;rdquo;菜单，在搜索框里输入cmd，&amp;rdquo;回车&amp;rdquo;
 Windows 8+：同时按住&amp;rdquo;win&amp;rdquo;+&amp;ldquo;Q&amp;rdquo;键，然后在弹出的搜索框里输入cmd，&amp;rdquo;回车&amp;rdquo;
@@ -273,7 +245,30 @@ Windows: &amp;ldquo;dir&amp;rdquo;+&amp;ldquo;回车&amp;rdquo;
  输入回车之后，你会发现终端显示出了一些文字，仔细观察的话你会发现其实是你电脑中某个目录下的文件。ls/dir这个命令就是列出当前目录的文件。 当然这个命令还有很多参数，也就是你可以告诉计算机显示什么文件（隐藏／非隐藏），显示文件的详细内容（创建日期，大小），ls/dir只会调用一个常用的默认配置，假如你想把隐藏文件也显示的话，在终端输入
  macOS: &amp;ldquo;ls -a&amp;rdquo;+&amp;ldquo;回车&amp;rdquo;
 Windows: &amp;ldquo;dir -a&amp;rdquo;+&amp;ldquo;回车&amp;rdquo;
- 终端还有很多其他命令，例如ping命令可以用作网络诊断。</description>
+ 终端还有很多其他命令，例如ping命令可以用作网络诊断。
+ping www.</description>
+    </item>
+    
+    <item>
+      <title>路径</title>
+      <link>https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/%E8%B7%AF%E5%BE%84/</link>
+      <pubDate>Mon, 08 Jan 2018 00:10:14 +0800</pubDate>
+      
+      <guid>https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/%E8%B7%AF%E5%BE%84/</guid>
+      <description>作者：Windson Yang
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处（www.enginego.org）。
+绝对路径和相对路径 . └── usr ├── foo │ ├── first.md │ └── second.md ├── bar │ ├── sunkist.toml │ ├── cherry.toml  计算机文件的存放规则一般如上图一样，例如上图中，usr文件夹中包含了foo和bar两个文件夹，两个文件夹之间分别包含了两个文件。路径指的是为文件/文件夹存放在计算机中的位置。每个文件/文件夹在一台计算机中可能会有无数个相对路径，但是只有一个绝对路径。什么意思呢？举个现实的例子：
+有一天，Cherry在路上遇到Sunkist，它问Sunkist的公司地址在哪里，Sunkist可能有两个答案：
+ 以这里为起点，西南方向500米的石室大厦 中国广东省广州市思哲路石室大厦  第一个答案以当前的位置为起点所描述的称为相对路径。第二个答案从国家到省份城市巨细无遗地描述称为绝对路径。根据Sunkist当前的位置不一样，相对路径会因此而改变，但是绝对路径是不会变化的。
+当前路径 当你打开终端的时候，会看到例如：
+masOS WindsondeMacBook-Air:fun/ windson$ Windsons C:fun\:  这里的&amp;rdquo;fun/&amp;ldquo;和&amp;rdquo;C:fun\&amp;ldquo;指当前执行命令的地方，也就是你的当前路径。可以通过命令来查看当前路径的绝对路径
+masOS WindsondeMacBook-Air:fun/ windson$ pwd /usr/fun/ Windsons C:fun\: cd \usr\fun\  当你在终端中输入命令，默认针对的就是当前路径。例如输入&amp;rdquo;ls&amp;rdquo;，计算机会理解成&amp;rdquo;ls /usr/foo/&amp;ldquo;(输入&amp;rdquo;dir&amp;rdquo;，理解为&amp;rdquo;dir \usr\foo\&amp;ldquo;)，两个命令都会列出当前路径中&amp;rdquo;fun/&amp;ldquo;下面的所有文件名称。
+你想要列出这个文件夹里面的所有文件，你可以告诉计算机这个文件夹的完整地址，也就是绝对路径
+dir C:\Administor\foo\  也可以根据当前自己的位置找这个文件（这时候输入的就是相对路径），假如你打开终端，当前路径是
+C:\Administor\bar\:  那么你也可以这样列出：
+dir ..\foo\  在路径命令中&amp;rdquo;.&amp;ldquo;以及&amp;rdquo;..&amp;ldquo;这两个符号有特殊意义，分别代表当前路径以及上一级目录，也就是说如果你当前路径是：
+C:\Administor\bar\  那么
+.\ = C:\Administor\bar\ .</description>
     </item>
     
     <item>
