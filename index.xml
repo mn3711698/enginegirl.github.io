@@ -213,7 +213,7 @@ HTTP 超文本传输协议 SMTP 邮件协议 telnet 终端传输协议 DNS 域�
 在打开网页或者文件的时候，你一定会遇过像这样的字符串乱码问题：
 É��OÇ��，系统包括了...  或者报错
 UnicodeDecodeError: &#39;ascii&#39; codec can&#39;t decode byte 0xc4  同时或多或少也遇到Unicode, UTF-8, ASCII, Latin-1这些编码术语。要真正地理解字符串编码，必须要了解计算机的一些基础知识，例如字符串如何存储与转换。如果只是希望靠运气来解决或者避开它，反而会在一次次盲目的尝试中浪费更多的时间。
- 基础术语 计算机如何存储数据 ASCII编码 GBK编码 Unicode UTF-8编码 总结  基础术语  字符 字符串 键值表 字符串编码与解码  字符 A B C 天 气 エ ン コ 😁  上面的用空格分割的都是单个字符(Character)，它代表对人类能看懂的有意义的语言文字。
+ 基础术语 计算机如何存储数据 ASCII编码 GBK编码 Unicode UTF-8编码 常见问题 总结  基础术语  字符 字符串 键值表 字符串编码与解码  字符 A B C 天 气 エ ン コ 😁  上面的用空格分割的都是单个字符(Character)，它代表对人类能看懂的有意义的语言文字。
 字符串 Hello 天气 Hola  字符串(Stirngs)就是多个字符组成的集合
 键值表 一一对应的表，例如函数
 y = x * 2  每个x都对应着唯一的一个y值，x与y组成的集合就是键值表(Hash Table)，例如：
@@ -257,18 +257,17 @@ ping www.</description>
       <guid>https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/%E8%B7%AF%E5%BE%84/</guid>
       <description>作者：Windson Yang
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处（www.enginego.org）。
-绝对路径和相对路径 . └── usr ├── foo │ ├── first.md │ └── second.md ├── bar │ ├── sunkist.toml │ ├── cherry.toml  计算机文件的存放规则一般如上图一样，例如上图中，usr文件夹中包含了foo和bar两个文件夹，两个文件夹之间分别包含了两个文件。路径指的是为文件/文件夹存放在计算机中的位置。每个文件/文件夹在一台计算机中可能会有无数个相对路径，但是只有一个绝对路径。什么意思呢？举个现实的例子：
+ 绝对路径和相对路径 当前路径 切换路径  绝对路径和相对路径 . └── usr ├── foo │ ├── first.md │ └── second.md ├── bar │ ├── sunkist.toml │ ├── cherry.toml  计算机文件的存放结构如上图一样，上图中，usr文件夹中包含了foo和bar两个文件夹，这两个文件夹分别包含了两个文件。路径指的是为文件/文件夹存放在计算机中的位置。举个现实的例子：
 有一天，Cherry在路上遇到Sunkist，它问Sunkist的公司地址在哪里，Sunkist可能有两个答案：
- 以这里为起点，西南方向500米的石室大厦 中国广东省广州市思哲路石室大厦  第一个答案以当前的位置为起点所描述的称为相对路径。第二个答案从国家到省份城市巨细无遗地描述称为绝对路径。根据Sunkist当前的位置不一样，相对路径会因此而改变，但是绝对路径是不会变化的。
-当前路径 当你打开终端的时候，会看到例如：
-masOS WindsondeMacBook-Air:fun/ windson$ Windsons C:fun\:  这里的&amp;rdquo;fun/&amp;ldquo;和&amp;rdquo;C:fun\&amp;ldquo;指当前执行命令的地方，也就是你的当前路径。可以通过命令来查看当前路径的绝对路径
-masOS WindsondeMacBook-Air:fun/ windson$ pwd /usr/fun/ Windsons C:fun\: cd \usr\fun\  当你在终端中输入命令，默认针对的就是当前路径。例如输入&amp;rdquo;ls&amp;rdquo;，计算机会理解成&amp;rdquo;ls /usr/foo/&amp;ldquo;(输入&amp;rdquo;dir&amp;rdquo;，理解为&amp;rdquo;dir \usr\foo\&amp;ldquo;)，两个命令都会列出当前路径中&amp;rdquo;fun/&amp;ldquo;下面的所有文件名称。
-你想要列出这个文件夹里面的所有文件，你可以告诉计算机这个文件夹的完整地址，也就是绝对路径
-dir C:\Administor\foo\  也可以根据当前自己的位置找这个文件（这时候输入的就是相对路径），假如你打开终端，当前路径是
-C:\Administor\bar\:  那么你也可以这样列出：
-dir ..\foo\  在路径命令中&amp;rdquo;.&amp;ldquo;以及&amp;rdquo;..&amp;ldquo;这两个符号有特殊意义，分别代表当前路径以及上一级目录，也就是说如果你当前路径是：
-C:\Administor\bar\  那么
-.\ = C:\Administor\bar\ .</description>
+ 以这里为起点，西南方向500米的石室大厦 中国广东省广州市思哲路石室大厦  第一个答案以当前的位置为起点所描述的称为相对路径。第二个答案从国家到省份城市巨细无遗地描述称为绝对路径。根据Sunkist当前的位置不一样，它回答的相对路径会不一样，但是绝对路径是不会变化的。每个文件/文件夹在一台计算机中可能会有无数个相对路径，但是只有一个绝对路径。上图中，first.md的绝对路径是
+/usr/foo/first.md (first.md的绝对路径)  相对foo目录的路径是
+./first.md (相对foo目录的路径)  相对bar目录的相对路径是
+../foo/first.md (相对bar目录的路径)  在路径命令中&amp;rdquo;.&amp;ldquo;以及&amp;rdquo;..&amp;ldquo;这两个符号有特殊意义，分别代表当前目录以及上一级目录。如果当前路径是&amp;rdquo;/usr/foo/&amp;rdquo;
+/usr/foo/ (当前路径) ./ = /usr/foo/ (当前目录) ../ = /usr/ (上一级目录)  所以
+./first.md  表示的是当前目录下的first.md文件(first.md原本就在foo目录里面)
+../foo/first.md  表示的是先返回当前目录(/usr/bar/)的上一级目录(/usr/)，然后再进入foo目录，找到first.md文件
+当前路径 当你打开终端的时候：
+(masOS) WindsondeMacBook-Air:fun/ windson$ (Windsons) C:fun\:  这里的&amp;rdquo;fun/&amp;ldquo;和&amp;rdquo;C:fun\&amp;ldquo;指当前执行命令的地方，也就是你的当前路径。可以通过命令来查看当前路径的绝对路径</description>
     </item>
     
     <item>
