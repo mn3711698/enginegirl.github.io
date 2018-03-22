@@ -79,8 +79,15 @@ PING www.enginego.org (104.24.121.11): 56 data bytes Request timeout for icmp_se
       <pubDate>Tue, 27 Feb 2018 00:10:14 +0800</pubDate>
       
       <guid>https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E9%80%89%E6%8B%A9/</guid>
-      <description>作者：Windson Yang
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处（www.enginego.org）。</description>
+      <description> 作者：Windson Yang
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处 (www.enginego.org)。
+刚开始学习编程的时候，我也很困惑这个问题，有那么那么多的编程语言，常见的有
+ python ruby php Go c java R &amp;hellip;  我们可以根据你的职业职业规划来选择要学习的语言：
+前端工程师  完成设计 后端交互  前端工程师主要的职责是把设计师的设计图实现，当设计师设计完界面之后
+![design]()
+完成设计 前端工程师需要用代码来实现设计图，例如界面的布局，按钮的颜色等等。这期间需要和设计师合作交流，讨论哪些方面在工程实现中可能会有困难，可能影响性能这类的因素。
+后端交互 完成设计之后，前端工程师需要根据不同的页面以及业务逻辑来与后端交互，这句话什么意思呢？假如你开发的是一个让用户写日记的应用。那么当用户写完日记之后，点击保存按钮，这个按钮要触发一个保存日记的事件，需要把日记根据协议传输到服务器，然后存储在数据库里面。听起来有点复杂，其实非常简单，因为都有通用的工具帮助你完成。
+后端工程师。  业务逻辑处理 前端交互  业务逻辑处理 前端交互 运维工程师 数据分析／机器学习工程师 </description>
     </item>
     
     <item>
@@ -241,7 +248,7 @@ C:\whatever\sunkist\:  就可以</description>
     </item>
     
     <item>
-      <title>终端，命令行</title>
+      <title>终端</title>
       <link>https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/%E7%BB%88%E7%AB%AF/</link>
       <pubDate>Mon, 08 Jan 2018 00:10:14 +0800</pubDate>
       
@@ -253,30 +260,20 @@ C:\whatever\sunkist\:  就可以</description>
 命令行界面 在计算机刚开始发展的时候，并没有那么容易上手的操作界面，大家都是通过一个黑乎乎的程序输入命令，然后等待计算机执行。它有点像：
 ![terminal]()
 这时候如果你需要打开一个文件，如果它是短文本文件，需要用cat指令：
-cat normal.txt  如果是图片的话，对不起，没有办法。:&amp;lt; 如果要运行一个python的hello程序，在安装了python软件之后，在终端直接输入
+cat normal.txt  如果是图片的话，需要安装额外的组件。:&amp;lt; 如果要运行一个python的hello程序，在安装了python软件之后，在终端直接输入
 python hello.py  到最后，你会发现图形界面与命令行界面本质是一样的，运行程序或者打开文件都需要 1. 安装对应的软件 2. 指定用什么程序来运行（图形界面会根据后缀名帮你选择用什么程序来打开。）
 亲自试试吧 你可以尝试先打开自己计算机的终端：
  macOS: 同时按住&amp;rdquo;control&amp;rdquo;+&amp;ldquo;space&amp;rdquo;键，在搜索框输入termianl，&amp;rdquo;回车&amp;rdquo;
 Windows 7：打开&amp;rdquo;开始&amp;rdquo;菜单，在搜索框里输入cmd，&amp;rdquo;回车&amp;rdquo;
 Windows 8+：同时按住&amp;rdquo;win&amp;rdquo;+&amp;ldquo;Q&amp;rdquo;键，然后在弹出的搜索框里输入cmd，&amp;rdquo;回车&amp;rdquo;
  成功打开之后，光标会停留在某一行。类似：
-WindsondeMacBook-Air:~ windson$ |  因为和计算机交互需要遵守一定的指令规则，终端默认会运行一个程序，常见的是bash或者sh，你可以尝试输入一个命令，然后让终端执行。
+WindsondeMacBook-Air:~ windson$ |  因为和计算机交互需要遵守一定的指令规则，终端默认会运行一个程序，常见的是Bash(Bourne Again SHell)或者sh，你可以尝试输入一个命令，然后让终端执行。
  macOS: &amp;ldquo;ls&amp;rdquo;+&amp;ldquo;回车&amp;rdquo;
 Windows: &amp;ldquo;dir&amp;rdquo;+&amp;ldquo;回车&amp;rdquo;
  输入回车之后，你会发现终端显示出了一些文字，仔细观察的话你会发现其实是你电脑中某个目录下的文件。ls/dir这个命令就是列出当前目录的文件。 当然这个命令还有很多参数，也就是你可以告诉计算机显示什么文件（隐藏／非隐藏），显示文件的详细内容（创建日期，大小），ls/dir只会调用一个常用的默认配置，假如你想把隐藏文件也显示的话，在终端输入
  macOS: &amp;ldquo;ls -a&amp;rdquo;+&amp;ldquo;回车&amp;rdquo;
 Windows: &amp;ldquo;dir -a&amp;rdquo;+&amp;ldquo;回车&amp;rdquo;
- 终端还有很多其他命令，例如ping命令可以用作网络诊断。
-ping www.apple.com 64 bytes from 27.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/%E8%A7%A3%E9%87%8A%E6%80%A7%E8%AF%AD%E8%A8%80or%E7%BC%96%E8%AF%91%E6%80%A7%E8%AF%AD%E8%A8%80/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/%E8%A7%A3%E9%87%8A%E6%80%A7%E8%AF%AD%E8%A8%80or%E7%BC%96%E8%AF%91%E6%80%A7%E8%AF%AD%E8%A8%80/</guid>
-      <description></description>
+ 终端还有很多其他命令，例如ping命令可以用作网络诊断。</description>
     </item>
     
     <item>
