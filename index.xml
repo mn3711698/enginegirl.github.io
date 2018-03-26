@@ -20,9 +20,13 @@
       <description>作者：Windson Yang
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处（www.enginego.org）。
 贝叶斯模型在机器学习以及人工智能中都有出现，cherry分类器使用了朴素贝叶斯模型算法，用少数的数据量（1000个句子）得到97.5%的准确率。在这篇文章我会介绍贝叶斯模型的理论，实现以及误差分析，我清楚现在主流的框架都带有朴素贝叶斯模型算法的实现，大多人只需要调用一个函数就可以达到相近的准确率，但是在现实使用中，当遇到不同的数据集，必须要了解算法的原理才知道如何调参。
-贝叶斯模型理论  分类器实例 关键字过滤 贝叶斯模型推导 贝叶斯模型实现 测试 统计分析  分类器实例 约定：  训练数据 告诉分类器哪些句子分别属于哪个类别的数据 输入句子 需要判断类别的新句子（通常不应该出现在训练数据中）  中文训练数据包含“正常”，“政治敏感”，“赌博”，“色情”4个类别，英文训练数据包含“正常邮件”，“垃圾邮件”两个类别，训练数据可以通过Google drive下载。输入句子：
+贝叶斯模型理论  分类器使用 关键字过滤 贝叶斯模型推导 贝叶斯模型实现 测试 统计分析  分类器使用 基础术语：  训练数据
+带有人工标识类别的数据集
+ 输入句子
+需要判断类别的新句子（通常不应该出现在训练数据中）
+  默认数据缓存中，中文训练数据包含正常，政治敏感，赌博，色情4个类别，英文训练数据包含正常邮件，垃圾邮件两个类别，训练数据可以通过Google drive下载。输入句子：
  警方召开了全省集中打击赌博违法犯罪活动专项行动电视电话会议。会议的重点是“查处”六合彩、赌球赌马等赌博活动。
- &amp;gt;&amp;gt;&amp;gt; result = cherry.classify(&#39;警方召开了全省集中打击赌博违法犯罪活动专项行动电 电话会议。会议的重点是“查处”六合彩、赌球赌马等赌博活动。&#39;) Building prefix dict from the default dictionary ... Loading model from cache /var/folders/md/0251yy51045d6nknpkbn6dc80000gn/T/jieba.cache Loading model cost 0.894 seconds. Prefix dict has been built succesfully. &amp;gt;&amp;gt;&amp;gt; result.percentage [(&#39;normal.dat&#39;, 0.997), (&#39;politics.dat&#39;, 0.002), (&#39;gamble.dat&#39;, 0.0), (&#39;sex.dat&#39;, 0.0)] &amp;gt;&amp;gt;&amp;gt; result.word_list [(&#39;赌博&#39;, 8.5881312727226), (&#39;活动&#39;, 6.</description>
+ &amp;gt;&amp;gt;&amp;gt; result = cherry.classify(&#39;警方召开了全省集中打击赌博违法犯罪活动专项行动电 电话会议。会议的重点是“查处”六合彩、赌球赌马等赌博活动。&#39;) Building prefix dict from the default dictionary ... Loading model from cache /var/folders/md/0251yy51045d6nknpkbn6dc80000gn/T/jieba.cache Loading model cost 0.894 seconds. Prefix dict has been built succesfully. &amp;gt;&amp;gt;&amp;gt; result.percentage [(&#39;normal.dat&#39;, 0.997), (&#39;politics.dat&#39;, 0.002), (&#39;gamble.dat&#39;, 0.0), (&#39;sex.dat&#39;, 0.0)] &amp;gt;&amp;gt;&amp;gt; result.word_list [(&#39;赌博&#39;, 8.</description>
     </item>
     
     <item>
