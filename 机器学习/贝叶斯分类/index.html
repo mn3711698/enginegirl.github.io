@@ -13,19 +13,19 @@
     <title>贝叶斯分类器 :: Engine GO</title>
     
     
-    <link href="/css/nucleus.css?1522076761" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1522076761" rel="stylesheet">
-    <link href="/css/hybrid.css?1522076761" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1522076761" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1522076761" rel="stylesheet">
-    <link href="/css/auto-complete.css?1522076761" rel="stylesheet">
-    <link href="/css/theme.css?1522076761" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1522076761" rel="stylesheet">
+    <link href="/css/nucleus.css?1522080932" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1522080932" rel="stylesheet">
+    <link href="/css/hybrid.css?1522080932" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1522080932" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1522080932" rel="stylesheet">
+    <link href="/css/auto-complete.css?1522080932" rel="stylesheet">
+    <link href="/css/theme.css?1522080932" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1522080932" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1522076761" rel="stylesheet">
+      <link href="/css/theme-blue.css?1522080932" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1522076761"></script>
+    <script src="/js/jquery-2.x.min.js?1522080932"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -53,15 +53,15 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1522076761"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1522076761"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1522080932"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1522080932"></script>
 <script type="text/javascript">
     
         
         var baseurl = "https://www.enginego.org";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1522076761"></script>
+<script type="text/javascript" src="/js/search.js?1522080932"></script>
 
     
   </div>
@@ -800,27 +800,32 @@
 <ul>
 <li>
 <ul>
-<li><a href="#贝叶斯模型理论">贝叶斯模型理论</a>
-<ul>
 <li><a href="#分类器使用">分类器使用</a>
+<ul>
+<li>
 <ul>
 <li><a href="#基础术语">基础术语：</a></li>
 </ul></li>
+</ul></li>
 <li><a href="#关键字过滤">关键字过滤</a></li>
 <li><a href="#贝叶斯模型推导">贝叶斯模型推导</a></li>
-<li><a href="#贝叶斯模型实现">贝叶斯模型实现</a></li>
+<li><a href="#贝叶斯模型实现">贝叶斯模型实现</a>
+<ul>
 <li><a href="#选择训练数据">选择训练数据</a></li>
 <li><a href="#词袋集合">词袋集合</a></li>
 <li><a href="#判断类别">判断类别</a></li>
+</ul></li>
 <li><a href="#测试">测试</a>
 <ul>
 <li><a href="#统计分析">统计分析</a></li>
-<li><a href="#算法分析">算法分析</a></li>
+<li><a href="#算法分析">算法分析</a>
+<ul>
 <li><a href="#错误权重">错误权重</a></li>
 <li><a href="#上下文关联">上下文关联</a></li>
 <li><a href="#分类器绕过">分类器绕过</a></li>
 </ul></li>
 </ul></li>
+<li><a href="#总结">总结</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -851,8 +856,6 @@
 
 <p>贝叶斯模型在机器学习以及人工智能中都有出现，<a href="https://github.com/Sunkist-Cherry/cherry">cherry</a>分类器使用了朴素贝叶斯模型算法，用少数的数据量（1000个句子）得到97.5%的准确率。在这篇文章我会介绍贝叶斯模型的理论，实现以及误差分析，我清楚现在主流的框架都带有朴素贝叶斯模型算法的实现，大多人只需要调用一个函数就可以达到相近的准确率，但是在现实使用中，当遇到不同的数据集，必须要了解算法的原理才知道如何调参。</p>
 
-<h3 id="贝叶斯模型理论">贝叶斯模型理论</h3>
-
 <ol>
 <li><a href="#分类器使用">分类器使用</a></li>
 <li><a href="#关键字过滤">关键字过滤</a></li>
@@ -860,9 +863,10 @@
 <li><a href="#贝叶斯模型实现">贝叶斯模型实现</a></li>
 <li><a href="#测试">测试</a></li>
 <li><a href="#误差分析">统计分析</a></li>
+<li><a href="#总结">总结</a></li>
 </ol>
 
-<h4 id="分类器使用">分类器使用</h4>
+<h3 id="分类器使用">分类器使用</h3>
 
 <h5 id="基础术语">基础术语：</h5>
 
@@ -898,7 +902,7 @@ Prefix dict has been built succesfully.
 <pre><code>赌博，活动，会议，违法犯罪
 </code></pre>
 
-<h4 id="关键字过滤">关键字过滤</h4>
+<h3 id="关键字过滤">关键字过滤</h3>
 
 <p>判断输入句子是什么类别，最简单和原始的方法是使用关键词过滤，输入句子：</p>
 
@@ -916,7 +920,7 @@ Prefix dict has been built succesfully.
 
 <p>虽然输入句子包含<strong>六合彩</strong>，<strong>赌球</strong>这两个词语，不过是正常的句子，所以关键词过滤算法很容易出现误判。</p>
 
-<h4 id="贝叶斯模型推导">贝叶斯模型推导</h4>
+<h3 id="贝叶斯模型推导">贝叶斯模型推导</h3>
 
 <p><strong>关键词过滤的问题在于只对输入句子中的几个词语进行分析，没有对输入句子的整体进行分析，</strong>当人类去判断输入句子：</p>
 
@@ -1092,7 +1096,7 @@ P(正常|输入句子) = P(输入句子|正常) * P(正常)</p></li>
 <p><strong>简单总结，要计算句子是某类别的概率，只需要计算该句子有效部分的词语的在该类别概率的乘积。</strong></p></li>
 </ol>
 
-<h4 id="贝叶斯模型实现">贝叶斯模型实现</h4>
+<h3 id="贝叶斯模型实现">贝叶斯模型实现</h3>
 
 <p>要计算每个词语在不同类别下出现的概率，我们需要训练数据进行训练：
 1. 选择训练数据，标记类别
@@ -1368,14 +1372,14 @@ P(正常|句子) = sum([0, 0, 1, 0, 1, ...] * [-3.25809654, -3.25809654, -3.2580
                     key=lambda x: x[1], reverse=True)
 </code></pre>
 
-<h4 id="测试">测试</h4>
+<h3 id="测试">测试</h3>
 
 <ul>
 <li><a href="#统计分析">统计分析</a></li>
 <li><a href="#算法分析">算法分析</a></li>
 </ul>
 
-<h5 id="统计分析">统计分析</h5>
+<h4 id="统计分析">统计分析</h4>
 
 <p>对一个句子进行分类，最终的结果会有4种类别：</p>
 
@@ -1443,7 +1447,7 @@ Prefix dict has been built succesfully.
 
 <p>如果业务的需求是尽可能找到潜在的阳性数据（例如癌症初检）那么就要求高查全率，不过对应的，高查全率会导致查准率降低。（可以这样理解，假如所有句子都判断成赌博类别，那么所有确实是赌博类别的句子确实都被检测到了，但是查准率变得很低。）影响查全率以及查准率的一点是训练数据数量的比例，日常的句子中，赌博类别的句子与正常类别的句子比例可能是1:50。也就是说随便给出一个句子，不用看内容，那么它有98%是正常的。不过在某些情况下，例如热门评论区打广告的用户就很多，那么这个比例就变成1:10或者1:20，这个比例是根据具体业务而调整的。<strong>训练数据也应该遵循这个比例，但是实现中，我们必须要找到大量独立分布的数据才能遵循这个比例，同时维持高查准率和查全率。</strong></p>
 
-<h5 id="算法分析">算法分析</h5>
+<h4 id="算法分析">算法分析</h4>
 
 <ul>
 <li><a href="#错误权重">错误权重</a></li>
@@ -1518,6 +1522,10 @@ H2 = 0
 
 <p>可以看到，在同样的句子长度下，第一个句子的熵为-2，第二个为0，可以设置一个熵的范围，如果低于该值，代表句子可能是垃圾数据。</p></li>
 </ol>
+
+<h3 id="总结">总结</h3>
+
+<p><strong>理解了贝叶斯分类的原理，你就能根据自己的业务需求，来判断使用什么分词函数，使用哪些stop_word，可以定制适合业务的数据集，同时根据输出的被错误分类的数据以及混淆矩阵，做出对应的调整。</strong>如果有什么疑问，欢迎留言。</p>
 
 
 <footer class=" footline" >
@@ -2069,20 +2077,20 @@ s.setAttribute('data-timestamp', +new Date());
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1522076761"></script>
-    <script src="/js/perfect-scrollbar.min.js?1522076761"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1522076761"></script>
-    <script src="/js/jquery.sticky.js?1522076761"></script>
-    <script src="/js/featherlight.min.js?1522076761"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1522076761"></script>
-    <script src="/js/highlight.pack.js?1522076761"></script>
+    <script src="/js/clipboard.min.js?1522080932"></script>
+    <script src="/js/perfect-scrollbar.min.js?1522080932"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1522080932"></script>
+    <script src="/js/jquery.sticky.js?1522080932"></script>
+    <script src="/js/featherlight.min.js?1522080932"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1522080932"></script>
+    <script src="/js/highlight.pack.js?1522080932"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1522076761"></script>
-    <script src="/js/learn.js?1522076761"></script>
-    <script src="/js/hugo-learn.js?1522076761"></script>
+    <script src="/js/modernizr.custom.71422.js?1522080932"></script>
+    <script src="/js/learn.js?1522080932"></script>
+    <script src="/js/hugo-learn.js?1522080932"></script>
 
-    <link href="/mermaid/mermaid.css?1522076761" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1522076761"></script>
+    <link href="/mermaid/mermaid.css?1522080932" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1522080932"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
