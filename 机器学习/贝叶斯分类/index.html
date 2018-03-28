@@ -13,19 +13,19 @@
     <title>贝叶斯分类器 :: Engine GO</title>
     
     
-    <link href="/css/nucleus.css?1522080974" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1522080974" rel="stylesheet">
-    <link href="/css/hybrid.css?1522080974" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1522080974" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1522080974" rel="stylesheet">
-    <link href="/css/auto-complete.css?1522080974" rel="stylesheet">
-    <link href="/css/theme.css?1522080974" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1522080974" rel="stylesheet">
+    <link href="/css/nucleus.css?1522246701" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1522246701" rel="stylesheet">
+    <link href="/css/hybrid.css?1522246701" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1522246701" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1522246701" rel="stylesheet">
+    <link href="/css/auto-complete.css?1522246701" rel="stylesheet">
+    <link href="/css/theme.css?1522246701" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1522246701" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1522080974" rel="stylesheet">
+      <link href="/css/theme-blue.css?1522246701" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1522080974"></script>
+    <script src="/js/jquery-2.x.min.js?1522246701"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -53,15 +53,15 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1522080974"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1522080974"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1522246701"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1522246701"></script>
 <script type="text/javascript">
     
         
         var baseurl = "https://www.enginego.org";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1522080974"></script>
+<script type="text/javascript" src="/js/search.js?1522246701"></script>
 
     
   </div>
@@ -854,7 +854,7 @@
 
 <p>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处（www.enginego.org）。</p>
 
-<p>贝叶斯模型在机器学习以及人工智能中都有出现，<a href="https://github.com/Sunkist-Cherry/cherry">cherry</a>分类器使用了朴素贝叶斯模型算法，用少数的数据量（1000个句子）得到97.5%的准确率。在这篇文章我会介绍贝叶斯模型的理论，实现以及误差分析，我清楚现在主流的框架都带有朴素贝叶斯模型算法的实现，大多人只需要调用一个函数就可以达到相近的准确率，但是在现实使用中，当遇到不同的数据集，必须要了解算法的原理才知道如何调参。</p>
+<p>贝叶斯模型在机器学习以及人工智能中都有出现，<a href="https://github.com/Sunkist-Cherry/cherry">cherry</a>分类器使用了朴素贝叶斯模型算法，用少数的数据量（1000个句子）得到97.5%的准确率。在这篇文章我会介绍贝叶斯模型的理论，实现以及误差分析，我清楚现在主流的框架都带有朴素贝叶斯模型算法的实现，大多数开发者只需要调用一个函数就可以达到相近的准确率，但是在工程使用中，当遇到不同的数据集，必须要了解算法的原理才知道如何调参以及调整数据集。</p>
 
 <ol>
 <li><a href="#分类器使用">分类器使用</a></li>
@@ -880,7 +880,7 @@
 <p>需要判断类别的新句子（通常不应该出现在训练数据中）</p></li>
 </ul>
 
-<p>默认数据缓存中，中文训练数据包含<strong>正常</strong>，<strong>政治敏感</strong>，<strong>赌博</strong>，<strong>色情</strong>4个类别，英文训练数据包含<strong>正常邮件</strong>，<strong>垃圾邮件</strong>两个类别，训练数据可以通过<a href="https://drive.google.com/file/d/1OtbY7RCjkoQWYb0fHIOTBcJfgDlW5Tjz/view?usp=sharing">Google drive</a>下载。输入句子：</p>
+<p>默认数据缓存中，中文训练数据包含<strong>正常</strong>，<strong>政治敏感</strong>，<strong>赌博</strong>，<strong>色情</strong>4个类别，英文训练数据包含<strong>正常邮件</strong>，<strong>垃圾邮件</strong>两个类别 (训练数据可以通过<a href="https://drive.google.com/file/d/1OtbY7RCjkoQWYb0fHIOTBcJfgDlW5Tjz/view?usp=sharing">Google drive</a>下载)。输入句子：</p>
 
 <blockquote>
 <p>警方召开了全省集中打击赌博违法犯罪活动专项行动电视电话会议。会议的重点是“查处”六合彩、赌球赌马等赌博活动。</p>
@@ -891,15 +891,17 @@ Building prefix dict from the default dictionary ...
 Loading model from cache /var/folders/md/0251yy51045d6nknpkbn6dc80000gn/T/jieba.cache
 Loading model cost 0.894 seconds.
 Prefix dict has been built succesfully.
+&gt;&gt;&gt;
 &gt;&gt;&gt; result.percentage
 [('normal.dat', 0.997), ('politics.dat', 0.002), ('gamble.dat', 0.0), ('sex.dat', 0.0)]
+&gt;&gt;&gt;
 &gt;&gt;&gt; result.word_list
 [('赌博', 8.5881312727226), ('活动', 6.401543938544878), ('会议', 6.091963362021649), ('违法犯罪', 4.234845736802978), ('警方', 3.536827626008435), ('打击', 3.2491455535566542), ('行动', 2.8561029654470476), ('查处', 2.3860993362013083), ('重点', 2.126816738271229), ('召开', 1.8628511924367634), ('专项', 1.1697040118768172), ('电视电话会议', 1.1697040118768172), ('全省', 0.47655683131687354), ('集中', -0.6220554573512382), ('六合彩', -2.29603189092291)]
 </code></pre>
 
 <p>分类器判断输入句子有99.7%的概率是正常句子，0.2%是政治敏感，剩余0.1%是其他两个类别，其中对分类器判断影响最大的词语分别是</p>
 
-<pre><code>赌博，活动，会议，违法犯罪
+<pre><code>赌博，活动，会议，违法犯罪，警方，打击
 </code></pre>
 
 <h3 id="关键字过滤">关键字过滤</h3>
@@ -910,7 +912,7 @@ Prefix dict has been built succesfully.
 <p>奖金将在您完成首存后即可存入您的账户。真人荷官，六合彩，赌球欢迎来到全新番摊游戏！</p>
 </blockquote>
 
-<p>因为<strong>真人荷官</strong>，<strong>六合彩</strong>这两个词语一般是赌博类的句子才会出现，使用关键字过滤的方法，我们可以将它加入赌博类别的黑名单，当再遇到句子包含这些黑名单词语，就判断成赌博类别。</p>
+<p><strong>真人荷官</strong>，<strong>六合彩</strong>这两个词语一般在赌博类的句子中才会出现，使用关键字过滤算法，我们将它们加入赌博类别的黑名单，当之后遇到句子包含这些黑名单词语，就判断成赌博类别。</p>
 
 <p>这个方法实现简单，但是缺点也很明显。例如遇到刚刚这个输入句子：</p>
 
@@ -918,7 +920,7 @@ Prefix dict has been built succesfully.
 <p>警方召开了全省集中打击赌博违法犯罪活动专项行动电视电话会议。会议的重点是“查处”六合彩、赌球赌马等赌博活动。</p>
 </blockquote>
 
-<p>虽然输入句子包含<strong>六合彩</strong>，<strong>赌球</strong>这两个词语，不过是正常的句子，所以关键词过滤算法很容易出现误判。</p>
+<p>虽然输入句子包含<strong>六合彩</strong>，<strong>赌球</strong>这两个词语，却是正常的句子，同时，如果一个句子中同时包含多个不同类别的黑名单词语，例如<strong>赌博</strong>，<strong>色情</strong>的话，关键字过滤算法也无法判断正确。</p>
 
 <h3 id="贝叶斯模型推导">贝叶斯模型推导</h3>
 
@@ -935,16 +937,20 @@ Prefix dict has been built succesfully.
 
 <p>它虽然包含<strong>六合彩</strong>这个关键词，但是<strong>警方</strong>，<strong>召开</strong>，<strong>集中打击</strong>这几个词代表这个句子极有可能是正常的句子。</p>
 
-<p><strong>贝叶斯模型也一样，相对于关键词过滤只着重于输入句子中的某几个词语，贝叶斯模型会对输入句子的所有有效词语进行分析，通过训练数据计算每个词语在不同类别下的概率，然后综合得出最有可能的结果。贝叶斯模型的数学推导非常简单，强烈建议大家静下心自己推导。</strong></p>
+<p><strong>相对于关键词过滤只着重于输入句子中的某几个词语，贝叶斯模型会对输入句子的所有有效部分进行分析，通过训练数据计算出每个词语在不同类别下的概率，然后综合得出最有可能的结果。可以说，贝叶斯模型是关键字过滤加上统计学的升级版。它的数学推导非常简单，强烈建议大家静下心自己推导。</strong></p>
 
-<p>这里为了简单起见，我们只考虑句子是“正常”或者“赌博”两种可能，我们先复习一下概率论：</p>
+<p>这里为了简单起见，我们只考虑句子是<strong>正常</strong>或者<strong>赌博</strong>两种可能，我们先复习一下概率论的基础表达：</p>
 
 <blockquote>
+<p>P(A) -&gt; A事件发生的概率，例如明天天晴的概率</p>
+
+<p>P(A|B) -&gt; 条件概率，B事件发生的前提下A事件发生的概率，例如明天天晴而我又没带伞的概率</p>
+
 <p>P(输入句子) -&gt; 这个句子在训练数据中出现的概率</p>
 
 <p>P(赌博) -&gt; 赌博类别的句子在训练数据中出现的概率</p>
 
-<p>P(赌博|输入句子) -&gt; 输入句子是赌博类别的概率（条件概率，也是我们最终要求的值）</p>
+<p>P(赌博|输入句子) -&gt; 输入句子是赌博类别的概率（也是我们最终要求的值）</p>
 </blockquote>
 
 <p>对于同一个句子：</p>
@@ -992,8 +998,10 @@ Prefix dict has been built succesfully.
 
 <p>由于(4)，(5)都要除于相同的P(输入句子)，所以(4)，(5)右边可以同时乘以P(句子)，只比较等号右边前两个值的乘积的大小。</p>
 
+<blockquote>
 <p>P(赌博|输入句子) = P(输入句子|赌博) * P(赌博)
-P(正常|输入句子) = P(输入句子|正常) * P(正常)</p></li>
+P(正常|输入句子) = P(输入句子|正常) * P(正常)</p>
+</blockquote></li>
 
 <li><p><strong>P(句子|赌博)</strong></p>
 
@@ -1006,7 +1014,7 @@ P(正常|输入句子) = P(输入句子|正常) * P(正常)</p></li>
 <p>可以变成</p>
 
 <blockquote>
-<p>奖金将在您完成首存后即可存入您的账户。合彩，赌球，真人荷官欢迎来到全新番摊游戏！</p>
+<p>奖金将在您完成首存后即可存入您的账户。六合彩，赌球，真人荷官欢迎来到全新番摊游戏！</p>
 </blockquote>
 
 <p>或者</p>
@@ -1098,11 +1106,14 @@ P(正常|输入句子) = P(输入句子|正常) * P(正常)</p></li>
 
 <h3 id="贝叶斯模型实现">贝叶斯模型实现</h3>
 
-<p>要计算每个词语在不同类别下出现的概率，我们需要训练数据进行训练：
-1. 选择训练数据，标记类别
-2. 把所有训练数据进行分词，并且组成成一个包含所有词语的词袋集合
-3. 把每个训练数据转换成词袋集合长度的向量
-4. 利用每个类别的下训练数据，计算词袋集合中每个词语的概率</p>
+<p>要计算每个词语在不同类别下出现的概率，我们需要训练数据进行训练：</p>
+
+<ol>
+<li>选择训练数据，标记类别</li>
+<li>把所有训练数据进行分词，并且组成成一个包含所有词语的词袋集合</li>
+<li>把每个训练数据转换成词袋集合长度的向量</li>
+<li>利用每个类别的下训练数据，计算词袋集合中每个词语的概率</li>
+</ol>
 
 <h4 id="选择训练数据">选择训练数据</h4>
 
@@ -1242,7 +1253,7 @@ P(正常|输入句子) = P(输入句子|正常) * P(正常)</p></li>
 ]
 </code></pre>
 
-<p>**要计算每个词语在不同类别下的概率，只需要把词语出现的次数除以该类别的词语总数，<a href="https://github.com/Sunkist-Cherry/cherry">cherry</a>出于效率的考虑使用了numpy的矩阵运算。</p>
+<p><strong>要计算每个词语在不同类别下的概率，只需要把词语出现的次数除以该类别的词语总数，</strong> <a href="https://github.com/Sunkist-Cherry/cherry">cherry</a>出于效率的考虑使用了numpy的矩阵运算。</p>
 
 <pre><code>def _training(self):
     '''
@@ -1509,8 +1520,9 @@ word_list is [('推荐', 2.458695507975194), ('各种', 2.3555233250262599), ('�
 
 <li><p>计算每个词语出现的次数除于句子的词语数量：</p>
 
-<p>P(车厘子) = P(非常) = P(可爱) = P(猫咪) = <sup>1</sup>&frasl;<sub>4</sub>
-P(车厘子) = <sup>4</sup>&frasl;<sub>4</sub> = 1</p>
+<p>P(车厘子) = P(非常) = P(可爱) = P(猫咪) = <sup>1</sup>&frasl;<sub>4</sub> (句子1)</p>
+
+<p>P(车厘子) = <sup>4</sup>&frasl;<sub>4</sub> = 1 (句子2)</p>
 
 <p>通过计算熵的公式，带入每个概率值，最后除于句子的词语数量</p>
 
@@ -1518,10 +1530,10 @@ P(车厘子) = <sup>4</sup>&frasl;<sub>4</sub> = 1</p>
 
 H1 = ((1/4 * -2) - (1/4 * -2) - (1/4 * -2) - (1/4 * -2)) / 4= -2 / 4 = -1/2
 H2 = 0
-</code></pre>
-
-<p>可以看到，在同样的句子长度下，第一个句子的熵为-2，第二个为0，可以设置一个熵的范围，如果低于该值，代表句子可能是垃圾数据。</p></li>
+</code></pre></li>
 </ol>
+
+<p>可以看到，在同样的句子长度下，第一个句子的熵为-2，第二个为0，可以设置一个熵的范围，如果低于该值，代表句子可能是垃圾数据。一般来说，先进行垃圾文本过滤，然后进行贝叶斯模型的分类，在工程中会有更好的效果。</p>
 
 <h3 id="总结">总结</h3>
 
@@ -2077,20 +2089,20 @@ s.setAttribute('data-timestamp', +new Date());
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1522080974"></script>
-    <script src="/js/perfect-scrollbar.min.js?1522080974"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1522080974"></script>
-    <script src="/js/jquery.sticky.js?1522080974"></script>
-    <script src="/js/featherlight.min.js?1522080974"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1522080974"></script>
-    <script src="/js/highlight.pack.js?1522080974"></script>
+    <script src="/js/clipboard.min.js?1522246701"></script>
+    <script src="/js/perfect-scrollbar.min.js?1522246701"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1522246701"></script>
+    <script src="/js/jquery.sticky.js?1522246701"></script>
+    <script src="/js/featherlight.min.js?1522246701"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1522246701"></script>
+    <script src="/js/highlight.pack.js?1522246701"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1522080974"></script>
-    <script src="/js/learn.js?1522080974"></script>
-    <script src="/js/hugo-learn.js?1522080974"></script>
+    <script src="/js/modernizr.custom.71422.js?1522246701"></script>
+    <script src="/js/learn.js?1522246701"></script>
+    <script src="/js/hugo-learn.js?1522246701"></script>
 
-    <link href="/mermaid/mermaid.css?1522080974" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1522080974"></script>
+    <link href="/mermaid/mermaid.css?1522246701" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1522246701"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
