@@ -13,19 +13,19 @@
     <title>贝叶斯分类器 :: Engine GO</title>
     
     
-    <link href="/css/nucleus.css?1522246701" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1522246701" rel="stylesheet">
-    <link href="/css/hybrid.css?1522246701" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1522246701" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1522246701" rel="stylesheet">
-    <link href="/css/auto-complete.css?1522246701" rel="stylesheet">
-    <link href="/css/theme.css?1522246701" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1522246701" rel="stylesheet">
+    <link href="/css/nucleus.css?1522338281" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1522338281" rel="stylesheet">
+    <link href="/css/hybrid.css?1522338281" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1522338281" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1522338281" rel="stylesheet">
+    <link href="/css/auto-complete.css?1522338281" rel="stylesheet">
+    <link href="/css/theme.css?1522338281" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1522338281" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1522246701" rel="stylesheet">
+      <link href="/css/theme-blue.css?1522338281" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1522246701"></script>
+    <script src="/js/jquery-2.x.min.js?1522338281"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -53,15 +53,15 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1522246701"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1522246701"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1522338281"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1522338281"></script>
 <script type="text/javascript">
     
         
         var baseurl = "https://www.enginego.org";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1522246701"></script>
+<script type="text/javascript" src="/js/search.js?1522338281"></script>
 
     
   </div>
@@ -800,7 +800,7 @@
 <ul>
 <li>
 <ul>
-<li><a href="#分类器使用">分类器使用</a>
+<li><a href="#cherry分类器">cherry分类器</a>
 <ul>
 <li>
 <ul>
@@ -808,7 +808,8 @@
 </ul></li>
 </ul></li>
 <li><a href="#关键字过滤">关键字过滤</a></li>
-<li><a href="#贝叶斯模型推导">贝叶斯模型推导</a></li>
+<li><a href="#贝叶斯模型">贝叶斯模型</a></li>
+<li><a href="#数学推导">数学推导</a></li>
 <li><a href="#贝叶斯模型实现">贝叶斯模型实现</a>
 <ul>
 <li><a href="#选择训练数据">选择训练数据</a></li>
@@ -820,7 +821,6 @@
 <li><a href="#统计分析">统计分析</a></li>
 <li><a href="#算法分析">算法分析</a>
 <ul>
-<li><a href="#错误权重">错误权重</a></li>
 <li><a href="#上下文关联">上下文关联</a></li>
 <li><a href="#分类器绕过">分类器绕过</a></li>
 </ul></li>
@@ -854,90 +854,85 @@
 
 <p>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处（www.enginego.org）。</p>
 
-<p>贝叶斯模型在机器学习以及人工智能中都有出现，<a href="https://github.com/Sunkist-Cherry/cherry">cherry</a>分类器使用了朴素贝叶斯模型算法，用少数的数据量（1000个句子）得到97.5%的准确率。在这篇文章我会介绍贝叶斯模型的理论，实现以及误差分析，我清楚现在主流的框架都带有朴素贝叶斯模型算法的实现，大多数开发者只需要调用一个函数就可以达到相近的准确率，但是在工程使用中，当遇到不同的数据集，必须要了解算法的原理才知道如何调参以及调整数据集。</p>
+<p>贝叶斯模型在机器学习以及人工智能中都有出现，<a href="https://github.com/Sunkist-Cherry/cherry">cherry分类器</a>使用了朴素贝叶斯模型算法，<strong>经过简单的优化，使用1000个训练数据就能得到97.5%的准确率。</strong>虽然现在主流的框架都带有朴素贝叶斯模型算法，大多数开发者只需要直接调用api就能使用。但是在实际业务中，面对不同的数据集，必须了解算法的原理，实现以及懂得对结果进行分析，才能达到高准确率。</p>
 
 <ol>
-<li><a href="#分类器使用">分类器使用</a></li>
+<li><a href="#cherry分类器">cherry分类器</a></li>
 <li><a href="#关键字过滤">关键字过滤</a></li>
-<li><a href="#贝叶斯模型推导">贝叶斯模型推导</a></li>
+<li><a href="#贝叶斯模型">贝叶斯模型</a></li>
+<li><a href="#数学推导">数学推导</a></li>
 <li><a href="#贝叶斯模型实现">贝叶斯模型实现</a></li>
 <li><a href="#测试">测试</a></li>
-<li><a href="#误差分析">统计分析</a></li>
+<li><a href="#统计分析">统计分析</a></li>
 <li><a href="#总结">总结</a></li>
 </ol>
 
-<h3 id="分类器使用">分类器使用</h3>
+<h3 id="cherry分类器">cherry分类器</h3>
 
 <h5 id="基础术语">基础术语：</h5>
 
-<ul>
-<li><p>训练数据</p>
-
-<p>带有人工标识类别的数据集</p></li>
-
-<li><p>输入句子</p>
-
-<p>需要判断类别的新句子（通常不应该出现在训练数据中）</p></li>
-</ul>
-
-<p>默认数据缓存中，中文训练数据包含<strong>正常</strong>，<strong>政治敏感</strong>，<strong>赌博</strong>，<strong>色情</strong>4个类别，英文训练数据包含<strong>正常邮件</strong>，<strong>垃圾邮件</strong>两个类别 (训练数据可以通过<a href="https://drive.google.com/file/d/1OtbY7RCjkoQWYb0fHIOTBcJfgDlW5Tjz/view?usp=sharing">Google drive</a>下载)。输入句子：</p>
+<p><a href="(https://github.com/Sunkist-Cherry/cherry)">cherry分类器</a>默认支持中英文分类，用作例子的数据缓存中，中文训练数据包含<strong>正常</strong>，<strong>政治敏感</strong>，<strong>赌博</strong>，<strong>色情</strong>4个类别，英文训练数据包含<strong>正常邮件</strong>，<strong>垃圾邮件</strong>两个类别 (训练数据可以通过<a href="https://drive.google.com/file/d/1OtbY7RCjkoQWYb0fHIOTBcJfgDlW5Tjz/view?usp=sharing">Google drive</a>下载)。调用非常容易，使用pip安装后，输入句子：</p>
 
 <blockquote>
 <p>警方召开了全省集中打击赌博违法犯罪活动专项行动电视电话会议。会议的重点是“查处”六合彩、赌球赌马等赌博活动。</p>
 </blockquote>
 
-<pre><code>&gt;&gt;&gt; result = cherry.classify('警方召开了全省集中打击赌博违法犯罪活动专项行动电 电话会议。会议的重点是“查处”六合彩、赌球赌马等赌博活动。')
+<pre><code>&gt;&gt;&gt; import cherry
+&gt;&gt;&gt; result = cherry.classify('警方召开了全省集中打击赌博违法犯罪活动专项行动电 电话会议。会议的重点是“查处”六合彩、赌球赌马等赌博活动。')
 Building prefix dict from the default dictionary ...
 Loading model from cache /var/folders/md/0251yy51045d6nknpkbn6dc80000gn/T/jieba.cache
 Loading model cost 0.894 seconds.
 Prefix dict has been built succesfully.
-&gt;&gt;&gt;
-&gt;&gt;&gt; result.percentage
-[('normal.dat', 0.997), ('politics.dat', 0.002), ('gamble.dat', 0.0), ('sex.dat', 0.0)]
-&gt;&gt;&gt;
-&gt;&gt;&gt; result.word_list
-[('赌博', 8.5881312727226), ('活动', 6.401543938544878), ('会议', 6.091963362021649), ('违法犯罪', 4.234845736802978), ('警方', 3.536827626008435), ('打击', 3.2491455535566542), ('行动', 2.8561029654470476), ('查处', 2.3860993362013083), ('重点', 2.126816738271229), ('召开', 1.8628511924367634), ('专项', 1.1697040118768172), ('电视电话会议', 1.1697040118768172), ('全省', 0.47655683131687354), ('集中', -0.6220554573512382), ('六合彩', -2.29603189092291)]
 </code></pre>
 
-<p>分类器判断输入句子有99.7%的概率是正常句子，0.2%是政治敏感，剩余0.1%是其他两个类别，其中对分类器判断影响最大的词语分别是</p>
+<p>分类器判断输入句子有99.7%的概率是正常句子，0.2%是政治敏感，剩余0.1%是其他两个类别</p>
 
-<pre><code>赌博，活动，会议，违法犯罪，警方，打击
+<pre><code>&gt;&gt;&gt; result.percentage
+[('normal.dat', 0.997), ('politics.dat', 0.002), ('gamble.dat', 0.0), ('sex.dat', 0.0)]
+</code></pre>
+
+<p>其中对分类器判断影响最大的词语分别是<strong>赌博</strong>，<strong>活动</strong>，<strong>会议</strong>，<strong>违法犯罪</strong>，<strong>警方</strong>，<strong>打击</strong></p>
+
+<pre><code>&gt;&gt;&gt; result.word_list
+[('赌博', 8.5881312727226), ('活动', 6.401543938544878), ('会议', 6.091963362021649), ('违法犯罪', 4.234845736802978), ('警方', 3.536827626008435), ('打击', 3.2491455535566542), ('行动', 2.8561029654470476), ('查处', 2.3860993362013083), ('重点', 2.126816738271229), ('召开', 1.8628511924367634), ('专项', 1.1697040118768172), ('电视电话会议', 1.1697040118768172), ('全省', 0.47655683131687354), ('集中', -0.6220554573512382), ('六合彩', -2.29603189092291)]
 </code></pre>
 
 <h3 id="关键字过滤">关键字过滤</h3>
 
-<p>判断输入句子是什么类别，最简单和原始的方法是使用关键词过滤，输入句子：</p>
+<p>要理解分类器的原理，可以先从最简单的分类关键词算法开始，输入句子：</p>
 
 <blockquote>
 <p>奖金将在您完成首存后即可存入您的账户。真人荷官，六合彩，赌球欢迎来到全新番摊游戏！</p>
 </blockquote>
 
-<p><strong>真人荷官</strong>，<strong>六合彩</strong>这两个词语一般在赌博类的句子中才会出现，使用关键字过滤算法，我们将它们加入赌博类别的黑名单，当之后遇到句子包含这些黑名单词语，就判断成赌博类别。</p>
-
-<p>这个方法实现简单，但是缺点也很明显。例如遇到刚刚这个输入句子：</p>
+<p>使用关键字算法，我们可以将<strong>真人荷官</strong>，<strong>六合彩</strong>这两个词语加入赌博类别的黑名单，每个类别都维持对应的黑名单表。当之后需要分类的时候，先判断关键字有没有出现在输入句子中，如果有，则判断为对应的类别。这个方法实现简单，但是缺点也很明显，误判率非常高，例如遇到输入句子：</p>
 
 <blockquote>
 <p>警方召开了全省集中打击赌博违法犯罪活动专项行动电视电话会议。会议的重点是“查处”六合彩、赌球赌马等赌博活动。</p>
 </blockquote>
 
-<p>虽然输入句子包含<strong>六合彩</strong>，<strong>赌球</strong>这两个词语，却是正常的句子，同时，如果一个句子中同时包含多个不同类别的黑名单词语，例如<strong>赌博</strong>，<strong>色情</strong>的话，关键字过滤算法也无法判断正确。</p>
+<p>这是一个正常的句子，但是由于包含<strong>六合彩</strong>，<strong>赌球</strong>这两个黑名单词语，关键字算法会误判其为赌博类别，同时，如果一个句子同时包含多个不同类别的黑名单词语，例如<strong>赌博</strong>，<strong>色情</strong>的话，关键字算法也无法判断正确。</p>
 
-<h3 id="贝叶斯模型推导">贝叶斯模型推导</h3>
+<h3 id="贝叶斯模型">贝叶斯模型</h3>
 
-<p><strong>关键词过滤的问题在于只对输入句子中的几个词语进行分析，没有对输入句子的整体进行分析，</strong>当人类去判断输入句子：</p>
+<p>其实关键字算法已经接近贝叶斯模型的原理了，我们再仔细分析下关键字算法。<strong>关键字算法的问题在于只对输入句子中的部分词语进行分析，而没有对输入句子的整体进行分析。而贝叶斯模型会对输入句子的所有有效部分进行分析，通过训练数据计算出每个词语在不同类别下的概率，然后综合得出最有可能的结果。可以说，贝叶斯模型是关键字过滤加上统计学的升级版。</strong></p>
+
+<p>当贝叶斯模型去判断输入句子：</p>
 
 <blockquote>
 <p>警方召开了全省集中打击赌博违法犯罪活动专项行动电视电话会议。会议的重点是“查处”六合彩、赌球赌马等赌博活动。</p>
 </blockquote>
 
-<p>我们会综合分析句子中的每个词语：</p>
+<p>它会综合分析句子中的每个词语：</p>
 
 <pre><code>警方，召开，全省，集中打击，... 六合彩，赌球，赌马，...
 </code></pre>
 
-<p>它虽然包含<strong>六合彩</strong>这个关键词，但是<strong>警方</strong>，<strong>召开</strong>，<strong>集中打击</strong>这几个词代表这个句子极有可能是正常的句子。</p>
+<p>输入句子虽然包含<strong>六合彩</strong>，<strong>赌球</strong>这些赌博常出现的词语，但是<strong>警方</strong>，<strong>召开</strong>，<strong>集中打击</strong>这几个词代表这个句子极有可能是正常的句子。</p>
 
-<p><strong>相对于关键词过滤只着重于输入句子中的某几个词语，贝叶斯模型会对输入句子的所有有效部分进行分析，通过训练数据计算出每个词语在不同类别下的概率，然后综合得出最有可能的结果。可以说，贝叶斯模型是关键字过滤加上统计学的升级版。它的数学推导非常简单，强烈建议大家静下心自己推导。</strong></p>
+<h3 id="数学推导">数学推导</h3>
+
+<p>贝叶斯模型的数学推导非常简单，强烈建议大家静下心自己推导。</p>
 
 <p>这里为了简单起见，我们只考虑句子是<strong>正常</strong>或者<strong>赌博</strong>两种可能，我们先复习一下概率论的基础表达：</p>
 
@@ -951,11 +946,7 @@ Prefix dict has been built succesfully.
 <p>P(赌博) -&gt; 赌博类别的句子在训练数据中出现的概率</p>
 
 <p>P(赌博|输入句子) -&gt; 输入句子是赌博类别的概率（也是我们最终要求的值）</p>
-</blockquote>
 
-<p>对于同一个句子：</p>
-
-<blockquote>
 <p>P(赌博|输入句子) + P(正常|输入句子) = 100%</p>
 </blockquote>
 
@@ -979,7 +970,7 @@ Prefix dict has been built succesfully.
 <p>P(赌博|输入句子) = P(输入句子|赌博) * P(赌博) / P(输入句子) (3)</p>
 </blockquote>
 
-<p>登登登灯，(3)就是贝叶斯定理。没看懂没关系，静下心再看一遍。 <strong>要得到最终输入句子是赌博类别的概率P(赌博|输入句子)，需要知道右边3个量的值</strong>：</p>
+<p>登登登灯，(3)就是贝叶斯模型定理。没看懂没关系，静下心再看一遍。<strong>要得到最终输入句子是赌博类别的概率P(赌博|输入句子)，需要知道右边3个量的值</strong>：</p>
 
 <ol>
 <li><p><strong>P(赌博)</strong></p>
@@ -1023,7 +1014,7 @@ P(正常|输入句子) = P(输入句子|正常) * P(正常)</p>
 <p>欢迎来到全新番摊游戏，奖金将在您完成首存后即可存入您的账户。六合彩，真人荷官，赌球！</p>
 </blockquote>
 
-<p>稍微变换词语的位置就是一个新的句子了，训练数据不可能把所有排列组合的句子都加进去，因为实在太多了。<strong>所以当我们遇到一个输入句子，很可能它在训练数据中没有出现，那么P(输入句子|类别)对应的概率都为零，这显然不是真实的结果。也会导致我们的分类器出错</strong>，这个时候该怎么办呢？<strong>刚刚在关键词过滤算法中我们提到，人类会将一个句子分成不同的词语来综合分析，那我们是不是也可以把句子当成词语的集合呢？</strong></p>
+<p>稍微变换词语的位置就是一个新的句子了，训练数据不可能把所有排列组合的句子都加进去，因为实在太多了。<strong>所以当我们遇到一个输入句子，很可能它在训练数据中没有出现，那么P(输入句子|类别)对应的概率都为零，这显然不是真实的结果。也会导致我们的分类器出错</strong>，这个时候该怎么办呢？<strong>刚刚在<a href="#贝叶斯模型">贝叶斯模型</a>中我们提到，它会将一个句子分成不同的词语来综合分析，那我们是不是也可以把句子当成词语的集合呢？</strong></p>
 
 <blockquote>
 <p>警方召开了全省集中打击赌博违法犯罪活动专项行动电视电话会议。会议的重点是“查处”六合彩、赌球赌马等赌博活动。</p>
@@ -1039,7 +1030,7 @@ P(正常|输入句子) = P(输入句子|正常) * P(正常)</p>
 <p>P(警方召开了全省&hellip;赌马等赌博活动。|赌博) = P(警方|赌博) * P(召开|赌博) * P(全省|赌博) &hellip;  * P(赌马|赌博) * P(赌博活动|赌博)</p>
 </blockquote>
 
-<p>我们把P(输入句子|赌博)分解成所有P(词语|赌博)概率的乘积，计算词语在训练数据中出现的概率就容易计算得多了。我们最终获取的是<strong>输入句子有效词语不同类别中的概率</strong>，在上面的例子中，虽然<strong>赌马</strong>，<strong>赌球</strong>，<strong>赌博活动</strong>这几个词是赌博类别的概率很高，但是综合整个句子的所有词语来说，分类器判断句子有90%的概率是正常的句子。</p>
+<p>我们把P(输入句子|赌博)分解成所有P(词语|赌博)概率的乘积，然后通过训练数据，计算每个词语在不同类别出现的概率。最终获取的是<strong>输入句子有效词语在不同类别中的概率</strong>。</p>
 
 <table>
 <thead>
@@ -1095,18 +1086,18 @@ P(正常|输入句子) = P(输入句子|正常) * P(正常)</p>
 
 <tr>
 <td>综合概率</td>
-<td align="center">0.9</td>
-<td align="right">0.1</td>
+<td align="center">0.8</td>
+<td align="right">0.2</td>
 </tr>
 </tbody>
-</table>
-
-<p><strong>简单总结，要计算句子是某类别的概率，只需要计算该句子有效部分的词语的在该类别概率的乘积。</strong></p></li>
+</table></li>
 </ol>
+
+<p>在上面的例子中，虽然<strong>赌马</strong>，<strong>赌球</strong>，<strong>赌博活动</strong>这几个词是赌博类别的概率很高，但是综合所有词语，分类器判断输入句子有80%的概率是正常句子。<strong>简单来说，要判断句子是某个类别的概率，只需要计算该句子有效部分的词语的在该类别概率的乘积。</strong></p>
 
 <h3 id="贝叶斯模型实现">贝叶斯模型实现</h3>
 
-<p>要计算每个词语在不同类别下出现的概率，我们需要训练数据进行训练：</p>
+<p>要计算每个词语在不同类别下出现的概率，有以下几个步骤：</p>
 
 <ol>
 <li>选择训练数据，标记类别</li>
@@ -1117,13 +1108,13 @@ P(正常|输入句子) = P(输入句子|正常) * P(正常)</p>
 
 <h4 id="选择训练数据">选择训练数据</h4>
 
-<p>训练数据的选择其实有很多方法，最简单的情况，我们可以从网络上搜索符合对应类别的句子，如果是二元分类的问题，可以使每个类别的数据各占一半。不过当你理解了贝叶斯模型的原理，你会发现一个问题，就是保持数据的独立分布，如果你选择的训练数据如下：</p>
+<p>训练数据的选择是非常关键的一步，我们可以从网络上搜索符合对应类别的句子，使每个类别的数据各占一半。不过当你理解了贝叶斯模型的原理之后，你会发现一个难题问题，就是如何保持数据的独立分布，例如你选择的训练数据如下：</p>
 
 <ul>
 <li><p>赌博类别</p>
 
 <blockquote>
-<p>根据您所选择的上述礼遇，您必须在娱乐场完成总金额（存款+首存奖金）16倍或15倍流水之后，方可申请提款。</p>
+<p>根据您所选择的上述六合彩游戏，您必须在娱乐场完成总金额（存款+首存奖金）16倍或15倍流水之后，方可申请提款。</p>
 
 <p>奖金将在您完成首存后即可存入您的账户。真人荷官 六合彩 欢迎来到全新番摊游戏！</p>
 </blockquote></li>
@@ -1137,20 +1128,32 @@ P(正常|输入句子) = P(输入句子|正常) * P(正常)</p>
 </blockquote></li>
 </ul>
 
-<p>正常类别的数据中没有出现过类似<strong>六合彩</strong>，<strong>游戏</strong>这两个词语，如果仅仅使用这些数据进行训练，那么这两个词语对句子是否是赌博类别会有很大的影响性，但是<strong>游戏</strong>这个词语本身和赌博没有直接的关系，却被错误划分为赌博类别相关的词语，如果分类器遇到</p>
+<p>我们可以注意到<strong>六合彩</strong>，<strong>游戏</strong>这两个词语，只在赌博类别的训练数据出现。这两个词语对句子是否是赌博类别会有很大的影响性，<strong>六合彩</strong>对赌博类别确实是重要的判别词，但是<strong>游戏</strong>这个词语本身和赌博没有直接的关系，却被错误划分为赌博类别相关的词语，当之后分类器遇到</p>
 
 <blockquote>
-<p>我们提供最新最全大型单机游戏下载，迷你单机游戏下载，并提供大量单机游戏攻略</p>
+<p>我们提供最新最全大型游戏下载，迷你游戏下载，并提供大量游戏攻略</p>
 </blockquote>
 
-<p>这类的句子，也很有可能会将它判断为赌博类别，这并不是我们的原意。所以，当我们要做一个赌博/正常的分类器，我们需要在正常类别的训练数据添加类似于：</p>
+<p>会因为里面的<strong>游戏</strong>，将它判断为赌博类别，</p>
+
+<pre><code>&gt;&gt;&gt; result = cherry.classify('我们提供最新最全大型游戏下载，迷你游戏下载，并提供大量游戏攻略')
+&gt;&gt;&gt; result.percentage
+[('gamble.dat', 0.793), ('normal.dat', 0.207)]
+&gt;&gt;&gt; result.word_list
+[('游戏', 1.9388011143762069)]
+</code></pre>
+
+<p>所以，当我们要做一个赌博/正常的分类器，我们需要在正常类别的训练数据添加：</p>
 
 <blockquote>
 <p>中国游戏第一门户站,全年365天保持不间断更新,您可以在这里获得专业的游戏新闻资讯,完善的游戏攻略专区</p>
 </blockquote>
 
-<p>这样的正常而且带有<strong>游戏</strong>关键字的句子。一般来说，正常的句子比赌博类别的句子出现的概率要多得多，这点也可以从训练数据的比例上面体现，可以增加正常类别句子的数量，不过要小心<a href="https://en.wikipedia.org/wiki/Accuracy_paradox">Accuracy_paradox</a>的问题。我们在<a href="#测试">测试</a>的时候，可以通过混淆矩阵以及被错分的测试数据权重最高的词语，来调整数据。
-为简单起见，我们这里只选取4个句子作为训练数据：</p>
+<p>这样的正常而且带有<strong>游戏</strong>关键字的句子。同时当训练数据过少，输入句子包含了训练数据中并没有c出现过的词语，该词语也会被分类器所忽略。<a href="(https://github.com/Sunkist-Cherry/cherry)">cherry分类器</a>可以通过启用debug模式得到被错误划分的数据以及其权重最高的词语，你可以根据输出的词语来调整训练数据。我们之后可以通过Adaboost算法动态调整每个词语的权重，这个功能我们会在下一个版本推出。 另外一方面，现实生活中，正常的句子比赌博类别的句子出现的概率要多得多，这点我们也可以从训练数据的比例上面体现，适当增加正常类别句子的数量，也可以赋予正常类别句子高权重，不过要小心<a href="https://en.wikipedia.org/wiki/Accuracy_paradox">Accuracy_paradox</a>的问题。我们在<a href="#测试">测试</a>的时候，可以根据混淆矩阵以及ROC曲线来分析分类器的效果，再进行数据调整。</p>
+
+<h4 id="词袋集合">词袋集合</h4>
+
+<p>为简单起见，本篇文章只选取4个句子作为训练数据：</p>
 
 <ul>
 <li><p>赌博类别：</p>
@@ -1170,9 +1173,7 @@ P(正常|输入句子) = P(输入句子|正常) * P(正常)</p>
 </blockquote></li>
 </ul>
 
-<h4 id="词袋集合">词袋集合</h4>
-
-<p>要计算每个词语在不同类别下的概率，首先需要一个词袋集合，集合包含了训练数据中所有非重复词语(_vocab_list)，参考函数_vocab_list：</p>
+<p>要计算每个词语在不同类别下的概率，首先需要一个词袋集合，集合包含了训练数据中所有非重复词语(_vocab_list)，参考函数_get_vocab_list：</p>
 
 <pre><code>def _get_vocab_list(self):
     '''
@@ -1191,7 +1192,7 @@ P(正常|输入句子) = P(输入句子|正常) * P(正常)</p>
     self._vocab_list = list(vocab_set)
 </code></pre>
 
-<p>我们使用<a href="https://github.com/fxsjy/jieba">结巴分词</a>，把训练数据的句子分成词语的集合，例如第一个数据：</p>
+<p>默认使用<a href="https://github.com/fxsjy/jieba">结巴分词</a>进行中文分词（你可以定制分词函数），例如第一个数据：</p>
 
 <blockquote>
 <p>根据您所选择的上述礼遇，您必须在娱乐场完成总金额（存款+首存奖金）16倍或15倍流水之后，方可申请提款。</p>
@@ -1202,17 +1203,18 @@ P(正常|输入句子) = P(输入句子|正常) * P(正常)</p>
 <pre><code>['根据', '您', '所', '选择', '的', '上述', '礼遇', '，', '您', '必须', '在', '娱乐场', '完成', '总金额', '（', '存款', '+', '首存', '奖金', '）', '16', '倍', '或', '15', '倍', '流水', '之后', '，', '方可', '申请', '提款', '。']
 </code></pre>
 
-<p>然后去掉包含在stop_word.dat中的词语，stop_word列表包含了汉语中的常见的转折词，例如</p>
+<p>我们去掉包含在stop_word.dat中的词语，stop_word.dat包含了汉语中的常见的转折词：</p>
 
-<pre><code>如果，但是，并且，不只
-</code></pre>
+<blockquote>
+<p>如果，但是，并且，不只&hellip;</p>
+</blockquote>
 
-<p>这些词语对于我们分类器没有用处，因为任何类别都会出现这些词语。去掉长度等于1的字以及stop_word_lst里面的词语之后，第一个句子就剩下：</p>
+<p>这些词语对于我们分类器没有用处，因为任何类别都会出现这些词语。接下来再去掉长度等于1的字，第一个训练数据剩下：</p>
 
 <pre><code>['选择', '上述', '礼遇', '娱乐场', '总金额', '存款', '首存', '奖金', '16', '15', '流水', '申请', '提款']
 </code></pre>
 
-<p>遍历4个句子最终得到的长度为49的词袋集合(vocab_list)就是：（这里使用的集合是无序的，所以你得到的结果顺序可能不同）</p>
+<p>遍历4个句子最终得到长度为49的词袋集合(vocab_list)：（这里使用的集合是无序的，所以你得到的结果顺序可能不同）</p>
 
 <pre><code>['提款', '存入', '游戏', '最初', '六合彩', '娱乐场', '费曼', '奖金', '账户', '菲利普斯', '量子', '电动力学', '总金额', '上述', '活动', '状态', '物理学家', '公安机关', '荷官', '即可', '理论', '申请', '半公开', '选择', '15', '打击', '全新', '来到', '公开', '方可', '博彩', '完成', '理查德', '纳米技术', '不断', '存款', '之一', '创始人', '真人', '私彩', '持续', '根据', '必须', '16', '赌博', '欢迎', '体育', '转入地下', '首存', '流水', '美国', '礼遇']
 </code></pre>
@@ -1240,11 +1242,11 @@ P(正常|输入句子) = P(输入句子|正常) * P(正常)</p>
 
 <p>对应转变成：</p>
 
-<pre><code># 长度为49
+<pre><code># 长度为49的一维向量
 [1, 0, 0, 0, 1, 0, ..., 1, 0, 1]
 </code></pre>
 
-<p>其中的1分别对应着数据分词后的词语在词袋中出现的次数。接下来将所有训练数据的向量结合成一个列表_matrix_list</p>
+<p>其中的1分别对应着数据分词后的词语在词袋中出现的次数。接下来将所有训练数据的一维向量组合成列表_matrix_list</p>
 
 <pre><code>[
     [1, 0, 0, 0, 1, 0, ..., 1, 0, 1]
@@ -1253,7 +1255,7 @@ P(正常|输入句子) = P(输入句子|正常) * P(正常)</p>
 ]
 </code></pre>
 
-<p><strong>要计算每个词语在不同类别下的概率，只需要把词语出现的次数除以该类别的词语总数，</strong> <a href="https://github.com/Sunkist-Cherry/cherry">cherry</a>出于效率的考虑使用了numpy的矩阵运算。</p>
+<p><strong>要计算每个词语在不同类别下的概率，只需要把词语出现的次数除以该类别的所有词语的总数，</strong> <a href="https://github.com/Sunkist-Cherry/cherry">cherry分类器</a>出于效率的考虑使用了numpy的矩阵运算。</p>
 
 <pre><code>def _training(self):
     '''
@@ -1283,9 +1285,9 @@ P(正常|输入句子) = P(输入句子|正常) * P(正常)</p>
             np.log(vector_list[i]['num']/len(self.train_data))))
 </code></pre>
 
-<p>遍历完所有训练数据之后，会得到两个类别对应的每个词语的概率向量，(为了防止python的小数溢出，这里的概率都是取np.log()对数之后得到的值)：</p>
+<p>遍历完所有训练数据之后，会得到两个类别对应的每个词语的概率向量，(为了防止python的小数相乘溢出，这里的概率都是取np.log()对数之后得到的值)：</p>
 
-<pre><code>赌博
+<pre><code># 赌博
 ([-2.80336038, -2.80336038, -2.80336038, -3.49650756, -3.49650756,
    -2.80336038, -3.49650756, -2.39789527, -2.80336038, -3.49650756,
    -3.49650756, -3.49650756, -2.80336038, -2.80336038, -3.49650756,
@@ -1298,7 +1300,7 @@ P(正常|输入句子) = P(输入句子|正常) * P(正常)</p>
    -2.80336038, -2.80336038, -3.49650756, -2.39789527, -2.80336038,
    -3.49650756, -2.80336038]), 0.5)
 
-正常
+# 正常
 ([-3.25809654, -3.25809654, -3.25809654, -2.56494936, -2.56494936,
    -3.25809654, -2.56494936, -3.25809654, -3.25809654, -2.56494936,
    -2.56494936, -2.56494936, -3.25809654, -3.25809654, -2.56494936,
@@ -1311,11 +1313,11 @@ P(正常|输入句子) = P(输入句子|正常) * P(正常)</p>
    -3.25809654, -3.25809654, -2.56494936, -3.25809654, -3.25809654,
    -2.56494936, -3.25809654]), 0.5)
 
-词袋集合 
+# 词袋集合 
 ['提款', '存入', '游戏', '最初', '六合彩', '娱乐场', '费曼', '奖金', '账户', '菲利普斯', '量子', '电动力学', '总金额', '上述', '活动', '状态', '物理学家', '公安机关', '荷官', '即可', '理论', '申请', '半公开', '选择', '15', '打击', '全新', '来到', '公开', '方可', '博彩', '完成', '理查德', '纳米技术', '不断', '存款', '之一', '创始人', '真人', '私彩', '持续', '根据', '必须', '16', '赌博', '欢迎', '体育', '转入地下', '首存', '流水', '美国', '礼遇']
 </code></pre>
 
-<p>把向量和词袋集合对应来看，可以看到，<strong>提款</strong>，<strong>存入</strong>，<strong>游戏</strong>这几个词是赌博的概率要大于正常的概率</p>
+<p>结合向量和词袋集合来看，<strong>提款</strong>，<strong>存入</strong>，<strong>游戏</strong>这几个词是赌博的概率要大于正常的概率</p>
 
 <pre><code>#赌博 提款，存入，游戏
 [-2.80336038, -2.80336038, -2.80336038]
@@ -1324,30 +1326,24 @@ P(正常|输入句子) = P(输入句子|正常) * P(正常)</p>
 [-3.25809654, -3.25809654, -3.25809654]
 </code></pre>
 
+<p>符合我们的常识，接下来就可以进行输入句子的分类了。</p>
+
 <h4 id="判断类别">判断类别</h4>
 
-<p>训练完数据，得到词语对应概率之后，判断类别就非常简单，<strong>只需要把输入句子进行相同的分词，然后计算对应的词语对应的概率的乘积即可，</strong>乘积最大的就是最有可能的类别。例如我们要判断的句子是：</p>
+<p>训练完数据，得到词语对应概率之后，判断类别就非常简单，<strong>只需要把输入句子进行相同的分词，然后计算对应的词语对应的概率的乘积即可，</strong>得到乘积最大的就是最有可能的类别。输入句子：</p>
 
 <pre><code>欢迎参加澳门在线娱乐城，这里有体育，百家乐，六合彩各类精彩游戏。
 </code></pre>
 
-<p>同样地，先根据原先的词袋集合，先转变为一维向量</p>
+<p>先根据原先的词袋集合，先转变为一维向量</p>
 
 <pre><code># 词袋集合
 ['提款', '存入', '游戏', '最初', '六合彩', '娱乐场', '费曼', '奖金', '账户', '菲利普斯', '量子', '电动力学', '总金额', '上述', '活动', '状态', '物理学家', '公安机关', '荷官', '即可', '理论', '申请', '半公开', '选择', '15', '打击', '全新', '来到', '公开', '方可', '博彩', '完成', '理查德', '纳米技术', '不断', '存款', '之一', '创始人', '真人', '私彩', '持续', '根据', '必须', '16', '赌博', '欢迎', '体育', '转入地下', '首存', '流水', '美国', '礼遇']
-# 一维向量
+# 长度为49的一维向量
 [0, 0, 1, 0, 1, ...]
 </code></pre>
 
-<p>然后与分别与两个概率向量相乘，求和，并加上对应的类别占比</p>
-
-<pre><code>P(赌博|句子) = sum([0, 0, 1, 0, 1, ...] * [-2.80336038, -2.80336038, -2.80336038, ...]) + P(赌博)
-P(正常|句子) = sum([0, 0, 1, 0, 1, ...] * [-3.25809654, -3.25809654, -3.25809654, ...])+ P(正常)
-
-最终得到P(赌博|句子) &gt; P(正常|句子)，所以分类器判断这个句子是赌博类别。
-</code></pre>
-
-<p>对应的代码：</p>
+<p>然后与分别与两个概率向量相乘，求和，并加上对应的类别占比，对应的代码：</p>
 
 <pre><code>def _bayes_classify(self):
     '''
@@ -1383,6 +1379,23 @@ P(正常|句子) = sum([0, 0, 1, 0, 1, ...] * [-3.25809654, -3.25809654, -3.2580
                     key=lambda x: x[1], reverse=True)
 </code></pre>
 
+<p>通过计算：</p>
+
+<blockquote>
+<p>P(赌博|句子) = sum([0, 0, 1, 0, 1, &hellip;] * [-2.80336038, -2.80336038, -2.80336038, &hellip;]) + P(赌博) = 0.85</p>
+
+<p>P(正常|句子) = sum([0, 0, 1, 0, 1, &hellip;] * [-3.25809654, -3.25809654, -3.25809654, &hellip;])+ P(正常) = 0.15</p>
+</blockquote>
+
+<p>最终得到P(赌博|句子) &gt; P(正常|句子)，所以分类器判断这个句子是赌博类别。</p>
+
+<pre><code>&gt;&gt;&gt; result = cherry.classify('欢迎参加澳门在线娱乐城，这里有体育，百家乐，六合彩各类精彩游戏。')
+&gt;&gt;&gt; result.percentage
+[('gamble.dat', 0.85), ('normal.dat', 0.15)]
+&gt;&gt;&gt; result.word_list
+[('六合彩', 0.96940055718810347), ('游戏', 0.96940055718810347), ('欢迎', 0.56393544907993931)]
+</code></pre>
+
 <h3 id="测试">测试</h3>
 
 <ul>
@@ -1392,7 +1405,24 @@ P(正常|句子) = sum([0, 0, 1, 0, 1, ...] * [-3.25809654, -3.25809654, -3.2580
 
 <h4 id="统计分析">统计分析</h4>
 
-<p>对一个句子进行分类，最终的结果会有4种类别：</p>
+<p>测试方法有留出法(hold-out)，k折交叉验证法(cross validation)，自助法(bootstrapping)，这里我们使用留出法，测试脚本默认每次从所有数据中选出60个句子当成测试数据，剩下的当成训练数据。重复进行测试10次。运行测试脚本</p>
+
+<pre><code>&gt;&gt;&gt; python runanalysis.py
+This may takes some time, Go get a coffee :D.
+Building prefix dict from the default dictionary ...
+Loading model from cache /var/folders/md/0251yy51045d6nknpkbn6dc80000gn/T/jieba.cache
+Loading model cost 0.914 seconds.
+Prefix dict has been built succesfully.
++Cherry---------------+------------+------------+
+| Confusion matrix    | gamble.dat | normal.dat |
++---------------------+------------+------------+
+| (Real)gamble.dat    |        249 |          0 |
+| (Real)normal.dat    |         13 |        338 |
+| Error rate is 2.17% |            |            |
++---------------------+------------+------------+
+</code></pre>
+
+<p>输出分类测试数据的平均错误率为2.17%，同时我们可以通过混淆矩阵对分类器进行分析：</p>
 
 <table>
 <thead>
@@ -1425,25 +1455,6 @@ P(正常|句子) = sum([0, 0, 1, 0, 1, ...] * [-3.25809654, -3.25809654, -3.2580
 </tbody>
 </table>
 
-<p>一般的测试方法有留出法(hold-out)，k折交叉验证法(cross validation)，自助法(bootstrapping)，这里我们使用留出法，测试脚本默认每次从所有数据中选出60个句子当成测试数据，剩下的当成训练数据。重复进行测试10次。运行测试脚本</p>
-
-<pre><code>&gt;&gt;&gt; python runanalysis.py
-This may takes some time, Go get a coffee :D.
-Building prefix dict from the default dictionary ...
-Loading model from cache /var/folders/md/0251yy51045d6nknpkbn6dc80000gn/T/jieba.cache
-Loading model cost 0.914 seconds.
-Prefix dict has been built succesfully.
-+Cherry---------------+------------+------------+
-| Confusion matrix    | gamble.dat | normal.dat |
-+---------------------+------------+------------+
-| (Real)gamble.dat    |        249 |          0 |
-| (Real)normal.dat    |         13 |        338 |
-| Error rate is 2.17% |            |            |
-+---------------------+------------+------------+
-</code></pre>
-
-<p>输出分类测试数据的平均错误率为2.17%，同时我们可以通过混淆矩阵对分类器进行分析：</p>
-
 <ul>
 <li><p>查全率(recall)（能找出赌博类别句子的概率）</p>
 
@@ -1456,29 +1467,18 @@ Prefix dict has been built succesfully.
 249 / (249 + 13) = 95%</p></li>
 </ul>
 
-<p>如果业务的需求是尽可能找到潜在的阳性数据（例如癌症初检）那么就要求高查全率，不过对应的，高查全率会导致查准率降低。（可以这样理解，假如所有句子都判断成赌博类别，那么所有确实是赌博类别的句子确实都被检测到了，但是查准率变得很低。）影响查全率以及查准率的一点是训练数据数量的比例，日常的句子中，赌博类别的句子与正常类别的句子比例可能是1:50。也就是说随便给出一个句子，不用看内容，那么它有98%是正常的。不过在某些情况下，例如热门评论区打广告的用户就很多，那么这个比例就变成1:10或者1:20，这个比例是根据具体业务而调整的。<strong>训练数据也应该遵循这个比例，但是实现中，我们必须要找到大量独立分布的数据才能遵循这个比例，同时维持高查准率和查全率。</strong></p>
+<p>如果业务的需求是尽可能找到潜在的阳性数据（例如癌症初检）那么就要求高查全率，不过对应的，高查全率会导致查准率降低。（可以这样理解，假如所有句子都判断成赌博类别，那么所有确实是赌博类别的句子确实都被检测到了，但是查准率变得很低。）影响查全率以及查准率的一点是训练数据数量的比例，日常的句子中，赌博类别的句子与正常类别的句子比例可能是1:50。也就是说随便给出一个句子，不用看内容，那么它有98%是正常的。不过在某些情况下，例如热门评论区打广告的用户就很多，那么这个比例就变成1:10或者1:20，这个比例是根据具体业务而调整的。<strong>训练数据也应该遵循这个比例，但是实现中，我们必须要找到大量独立分布的数据才能遵循这个比例，这就是机器学习数据常遇到的不均衡分类问题。要解决这个问题，可以引入Adaboost算法动态调整每个词语的权重。</strong>。我们可以通过-p参数输出ROC曲线：</p>
+
+<p><img src="https://raw.githubusercontent.com/EngineGirl/enginegirl.github.io/master/images/bayes/auc.png" alt="roc" /></p>
+
+<p>ROC曲线横坐标代表的是假阳性（没有问题却被判断为有问题），纵坐标代表的是真阳性（有问题而且被判断出来），一个优秀的分类器尽可能维持高真阳性以及低假阳性。一般来说，如果一个分类器的ROC曲线包含了另外一个分类器的ROC曲线，代表此分类器在此数据集的分类效果更好。</p>
 
 <h4 id="算法分析">算法分析</h4>
 
 <ul>
-<li><a href="#错误权重">错误权重</a></li>
 <li><a href="#上下文关联">上下文关联</a></li>
 <li><a href="#分类器绕过">分类器绕过</a></li>
 </ul>
-
-<h5 id="错误权重">错误权重</h5>
-
-<p>如果训练数据过少，输入句子包含了词袋集合模型中并没有的词语，就无法获得该词语的对应概率，如果某些词语是中性词，但是只出现在某一个类别，那么分类器也会以为该词语是关键词。我们可以在测试的过程，输出错误分类的输入句子，然后观察哪些词语被错误赋予高权重了。例如：</p>
-
-<pre><code>data is 每周为你推荐好吃的零食，和各种美食评测！还有萌萌的黄教授为你试验各种食物流言和爱冒险的老船长带你脑洞大开，用汽车做料理！
-
---------------------
-percentage is [('gamble.dat', 0.955), ('normal.dat', 0.045)]
---------------------
-word_list is [('推荐', 2.458695507975194), ('各种', 2.3555233250262599), ('每周', 1.3600832193070849), ('冒险', 0.95461811119892026), ('评测', 0.95461811119892026), ('美食', -0.43167624992097053), ('好吃', -1.3479669817951256), ('汽车', -1.5302885385890796)]
-</code></pre>
-
-<p>在这个错误分类的数据中，可以看到<strong>推荐</strong>，<strong>各种</strong>这两个词语被赋予赌博类别的高权重，与我们的常识冲突，那么我们可以在正常类别的训练数据加上包含<strong>推荐</strong>，<strong>各种</strong>这两个词语的数据来降低权重，或者我们可以使用Adaboost算法动态调整权重，这个功能我们之后会加上。</p>
 
 <h5 id="上下文关联">上下文关联</h5>
 
@@ -2089,20 +2089,20 @@ s.setAttribute('data-timestamp', +new Date());
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1522246701"></script>
-    <script src="/js/perfect-scrollbar.min.js?1522246701"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1522246701"></script>
-    <script src="/js/jquery.sticky.js?1522246701"></script>
-    <script src="/js/featherlight.min.js?1522246701"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1522246701"></script>
-    <script src="/js/highlight.pack.js?1522246701"></script>
+    <script src="/js/clipboard.min.js?1522338281"></script>
+    <script src="/js/perfect-scrollbar.min.js?1522338281"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1522338281"></script>
+    <script src="/js/jquery.sticky.js?1522338281"></script>
+    <script src="/js/featherlight.min.js?1522338281"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1522338281"></script>
+    <script src="/js/highlight.pack.js?1522338281"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1522246701"></script>
-    <script src="/js/learn.js?1522246701"></script>
-    <script src="/js/hugo-learn.js?1522246701"></script>
+    <script src="/js/modernizr.custom.71422.js?1522338281"></script>
+    <script src="/js/learn.js?1522338281"></script>
+    <script src="/js/hugo-learn.js?1522338281"></script>
 
-    <link href="/mermaid/mermaid.css?1522246701" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1522246701"></script>
+    <link href="/mermaid/mermaid.css?1522338281" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1522338281"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
