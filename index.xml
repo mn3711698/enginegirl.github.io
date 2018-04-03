@@ -6,17 +6,38 @@
     <description>Recent content in 目录 on Engine GO</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 26 Mar 2018 00:19:14 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 03 Apr 2018 00:10:14 +0800</lastBuildDate>
     
 	<atom:link href="https://www.enginego.org/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>贝叶斯分类器</title>
-      <link>https://www.enginego.org/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB/</link>
+      <title>路径</title>
+      <link>https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/%E8%B7%AF%E5%BE%84/</link>
+      <pubDate>Tue, 03 Apr 2018 00:10:14 +0800</pubDate>
+      
+      <guid>https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/%E8%B7%AF%E5%BE%84/</guid>
+      <description>作者：Windson Yang
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处（www.enginego.org）。
+ 绝对路径和相对路径 当前路径 切换路径  绝对路径和相对路径 . └── usr ├── foo │ ├── first.md │ └── second.md ├── bar │ ├── sunkist.toml │ ├── cherry.toml  计算机文件的存放结构如上图一样，上图中，usr文件夹中包含了foo和bar两个文件夹，这两个文件夹分别包含了两个文件。路径指的是为文件/文件夹存放在计算机中的位置。举个现实的例子：
+有一天，Cherry在路上遇到Sunkist，它问Sunkist的公司地址在哪里，Sunkist可能有两个答案：
+ 以这里为起点，西南方向500米的石室大厦 中国广东省广州市思哲路石室大厦  第一个答案以当前的位置为起点所描述的称为相对路径。第二个答案从国家到省份城市巨细无遗地描述称为绝对路径。根据Sunkist当前的位置不一样，它回答的相对路径会不一样，但是绝对路径是不会变化的。每个文件/文件夹在一台计算机中可能会有无数个相对路径，但是只有一个绝对路径。上图中，first.md的绝对路径是
+/usr/foo/first.md (first.md的绝对路径)  在路径命令中&amp;rdquo;.&amp;ldquo;以及&amp;rdquo;..&amp;ldquo;这两个符号有特殊意义，分别代表当前目录以及上一级目录。如果当前路径是&amp;rdquo;/usr/foo/&amp;rdquo;
+/usr/foo/ (当前路径) ./ = /usr/foo/ (当前目录) ../ = /usr/ (上一级目录)  相对foo目录的路径是
+./first.md (first.md相对foo目录的路径)  相对bar目录的相对路径是
+../foo/first.md (first.md相对bar目录的路径)  所以
+./first.md  表示的是当前目录下的first.md文件(first.md原本就在foo目录里面)
+../foo/first.md  表示的是先返回当前目录(/usr/bar/)的上一级目录(/usr/)，然后再进入foo目录，找到first.md文件
+当前路径 当你打开终端的时候：
+(masOS) WindsondeMacBook-Air:fun/ windson$ (Windsons) C:fun\:  这里的&amp;rdquo;fun/&amp;ldquo;和&amp;rdquo;C:fun\&amp;ldquo;指当前执行命令的地方，也就是你的当前路径。可以通过命令来查看当前路径的绝对路径</description>
+    </item>
+    
+    <item>
+      <title>理解贝叶斯分类</title>
+      <link>https://www.enginego.org/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E7%90%86%E8%A7%A3%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB/</link>
       <pubDate>Mon, 26 Mar 2018 00:19:14 +0800</pubDate>
       
-      <guid>https://www.enginego.org/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB/</guid>
+      <guid>https://www.enginego.org/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E7%90%86%E8%A7%A3%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB/</guid>
       <description>作者：Windson Yang
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处（www.enginego.org）。
 贝叶斯模型在机器学习以及人工智能中都有出现，cherry分类器使用了朴素贝叶斯模型算法，经过简单的优化，使用1000个训练数据就能得到97.5%的准确率。虽然现在主流的框架都带有朴素贝叶斯模型算法，大多数开发者只需要直接调用api就能使用。但是在实际业务中，面对不同的数据集，必须了解算法的原理，实现以及懂得对结果进行分析，才能达到高准确率。
@@ -71,16 +92,6 @@ PING www.enginego.org (104.24.121.11): 56 data bytes Request timeout for icmp_se
 我接触到很多开发者对于公钥和私钥只是一知半解，其实它的原理非常简单。
 我们一般认识的密码／密钥类似保险柜，你设置密码成0335，那么打开的密码也是0335，这种叫做对称密钥，也就是开锁和关锁用的是同一个密码。另外一种关闭的密码与打开的密码不同，叫做非对称密钥。在网络传输中，如果你要和其他人传输一段重要的信息，例如你最怕的蔬菜的名字。你想要加密传输，那么你可以把这段信息通过密钥加密，例如你要传输的是
 芹菜，苦瓜，香菜  </description>
-    </item>
-    
-    <item>
-      <title>前端or后端（未完成）</title>
-      <link>https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/%E5%89%8D%E7%AB%AFor%E5%90%8E%E7%AB%AF/</link>
-      <pubDate>Tue, 27 Feb 2018 00:10:14 +0800</pubDate>
-      
-      <guid>https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/%E5%89%8D%E7%AB%AFor%E5%90%8E%E7%AB%AF/</guid>
-      <description>作者：Windson Yang
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处（www.enginego.org）。</description>
     </item>
     
     <item>
@@ -202,7 +213,7 @@ HTTP 超文本传输协议 SMTP 邮件协议 telnet 终端传输协议 DNS 域�
     </item>
     
     <item>
-      <title>基础术语</title>
+      <title>服务端</title>
       <link>https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/%E6%9C%8D%E5%8A%A1%E7%AB%AF/</link>
       <pubDate>Mon, 08 Jan 2018 00:10:14 +0800</pubDate>
       
@@ -221,42 +232,23 @@ HTTP 超文本传输协议 SMTP 邮件协议 telnet 终端传输协议 DNS 域�
       <description>作者：Windson Yang
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处 (www.enginego.org)。
 使用终端是我们开始编程的第一步，无论是运行程序，或者了解计算机的基本信息都需要用到。让我们愉快地和它玩耍把。
- 基础版 进阶版  基础版  什么是终端 为什么要用终端  什么是终端  图形界面 命令行界面 亲自试试吧  图形界面 我们平时习惯了使用图形界面，当我们双击图标打开文件，计算机会先通过后续去猜测用什么程序运行文件，如果是图片(.jpg, .png)的话，计算机就会用图片浏览器打开，如果是可执行文件(macOS下的dmg后缀文件，Windows下的exe后缀文件)，计算机会先找到该应用的在硬盘中的位置，然后根据可执行文件里面包含的信息（需要加载什么资源）来运行程序。
+基础版  什么是终端 为什么要用终端  什么是终端  图形界面 命令行界面 亲自试试吧  图形界面 我们平时习惯了使用图形界面，当我们双击图标打开文件，计算机会先通过后续去猜测用什么程序运行文件，如果是图片（.jpg, .png）的话，计算机就会用图片浏览器打开，如果是可执行文件（macOS下的dmg后缀文件，Windows下的exe后缀文件），计算机会先找到该应用的在硬盘中的位置，然后根据可执行文件里面包含的信息（需要加载什么资源）来运行程序。
 命令行界面 在计算机刚开始发展的时候，并没有那么容易上手的操作界面，大家都是通过一个黑乎乎的程序输入命令，然后等待计算机执行。
-这时候运行程序或者打开文件，则需要使用不同的命令。例如打开一个名为normal.txt的文本文件，可以用cat命令：
+这时候运行程序或者打开文件，则需要使用不同的命令。例如打开当前路径下一个名为normal.txt的文本文件，可以用cat命令：
 cat normal.txt  要打开图片的话，需要安装额外的软件来打开。要运行一个名为hello.py的python程序，在安装了python软件之后，在终端直接输入
 python hello.py  回车之后就可以看到程序的输出结果了。其实图形界面与命令行界面运行的本质是一样的，运行程序或者打开文件：
- 安装对应的软件 指定程序运行 (图形界面会根据后缀名帮你选择用什么程序来打开。)  亲自试试吧 你可以尝试先打开自己计算机的终端：
+ 安装对应的软件 指定程序运行（图形界面会根据后缀名帮你选择用什么程序来打开。）  亲自试试吧 你可以尝试先打开自己计算机的终端：
  macOS: 同时按住&amp;rdquo;control&amp;rdquo;+&amp;ldquo;space&amp;rdquo;键，在搜索框输入termianl，&amp;rdquo;回车&amp;rdquo;
 Windows 7：打开&amp;rdquo;开始&amp;rdquo;菜单，在搜索框里输入cmd，&amp;rdquo;回车&amp;rdquo;
 Windows 8+：同时按住&amp;rdquo;win&amp;rdquo;+&amp;ldquo;Q&amp;rdquo;键，然后在弹出的搜索框里输入cmd，&amp;rdquo;回车&amp;rdquo;
  成功打开之后，光标会停留在某一行。类似：
-WindsondeMacBook-Air:~ windson$ |  因为和计算机交互需要遵守一定的指令规则，终端默认会运行一个程序，常见的是Bash(Bourne Again SHell)或者sh，你可以尝试输入一个命令，然后让终端执行。
+WindsondeMacBook-Air:~ windson$ |  因为和计算机交互需要遵守一定的指令规则，终端默认会运行一个程序，常见的是Bash（Bourne Again SHell）或者sh，你可以尝试输入一个命令，然后让终端执行。
  macOS: &amp;ldquo;ls&amp;rdquo;+&amp;ldquo;回车&amp;rdquo;
 Windows: &amp;ldquo;dir&amp;rdquo;+&amp;ldquo;回车&amp;rdquo;
  输入回车之后，你会发现终端显示出了一些文字，仔细观察的话你会发现其实是你电脑中某个目录下的文件。ls/dir这个命令就是列出当前目录的文件。 当然这个命令还有很多参数，也就是你可以告诉计算机显示什么文件（隐藏／非隐藏），显示文件的详细内容（创建日期，大小），ls/dir只会调用一个常用的默认配置，假如你想把隐藏文件也显示的话，在终端输入
- macOS: &amp;ldquo;ls -a&amp;rdquo;+&amp;ldquo;回车&amp;rdquo;</description>
-    </item>
-    
-    <item>
-      <title>路径</title>
-      <link>https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/%E8%B7%AF%E5%BE%84/</link>
-      <pubDate>Mon, 08 Jan 2018 00:10:14 +0800</pubDate>
-      
-      <guid>https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/%E8%B7%AF%E5%BE%84/</guid>
-      <description>作者：Windson Yang
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处（www.enginego.org）。
- 绝对路径和相对路径 当前路径 切换路径  绝对路径和相对路径 . └── usr ├── foo │ ├── first.md │ └── second.md ├── bar │ ├── sunkist.toml │ ├── cherry.toml  计算机文件的存放结构如上图一样，上图中，usr文件夹中包含了foo和bar两个文件夹，这两个文件夹分别包含了两个文件。路径指的是为文件/文件夹存放在计算机中的位置。举个现实的例子：
-有一天，Cherry在路上遇到Sunkist，它问Sunkist的公司地址在哪里，Sunkist可能有两个答案：
- 以这里为起点，西南方向500米的石室大厦 中国广东省广州市思哲路石室大厦  第一个答案以当前的位置为起点所描述的称为相对路径。第二个答案从国家到省份城市巨细无遗地描述称为绝对路径。根据Sunkist当前的位置不一样，它回答的相对路径会不一样，但是绝对路径是不会变化的。每个文件/文件夹在一台计算机中可能会有无数个相对路径，但是只有一个绝对路径。上图中，first.md的绝对路径是
-/usr/foo/first.md (first.md的绝对路径)  相对foo目录的路径是
-./first.md (相对foo目录的路径)  相对bar目录的相对路径是
-../foo/first.md (相对bar目录的路径)  在路径命令中&amp;rdquo;.&amp;ldquo;以及&amp;rdquo;..&amp;ldquo;这两个符号有特殊意义，分别代表当前目录以及上一级目录。如果当前路径是&amp;rdquo;/usr/foo/&amp;rdquo;
-/usr/foo/ (当前路径) ./ = /usr/foo/ (当前目录) ../ = /usr/ (上一级目录)  所以
-./first.md  表示的是当前目录下的first.md文件(first.md原本就在foo目录里面)
-../foo/first.md  表示的是先返回当前目录(/usr/bar/)的上一级目录(/usr/)，然后再进入foo目录，找到first.md文件
-当前路径 当你打开终端的时候：
-(masOS) WindsondeMacBook-Air:fun/ windson$ (Windsons) C:fun\:  这里的&amp;rdquo;fun/&amp;ldquo;和&amp;rdquo;C:fun\&amp;ldquo;指当前执行命令的地方，也就是你的当前路径。可以通过命令来查看当前路径的绝对路径</description>
+ macOS: &amp;ldquo;ls -a&amp;rdquo;+&amp;ldquo;回车&amp;rdquo;
+Windows: &amp;ldquo;dir -a&amp;rdquo;+&amp;ldquo;回车&amp;rdquo;
+ 终端还有很多其他命令，例如输出当前路径</description>
     </item>
     
     <item>
