@@ -13,19 +13,19 @@
     <title>路径 :: Engine GO</title>
     
     
-    <link href="/css/nucleus.css?1522770728" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1522770728" rel="stylesheet">
-    <link href="/css/hybrid.css?1522770728" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1522770728" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1522770728" rel="stylesheet">
-    <link href="/css/auto-complete.css?1522770728" rel="stylesheet">
-    <link href="/css/theme.css?1522770728" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1522770728" rel="stylesheet">
+    <link href="/css/nucleus.css?1523114565" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1523114565" rel="stylesheet">
+    <link href="/css/hybrid.css?1523114565" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1523114565" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1523114565" rel="stylesheet">
+    <link href="/css/auto-complete.css?1523114565" rel="stylesheet">
+    <link href="/css/theme.css?1523114565" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1523114565" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1522770728" rel="stylesheet">
+      <link href="/css/theme-blue.css?1523114565" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1522770728"></script>
+    <script src="/js/jquery-2.x.min.js?1523114565"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -53,15 +53,15 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1522770728"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1522770728"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1523114565"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1523114565"></script>
 <script type="text/javascript">
     
         
         var baseurl = "https://www.enginego.org";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1522770728"></script>
+<script type="text/javascript" src="/js/search.js?1523114565"></script>
 
     
   </div>
@@ -789,8 +789,9 @@
 <ul>
 <li>
 <ul>
-<li><a href="#绝对路径和相对路径">绝对路径和相对路径</a></li>
+<li><a href="#计算机文件存储">计算机文件存储</a></li>
 <li><a href="#当前路径">当前路径</a></li>
+<li><a href="#绝对路径和相对路径">绝对路径和相对路径</a></li>
 <li><a href="#切换路径">切换路径</a></li>
 <li><a href="#总结">总结</a></li>
 </ul></li>
@@ -823,14 +824,17 @@
 <p>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处（www.enginego.org）。</p>
 
 <ul>
-<li><a href="#绝对路径和相对路径">绝对路径和相对路径</a></li>
+<li><a href="#计算机文件存储">计算机文件存储</a></li>
 <li><a href="#当前路径">当前路径</a></li>
+<li><a href="#绝对路径和相对路径">绝对路径和相对路径</a></li>
 <li><a href="#切换路径">切换路径</a></li>
 </ul>
 
-<h4 id="绝对路径和相对路径">绝对路径和相对路径</h4>
+<h4 id="计算机文件存储">计算机文件存储</h4>
 
-<pre><code>.
+<p>计算机文件的存储结构如下：</p>
+
+<pre><code>/
 └── usr
     ├── foo
     │   ├── first.md
@@ -840,7 +844,38 @@
     │   ├── cherry.toml
 </code></pre>
 
-<p>计算机文件的存放结构如上图一样，上图中，<strong>usr文件夹中包含了foo和bar两个文件夹，这两个文件夹分别包含了两个文件。</strong>路径指的是为文件/文件夹存放在计算机中的位置。举个现实的例子：</p>
+<p>我们平时使用计算机，都会接触到文件夹以及目录，上图中，<strong>usr文件夹中包含了foo和bar两个文件夹，这两个文件夹分别包含了两个文件。</strong>路径指的是为文件/文件夹存放在计算机中的位置。要描述first.md这个文件的位置可以有两种方式，绝对路径和相对路径，其中绝对路径是</p>
+
+<pre><code>/usr/foo/first.md
+</code></pre>
+
+<p><strong>每个文件／文件夹都只有一个绝对路径，无数个相对路径</strong>，如果你不理解的话，没关系，我们从头一步步开始介绍。</p>
+
+<h4 id="当前路径">当前路径</h4>
+
+<p>我们平时用导航软件的时候，首先需要知道的是现在的位置，在计算机中也是一样，我们首先要知道自己在哪里，当你打开<a href="../终端/">终端</a>的时候：</p>
+
+<pre><code>(masOS)
+WindsondeMacBook-Air:fun/ windson$
+
+(Windsons)
+C:fun\:
+</code></pre>
+
+<p>这里的&rdquo;fun/&ldquo;和&rdquo;C:fun\&ldquo;指当前执行命令的地方，也就是你的<strong>当前路径</strong>。可以通过命令来查看当前路径的<strong>绝对路径</strong></p>
+
+<pre><code>(masOS)
+WindsondeMacBook-Air:foo/ windson$ pwd
+/usr/foo/
+
+(Windsons)
+C:foo\: cd
+\usr\foo\
+</code></pre>
+
+<p>当你在终端中输入命令，默认命令针对的是当前路径。例如输入&rdquo;ls&rdquo;，计算机会理解成&rdquo;ls /usr/foo/&ldquo;(Windows下输入&rdquo;dir&rdquo;，理解为&rdquo;dir \usr\foo\&ldquo;)，两个命令都会列出<strong>当前路径下的所有文件名称</strong>。</p>
+
+<h4 id="绝对路径和相对路径">绝对路径和相对路径</h4>
 
 <p>有一天，Cherry在路上遇到Sunkist，它问Sunkist的公司地址在哪里，Sunkist可能有两个答案：</p>
 
@@ -849,7 +884,7 @@
 <li>中国广东省广州市思哲路石室大厦</li>
 </ol>
 
-<p>第一个答案以当前的位置为起点所描述的称为<strong>相对路径</strong>。第二个答案从国家到省份城市巨细无遗地描述称为<strong>绝对路径</strong>。<strong>根据Sunkist当前的位置不一样，它回答的相对路径会不一样，但是绝对路径是不会变化的。每个文件/文件夹在一台计算机中可能会有无数个相对路径，但是只有一个绝对路径。</strong>上图中，first.md的绝对路径是</p>
+<p>第一个答案以当前的位置为起点所描述的称为<strong>相对路径</strong>。<strong>根据Sunkist当前的位置不一样，它回答的相对路径会不一样，第二个答案从国家到省份城市巨细无遗地描述称为</strong>绝对路径<strong>，一个文件除非被移动，否则绝对路径是不会变化的。每个文件/文件夹在一台计算机中可能会有无数个相对路径，但是只有一个绝对路径。</strong>上图中，first.md的绝对路径是</p>
 
 <pre><code>/usr/foo/first.md (first.md的绝对路径)
 </code></pre>
@@ -882,30 +917,6 @@
 </code></pre>
 
 <p>表示的是先返回当前目录(/usr/bar/)的上一级目录(/usr/)，然后再进入foo目录，找到first.md文件</p>
-
-<h4 id="当前路径">当前路径</h4>
-
-<p>当你打开<a href="../终端/">终端</a>的时候：</p>
-
-<pre><code>(masOS)
-WindsondeMacBook-Air:fun/ windson$
-
-(Windsons)
-C:fun\:
-</code></pre>
-
-<p>这里的&rdquo;fun/&ldquo;和&rdquo;C:fun\&ldquo;指当前执行命令的地方，也就是你的<strong>当前路径</strong>。可以通过命令来查看当前路径的<strong>绝对路径</strong></p>
-
-<pre><code>(masOS)
-WindsondeMacBook-Air:foo/ windson$ pwd
-/usr/foo/
-
-(Windsons)
-C:foo\: cd
-\usr\foo\
-</code></pre>
-
-<p>当你在终端中输入命令，默认针对的就是当前路径。例如输入&rdquo;ls&rdquo;，计算机会理解成&rdquo;ls /usr/foo/&ldquo;(输入&rdquo;dir&rdquo;，理解为&rdquo;dir \usr\foo\&ldquo;)，两个命令都会列出<strong>当前路径中&rdquo;foo/&ldquo;下面的所有文件名称</strong>。</p>
 
 <h4 id="切换路径">切换路径</h4>
 
@@ -1472,20 +1483,20 @@ s.setAttribute('data-timestamp', +new Date());
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1522770728"></script>
-    <script src="/js/perfect-scrollbar.min.js?1522770728"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1522770728"></script>
-    <script src="/js/jquery.sticky.js?1522770728"></script>
-    <script src="/js/featherlight.min.js?1522770728"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1522770728"></script>
-    <script src="/js/highlight.pack.js?1522770728"></script>
+    <script src="/js/clipboard.min.js?1523114565"></script>
+    <script src="/js/perfect-scrollbar.min.js?1523114565"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1523114565"></script>
+    <script src="/js/jquery.sticky.js?1523114565"></script>
+    <script src="/js/featherlight.min.js?1523114565"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1523114565"></script>
+    <script src="/js/highlight.pack.js?1523114565"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1522770728"></script>
-    <script src="/js/learn.js?1522770728"></script>
-    <script src="/js/hugo-learn.js?1522770728"></script>
+    <script src="/js/modernizr.custom.71422.js?1523114565"></script>
+    <script src="/js/learn.js?1523114565"></script>
+    <script src="/js/hugo-learn.js?1523114565"></script>
 
-    <link href="/mermaid/mermaid.css?1522770728" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1522770728"></script>
+    <link href="/mermaid/mermaid.css?1523114565" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1523114565"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
