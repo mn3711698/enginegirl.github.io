@@ -6,29 +6,43 @@
     <description>Recent content in 目录 on Engine GO</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 03 Apr 2018 00:10:14 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 08 Apr 2018 00:10:14 +0800</lastBuildDate>
     
 	<atom:link href="https://www.enginego.org/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Ping命令</title>
+      <link>https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/ping%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Sun, 08 Apr 2018 00:10:14 +0800</pubDate>
+      
+      <guid>https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/ping%E5%91%BD%E4%BB%A4/</guid>
+      <description>作者：Windson Yang
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处 (www.enginego.org)。
+ 基础版 进阶版  基础版 ping命令 有时候当我们无法上网，会计算机的朋友会说，你ping一下网关，或者你ping一个网站看看。ping这个命令，其实是操作系统自带的命令之一，在终端中输入：
+ping www.enginggo.org  正常的话会返回：
+64 bytes from 104.24.121.11: icmp_seq=0 ttl=54 time=170.383 ms 64 bytes from 104.24.121.11: icmp_seq=1 ttl=54 time=170.053 ms 64 bytes from 104.24.121.11: icmp_seq=2 ttl=54 time=171.298 ms 64 bytes from 104.24.121.11: icmp_seq=3 ttl=54 time=170.352 ms 64 bytes from 104.24.121.11: icmp_seq=4 ttl=54 time=170.636 ms ...  从我的计算机发送64个字节的数据到104.24.121.11 (这个是经过DNS查询后的www.enginego.org的ip地址)，从发送到接受对方返回总共经过了170.xxx毫秒。代表www.enginego.org对应的那台服务器是开启并且响应ping指令的。
+如果返回：
+PING www.enginego.org (104.24.121.11): 56 data bytes Request timeout for icmp_seq 0 Request timeout for icmp_seq 1 Request timeout for icmp_seq 2 Request timeout for icmp_seq 3  这就代表连接超时，访问失败。原因有可能是本地计算机网络问题，也有可能是对应的服务器关闭或者不响应ping指令。</description>
+    </item>
+    
+    <item>
       <title>路径</title>
       <link>https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/%E8%B7%AF%E5%BE%84/</link>
-      <pubDate>Tue, 03 Apr 2018 00:10:14 +0800</pubDate>
+      <pubDate>Sun, 08 Apr 2018 00:10:14 +0800</pubDate>
       
       <guid>https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/%E8%B7%AF%E5%BE%84/</guid>
       <description>作者：Windson Yang
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处（www.enginego.org）。
  计算机文件存储 当前路径 绝对路径和相对路径 切换路径  计算机文件存储 计算机文件的存储结构如下：
-/ └── usr ├── foo │ ├── first.md │ └── second.md ├── bar │ ├── sunkist.toml │ ├── cherry.toml  我们平时使用计算机，都会接触到文件夹以及目录，上图中，usr文件夹中包含了foo和bar两个文件夹，这两个文件夹分别包含了两个文件。路径指的是为文件/文件夹存放在计算机中的位置。要描述first.md这个文件的位置可以有两种方式，绝对路径和相对路径，其中绝对路径是
+/（根目录） │ └── usr ├── foo │ ├── first.md │ └── second.md ├── bar │ ├── sunkist.toml │ ├── cherry.toml  我们平时使用计算机，都会接触到文件夹以及目录，上图中，计算机中只有一个usr文件夹，usr 文件夹中又包含了foo和bar两个文件夹，分别包含两个文件。路径指的是文件／文件夹存放在计算机中的位置。要描述first.md这个文件的位置可以有两种方式，绝对路径和相对路径，其中绝对路径是
 /usr/foo/first.md  每个文件／文件夹都只有一个绝对路径，无数个相对路径，如果你不理解的话，没关系，我们从头一步步开始介绍。
 当前路径 我们平时用导航软件的时候，首先需要知道的是现在的位置，在计算机中也是一样，我们首先要知道自己在哪里，当你打开终端的时候：
 (masOS) WindsondeMacBook-Air:fun/ windson$ (Windsons) C:fun\:  这里的&amp;rdquo;fun/&amp;ldquo;和&amp;rdquo;C:fun\&amp;ldquo;指当前执行命令的地方，也就是你的当前路径。可以通过命令来查看当前路径的绝对路径
 (masOS) WindsondeMacBook-Air:foo/ windson$ pwd /usr/foo/ (Windsons) C:foo\: cd \usr\foo\  当你在终端中输入命令，默认命令针对的是当前路径。例如输入&amp;rdquo;ls&amp;rdquo;，计算机会理解成&amp;rdquo;ls /usr/foo/&amp;ldquo;(Windows下输入&amp;rdquo;dir&amp;rdquo;，理解为&amp;rdquo;dir \usr\foo\&amp;ldquo;)，两个命令都会列出当前路径下的所有文件名称。
 绝对路径和相对路径 有一天，Cherry在路上遇到Sunkist，它问Sunkist的公司地址在哪里，Sunkist可能有两个答案：
- 以这里为起点，西南方向500米的石室大厦 中国广东省广州市思哲路石室大厦  第一个答案以当前的位置为起点所描述的称为相对路径。根据Sunkist当前的位置不一样，它回答的相对路径会不一样，第二个答案从国家到省份城市巨细无遗地描述称为绝对路径，一个文件除非被移动，否则绝对路径是不会变化的。每个文件/文件夹在一台计算机中可能会有无数个相对路径，但是只有一个绝对路径。上图中，first.md的绝对路径是
-/usr/foo/first.md (first.md的绝对路径)  在路径命令中&amp;rdquo;.&amp;ldquo;以及&amp;rdquo;..&amp;ldquo;这两个符号有特殊意义，分别代表当前目录以及上一级目录。如果当前路径是&amp;rdquo;/usr/foo/&amp;rdquo;
-/usr/foo/ (当前路径) .</description>
+ 以这里为起点，西南方向500米的石室大厦 中国广东省广州市思哲路石室大厦  第一个答案以当前的位置为起点所描述的称为相对路径。根据Sunkist当前的位置不一样，它回答的相对路径会不一样，第二个答案从国家到省份城市巨细无遗地描述称为绝对路径，一个文件除非被移动，否则绝对路径是不会变化的。每个文件/文件夹在一台计算机中可能会有无数个相对路径，但是只有一个绝对路径。回到文章最初的文件存储结构，first.md的绝对路径是
+/usr/foo/first.md (first.md的绝对路径)  这是从根目录&amp;rdquo;/&amp;ldquo;开始一层一层描述的位置。了解相对路径之前先有一点预备知识。在路径命令中&amp;rdquo;.</description>
     </item>
     
     <item>
@@ -63,21 +77,6 @@ UnicodeDecodeError: &#39;ascii&#39; codec can&#39;t decode byte 0xc4  同时或�
 键值表 一一对应的表，例如函数
 y = x * 2  每个x都对应着唯一的一个y值，x与y组成的集合就是键值表(Hash Table)，例如：
 1 -&amp;gt; 2 2 -&amp;gt; 4 3 -&amp;gt; 6  这里的每一个x(1, 2, 3)都有对应的y(2, 4, 6)</description>
-    </item>
-    
-    <item>
-      <title>Ping命令</title>
-      <link>https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/ping%E5%91%BD%E4%BB%A4/</link>
-      <pubDate>Tue, 27 Feb 2018 00:10:14 +0800</pubDate>
-      
-      <guid>https://www.enginego.org/%E5%9F%BA%E7%A1%80/%E6%9C%AF%E8%AF%AD/ping%E5%91%BD%E4%BB%A4/</guid>
-      <description>作者：Windson Yang
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处 (www.enginego.org)。
- 基础版 进阶版  基础版 什么是ping命令 有时候当我们无法上网，会计算机的朋友会说，你ping一下网关，或者你ping一个网站看看。ping这个命令，其实是操作系统自带的命令之一，如果在终端中输入：
-ping www.enginggo.org  正常的话会返回：
-64 bytes from 104.24.121.11: icmp_seq=0 ttl=54 time=170.383 ms 64 bytes from 104.24.121.11: icmp_seq=1 ttl=54 time=170.053 ms 64 bytes from 104.24.121.11: icmp_seq=2 ttl=54 time=171.298 ms 64 bytes from 104.24.121.11: icmp_seq=3 ttl=54 time=170.352 ms 64 bytes from 104.24.121.11: icmp_seq=4 ttl=54 time=170.636 ms ...  从我的计算机发送64个字节的数据到104.24.121.11 (这个是经过DNS查询后的www.enginego.org的ip地址)，从发送到接受对方返回总共经过了170.xxx毫秒。代表www.enginego.org对应的那台服务器是开启并且响应ping指令的。
-如果返回：
-PING www.enginego.org (104.24.121.11): 56 data bytes Request timeout for icmp_seq 0 Request timeout for icmp_seq 1 Request timeout for icmp_seq 2 Request timeout for icmp_seq 3  这就代表连接超时，访问失败。原因有可能是本地计算机网络问题，也有可能是对应的服务器关闭或者不响应ping指令。</description>
     </item>
     
     <item>
